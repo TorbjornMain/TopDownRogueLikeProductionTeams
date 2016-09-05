@@ -25,9 +25,9 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 
 		bool raycastHit;
 		if (isPiercing) {
-			raycastHit = Physics.Raycast (pws.barrelPos, pws.barrelDir, out rc, beamRange, LayerMask.GetMask ("Terrain"));
+			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, LayerMask.GetMask ("Terrain"));
 		} else {
-			raycastHit = Physics.Raycast (pws.barrelPos, pws.barrelDir, out rc, beamRange, 1 << pws.gameObject.layer);
+			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, ~(1 << pws.gameObject.layer));
 		}
 		if (raycastHit) {
 			lr.SetPositions (new Vector3[]{transform.position, transform.position + transform.forward * rc.distance});
@@ -70,5 +70,7 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 	{
 		base.endEffect ();
 	}
+
+
 }
 

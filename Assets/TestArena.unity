@@ -244,12 +244,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 739223041}
   - 33: {fileID: 739223040}
-  - 65: {fileID: 739223039}
   - 23: {fileID: 739223038}
-  - 54: {fileID: 739223037}
   - 114: {fileID: 739223036}
   - 114: {fileID: 739223042}
-  m_Layer: 0
+  - 143: {fileID: 739223037}
+  m_Layer: 8
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,21 +276,23 @@ MonoBehaviour:
   transportSocket:
     transport: {fileID: 11405796, guid: 7c6af17156f63ce428d799d48fd54afa, type: 2}
     offset: {x: 0, y: -0.5, z: 0}
---- !u!54 &739223037
-Rigidbody:
+--- !u!143 &739223037
+CharacterController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 739223035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 3
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!23 &739223038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -318,18 +319,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &739223039
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 739223035}
-  m_Material: {fileID: 13400000, guid: 8d12f198cecfb304b95fecf79b87e419, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!33 &739223040
 MeshFilter:
   m_ObjectHideFlags: 0

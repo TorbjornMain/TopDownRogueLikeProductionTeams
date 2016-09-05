@@ -26,16 +26,16 @@ public class TransportSocket
 }
 
 [DisallowMultipleComponent()]
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
 public class BodySockets : MonoBehaviour
 {
 	public PrimaryWeaponSocket[] primaryWeaponSockets;
 	public TransportSocket transportSocket;
-	private Rigidbody mainBody;
+	private CharacterController mainBody;
 
 	void Start()
 	{
-		mainBody = GetComponent<Rigidbody> ();
+		mainBody = GetComponent<CharacterController> ();
 		for (int i = 0; i < primaryWeaponSockets.Length; i++) {
 			PrimaryWeaponNode pwn;
 			if ((pwn = primaryWeaponSockets [i].primaryWeapon) != null) {
@@ -62,6 +62,7 @@ public class BodySockets : MonoBehaviour
 	public void AttachTransport(TransportNode transport)
 	{
 		transportSocket.transport = transport;
+		transport.gameObject.layer = gameObject.layer;
 		transport.nodeObject.mainBody = mainBody;
 		transport.isAttached = true;
 	}
@@ -70,6 +71,7 @@ public class BodySockets : MonoBehaviour
 	{
 		if (!discard) {
 			transportSocket.transport.isAttached = false;
+			transportSocket.transport.gameObject.layer = LayerMask.NameToLayer ("Item");
 			transportSocket.transport.nodeObject.mainBody = null;
 		} else {
 			Destroy (transportSocket.transport.nodeObject.gameObject);
@@ -82,7 +84,7 @@ public class BodySockets : MonoBehaviour
 	public void AttachPrimaryWeapon (int index, PrimaryWeaponNode weapon)
 	{
 		weapon.isAttached = true;
-
+		weapon.gameObject.layer = gameObject.layer;
 		if (primaryWeaponSockets [index].side == SocketSide.Right) {
 			weapon.transform.localScale = Vector3.Scale (weapon.transform.localScale, new Vector3 (-1, 1, 1));
 		}
@@ -97,6 +99,7 @@ public class BodySockets : MonoBehaviour
 	{
 		if (!discard) {
 			primaryWeaponSockets [index].primaryWeapon.isAttached = false;
+			primaryWeaponSockets [index].primaryWeapon.gameObject.layer = LayerMask.NameToLayer ("Item");
 			primaryWeaponSockets [index].primaryWeapon.transform.SetParent (null);
 		} else {
 			Destroy (primaryWeaponSockets [index].primaryWeapon.nodeObject.gameObject);

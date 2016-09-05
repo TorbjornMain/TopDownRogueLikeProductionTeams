@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 486750}
   - 33: {fileID: 3339078}
-  - 65: {fileID: 6509076}
   - 23: {fileID: 2302562}
   - 114: {fileID: 11468110}
   - 114: {fileID: 11405796}
@@ -65,18 +64,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197056}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6509076
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11405796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     type: 0
-    speed: 35
+    speed: 5
     turnRate: 0.1
 --- !u!1001 &100100000
 Prefab:
@@ -110,7 +97,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: stats.speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197056}

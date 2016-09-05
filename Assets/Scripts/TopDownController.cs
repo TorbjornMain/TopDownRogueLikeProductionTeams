@@ -16,10 +16,8 @@ public class TopDownController : MonoBehaviour {
 
 
 
-
-
-	void Update () {
-
+	void FixedUpdate()
+	{
 		Vector3 moveVec = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
 		if(mainBody.transportSocket.transport != null)
 			mainBody.transportSocket.transport.nodeObject.Drive(moveVec);
@@ -32,7 +30,9 @@ public class TopDownController : MonoBehaviour {
 		}
 		gunAimVec.Set (gunAimVec.x, 0, gunAimVec.y);
 		mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
-		 
+	}
+
+	void Update () {		 
 		if (Input.GetButtonDown ("Fire1")) {
 			mainBody.StartFirePrimary ();
 		}

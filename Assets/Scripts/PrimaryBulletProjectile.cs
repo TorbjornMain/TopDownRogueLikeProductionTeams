@@ -27,6 +27,11 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 		}
 		base.Update ();
 	}
+
+	protected void OnTriggerEnter(Collider other)
+	{
+		endEffect ();
+	}
 }
 
 

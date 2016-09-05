@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Rigidbody))]
 public class PrimaryWeaponSystem : MonoBehaviour
 {
 	public List<Modifier> weaponMods;
@@ -38,12 +37,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 			if (isContinuous && value && shotTime <= 0 ) {
 				shotTime += 1 / Stats.speed;
 				for (int i = 0; i < Stats.numProjectiles; i++) {
-					PrimaryProjectile g = Instantiate<PrimaryProjectile> (projectilePrefab);
-					g.transform.position = transform.TransformPoint (barrelPos);
-					Quaternion relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
-					g.transform.rotation = Quaternion.FromToRotation (new Vector3 (0, 0, 1), transform.TransformDirection (barrelDir)) * relativeSpread;
-					g.pws = this;
-					g.relativeSpread = relativeSpread;
+					SpawnBullet ();
 				}
 			}
 			_isFiring = value;
@@ -57,12 +51,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 			if (shotTime <= 0) {
 				shotTime += 1 / (1 + Stats.speed);
 				for (int i = 0; i < Stats.numProjectiles; i++) {
-					PrimaryProjectile g = Instantiate<PrimaryProjectile> (projectilePrefab);
-					g.transform.position = transform.TransformPoint (barrelPos);
-					Quaternion relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
-					g.transform.rotation = Quaternion.FromToRotation (new Vector3 (0, 0, 1), transform.TransformDirection (barrelDir)) * relativeSpread;
-					g.pws = this;
-					g.relativeSpread = relativeSpread;
+					SpawnBullet ();
 				}
 			}
 			shotTime -= Time.deltaTime;
@@ -75,6 +64,23 @@ public class PrimaryWeaponSystem : MonoBehaviour
 
 	}
 
+	void SpawnBullet()
+	{
+		PrimaryProjectile g = Instantiate<PrimaryProjectile> (projectilePrefab);
+		g.transform.position = transform.TransformPoint (barrelPos);
+		Quaternion relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
+		g.transform.rotation = Quaternion.FromToRotation (new Vector3 (0, 0, 1), transform.TransformDirection (barrelDir)) * relativeSpread;
+		g.pws = this;
+		g.relativeSpread = relativeSpread;
+
+		if (gameObject.layer == LayerMask.NameToLayer ("Player"))
+			g.gameObject.layer = LayerMask.NameToLayer ("PlayerBullet");
+		else if (gameObject.layer == LayerMask.NameToLayer ("Enemy"))
+			g.gameObject.layer = LayerMask.NameToLayer ("EnemyBullet");
+		else
+			g.gameObject.layer = LayerMask.NameToLayer ("NeutralBullet");
+
+	}
 
 	void OnDrawGizmos ()
 	{
