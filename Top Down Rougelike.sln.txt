@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{25F7A5F3-2AE6-0D11-CF11-ECFDE247984D}") = "Top Down Rougelike", "Assembly-CSharp.csproj", "{912645F3-244C-45FB-6F5D-DF29E6774489}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{912645F3-244C-45FB-6F5D-DF29E6774489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912645F3-244C-45FB-6F5D-DF29E6774489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912645F3-244C-45FB-6F5D-DF29E6774489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912645F3-244C-45FB-6F5D-DF29E6774489}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

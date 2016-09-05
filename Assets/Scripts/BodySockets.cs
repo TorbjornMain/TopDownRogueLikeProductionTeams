@@ -1,0 +1,137 @@
+﻿using System.Collections;
+using UnityEngine;
+
+public enum SocketSide
+{
+	Left,
+	Right,
+	Top
+}
+
+
+[System.Serializable]
+public class PrimaryWeaponSocket
+{
+	public PrimaryWeaponNode primaryWeapon;
+	public Vector3 offset;
+	public SocketSide side;
+}
+
+
+[System.Serializable]
+public class TransportSocket
+{
+	public TransportNode transport;
+	public Vector3 offset;
+}
+
+[DisallowMultipleComponent()]
+[RequireComponent(typeof(Rigidbody))]
+public class BodySockets : MonoBehaviour
+{
+	public PrimaryWeaponSocket[] primaryWeaponSockets;
+	public TransportSocket transportSocket;
+	private Rigidbody mainBody;
+
+	void Start()
+	{
+		mainBody = GetComponent<Rigidbody> ();
+		for (int i = 0; i < primaryWeaponSockets.Length; i++) {
+			PrimaryWeaponNode pwn;
+			if ((pwn = primaryWeaponSockets [i].primaryWeapon) != null) {
+				AttachPrimaryWeapon (i, Instantiate<PrimaryWeaponNode> (pwn));
+			}
+		}
+
+		TransportNode trn;
+		if ((trn = transportSocket.transport) != null) {
+			AttachTransport (Instantiate<TransportNode> (trn));
+		}
+	}
+
+
+	void Update()
+	{
+		if(transportSocket.transport != null)
+		{
+		transportSocket.transport.transform.position = transform.TransformPoint(transportSocket.offset) + transportSocket.transport.transform.rotation * Vector3.Scale(-transportSocket.transport.offset, transportSocket.transport.transform.lossyScale);
+		}
+	}
+
+
+	public void AttachTransport(TransportNode transport)
+	{
+		transportSocket.transport = transport;
+		transport.nodeObject.mainBody = mainBody;
+		transport.isAttached = true;
+	}
+
+	public void DetachTransport(bool discard)
+	{
+		if (!discard) {
+			transportSocket.transport.isAttached = false;
+			transportSocket.transport.nodeObject.mainBody = null;
+		} else {
+			Destroy (transportSocket.transport.nodeObject.gameObject);
+		}
+
+		transportSocket.transport = null;
+	}
+		
+
+	public void AttachPrimaryWeapon (int index, PrimaryWeaponNode weapon)
+	{
+		weapon.isAttached = true;
+
+		if (primaryWeaponSockets [index].side == SocketSide.Right) {
+			weapon.transform.localScale = Vector3.Scale (weapon.transform.localScale, new Vector3 (-1, 1, 1));
+		}
+
+		weapon.transform.SetParent (transform);
+		weapon.transform.rotation = transform.rotation * weapon.transform.localRotation;
+		weapon.transform.position = transform.TransformPoint(primaryWeaponSockets [index].offset) + weapon.transform.rotation * Vector3.Scale(-weapon.offset, weapon.transform.lossyScale);
+		primaryWeaponSockets [index].primaryWeapon = weapon;
+	}
+
+	public void DetatchPrimaryWeapon(int index, bool discard)
+	{
+		if (!discard) {
+			primaryWeaponSockets [index].primaryWeapon.isAttached = false;
+			primaryWeaponSockets [index].primaryWeapon.transform.SetParent (null);
+		} else {
+			Destroy (primaryWeaponSockets [index].primaryWeapon.nodeObject.gameObject);
+		}
+		primaryWeaponSockets [index].primaryWeapon = null;
+	}
+
+	public void StartFirePrimary()
+	{
+		foreach (var item in primaryWeaponSockets) {
+			if(item.primaryWeapon != null)
+			item.primaryWeapon.nodeObject.isFiring = true;
+		}
+	}
+
+	public void CeaseFirePrimary()
+	{
+		foreach (var item in primaryWeaponSockets) {
+			if(item.primaryWeapon != null)
+			item.primaryWeapon.nodeObject.isFiring = false;
+		}
+	}
+
+
+	void OnDrawGizmos()
+	{
+		if (primaryWeaponSockets.Length != 0) {
+			Gizmos.color = Color.magenta;
+
+			foreach (var item in primaryWeaponSockets) {
+				Gizmos.DrawSphere (transform.TransformPoint (item.offset), 0.2f);
+			}
+		}
+
+		Gizmos.color = Color.green;
+		Gizmos.DrawSphere (transform.TransformPoint(transportSocket.offset), 0.2f);
+	}
+}
