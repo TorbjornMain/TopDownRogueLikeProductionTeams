@@ -81,22 +81,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0.9501252
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 0.5016737
-      value: 1.0485623
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 0.9989904
-      value: 0.9488127
-      inSlope: 0
-      outSlope: 0
+      value: 1.7399511
+      inSlope: 0.51865345
+      outSlope: 0.51865345
+      tangentMode: 10
+    - time: 0.50683045
+      value: 2.0028205
+      inSlope: 0.006235987
+      outSlope: 0.006235987
+      tangentMode: 10
+    - time: 1.0038004
+      value: 1.7512635
+      inSlope: 0.06847982
+      outSlope: 0.06847982
       tangentMode: 0
     m_PreInfinity: 1
-    m_PostInfinity: 1
+    m_PostInfinity: 0
     m_RotationOrder: 0
   fadeOutWidthCurve:
     serializedVersion: 2
@@ -115,7 +115,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   beamRange: 15
-  beamWidth: 0.2
+  beamWidth: 1
 --- !u!120 &12090280
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -176,7 +176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: beamWidth
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifetime
@@ -192,19 +192,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[1].time
-      value: 0.5016737
+      value: 0.50683045
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[2].time
-      value: 0.9989904
+      value: 1.0038004
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[2].value
-      value: 0.9488127
+      value: 1.7512635
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[1].value
-      value: 1.0485623
+      value: 2.0028205
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_PreInfinity
@@ -212,7 +212,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[0].value
-      value: 0.9501252
+      value: 1.7399511
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[0].time
@@ -220,7 +220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifeLoopWidthCurve.m_PostInfinity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fadeInWidthCurve.m_RotationOrder
@@ -284,6 +284,42 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: isPiercing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[0].inSlope
+      value: 0.51865345
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[0].outSlope
+      value: 0.51865345
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[0].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[1].inSlope
+      value: 0.006235987
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[1].outSlope
+      value: 0.006235987
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[2].inSlope
+      value: 0.06847982
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[2].outSlope
+      value: 0.06847982
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeLoopWidthCurve.m_Curve.Array.data[2].tangentMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
