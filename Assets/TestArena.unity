@@ -549,7 +549,7 @@ MonoBehaviour:
   tileSize: 1
   wallYOffset: 0.5
   initialPassablePercentage: 0.55
-  iterations: 1
+  iterations: 20
   starveLimit: 4
   birthLimit: 4
   wallPrefab: {fileID: 129336, guid: 34520af6528d90646a9f6cb68b2b47c1, type: 2}
