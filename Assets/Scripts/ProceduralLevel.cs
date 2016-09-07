@@ -57,24 +57,29 @@ public class ProceduralLevel : MonoBehaviour {
 			for (int x = 0; x < tileGrid.GetLength (0); x++) {
 				for (int y = 0; y < tileGrid.GetLength (1); y++) {
 					int neighboursBlocked = 0;
-					for (int xOff = Mathf.Max (0, x - 1); xOff < Mathf.Min (width - 1, x + 1); xOff++) {
-						for (int yOff = Mathf.Max (0, y - 1); yOff < Mathf.Min (height - 1, y + 1); yOff++) {
-							if (!tileGrid [xOff, yOff].passable) {
-								if (xOff != x && yOff != y) {
-									neighboursBlocked++;
+					
+					for (int xOff = x - 1; xOff < x + 2; xOff++) {
+						for (int yOff = y - 1; yOff < y + 2; yOff++) {
+							if (xOff < 0 || xOff > width - 1 || yOff < 0 || yOff > height - 1)
+								neighboursBlocked++;
+							else {
+								if (!tileGrid [xOff, yOff].passable) {
+									if (xOff != x || yOff != y) {
+										neighboursBlocked++;
+									}
 								}
 							}
 						}
 					}
 					if (tileGrid [x, y].passable) {
-						if (neighboursBlocked > birthLimit) {
-							tempGrid [x, y].passable = true;
-						} else {
+						if (neighboursBlocked >= birthLimit) {
 							tempGrid [x, y].passable = false;
+						} else {
+							tempGrid [x, y].passable = true;
 
 						}
 					} else {
-						if (neighboursBlocked < starveLimit) {
+						if (neighboursBlocked <= starveLimit) {
 							tempGrid [x, y].passable = true;
 						} else {
 							tempGrid [x, y].passable = false;
