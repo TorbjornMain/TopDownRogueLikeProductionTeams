@@ -38,6 +38,23 @@ public class DungeonGenerator : MonoBehaviour {
 			}
 		}
 
+		placeRooms ();
+
+		for (int x = 0; x < maze.GetLength (0); x++) {
+			for (int y = 0; y < maze.GetLength (1); y++) {
+				if (maze [x, y] == TileState.Open) {
+					GameObject g = Instantiate<GameObject> (wallPrefab);
+					g.transform.SetParent (transform);
+					g.transform.localScale = new Vector3 (g.transform.localScale.x, 10, g.transform.localScale.z);
+					g.transform.localPosition = new Vector3 (((-width / 2.0f) + x), 0, ((-height / 2.0f) + y));
+				}
+			}
+		}
+
+	}
+
+	void placeRooms()
+	{
 		for (int i = 0; i < roomAttempts; i++) {
 			int roomWidth = (int)(Random.value * (maxRoomSize - minRoomSize)) + minRoomSize;
 			int roomHeight = (int)(Random.value * (maxRoomSize - minRoomSize)) + minRoomSize;
@@ -69,19 +86,27 @@ public class DungeonGenerator : MonoBehaviour {
 					}
 				}
 			}
+		}
+	}
 
-			for (int x = 0; x < maze.GetLength (0); x++) {
-				for (int y = 0; y < maze.GetLength (1); y++) {
-					if (maze [x, y] == TileState.Open) {
-						GameObject g = Instantiate<GameObject> (wallPrefab);
-						g.transform.SetParent (transform);
-						g.transform.localScale = new Vector3(g.transform.localScale.x, 10, g.transform.localScale.z);
-						g.transform.localPosition = new Vector3 (((-width / 2.0f) + x), 0, ((-height / 2.0f) + y));
-					}
-				}
-			}
+	struct IntVec2 
+	{
+		public int x = Random.value * width;
+		public int y = Random.value * height;
+	}
 
+	void createMaze()
+	{
+		
+		IntVec2 vec = new IntVec2();
+	
+		while (maze [vec.x, vec.y] != TileState.Unmade) {
+			vec.x = Random.value * width;
+			vec.y = Random.value * height;
 		}
 
+
+
 	}
+
 }
