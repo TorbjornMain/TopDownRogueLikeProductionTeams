@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum TileState
 {
@@ -8,6 +9,7 @@ public enum TileState
 	Unmade,
 	Connected
 }
+
 
 
 public class DungeonGenerator : MonoBehaviour {
@@ -91,22 +93,28 @@ public class DungeonGenerator : MonoBehaviour {
 
 	struct IntVec2 
 	{
-		public int x = Random.value * width;
-		public int y = Random.value * height;
+		public int x;
+		public int y;
 	}
 
 	void createMaze()
 	{
 		
 		IntVec2 vec = new IntVec2();
-	
+		vec.x = (int)(Random.value * width);
+		vec.y = (int)(Random.value * height);
 		while (maze [vec.x, vec.y] != TileState.Unmade) {
-			vec.x = Random.value * width;
-			vec.y = Random.value * height;
+			vec.x = (int)(Random.value * width);
+			vec.y = (int)(Random.value * height);
 		}
+
+		Stack<IntVec2> posStack = new Stack<IntVec2> ();
+
+		posStack.Push (vec);
 
 
 
 	}
+
 
 }
