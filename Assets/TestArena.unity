@@ -351,6 +351,7 @@ GameObject:
   - 224: {fileID: 1137556836}
   - 222: {fileID: 1137556838}
   - 114: {fileID: 1137556837}
+  - 114: {fileID: 1137556839}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -410,6 +411,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1137556835}
+--- !u!114 &1137556839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137556835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a7261f9deb36141929b979d616a8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  percentFilled: 0
+  image: {fileID: 1484326622}
 --- !u!1 &1276672520
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.006896496, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
