@@ -22,7 +22,7 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 	{
 		transform.position = (pws.transform.TransformPoint (pws.barrelPos));
 		transform.rotation = (Quaternion.FromToRotation (new Vector3 (0, 0, 1), pws.transform.TransformDirection (pws.barrelDir)) * relativeSpread);
-
+		float range;
 		bool raycastHit;
 		if (isPiercing) {
 			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, LayerMask.GetMask ("Terrain"));
@@ -30,8 +30,10 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, ~(1 << pws.gameObject.layer));
 		}
 		if (raycastHit) {
+			range = rc.distance;
 			lr.SetPositions (new Vector3[]{transform.position, transform.position + transform.forward * rc.distance});
 		} else {
+			range = beamRange;
 			lr.SetPositions (new Vector3[]{transform.position, transform.position + transform.forward * beamRange});
 		}
 
@@ -55,20 +57,21 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 			//Do Boxcast and apply damage to all enemies hit (damage * speed * Time.deltaTime)
 			if (!hasStoppedFiring)
 				lifetime = timeAlive - fadeInTime;
+
+//			EndEffectData ed;
+//			ed.targ = null;
+//			ed.pos = transform.position + transform.forward * range;
+//			ed.rot = transform.rotation;
+//			SendMessage ("EndEffect", ed);
 		}
 
 		if(timeAlive >= fadeInTime + lifetime + fadeOutTime)
 		{
-			endEffect();
+			Destroy (gameObject);
 		}
 
 		base.Update ();
 
-	}
-
-	protected override void endEffect ()
-	{
-		base.endEffect ();
 	}
 
 

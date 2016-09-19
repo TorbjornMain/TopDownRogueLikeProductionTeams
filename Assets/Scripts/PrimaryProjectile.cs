@@ -25,10 +25,5 @@ public class PrimaryProjectile : MonoBehaviour
 
 
 	}
-
-	protected virtual void endEffect()
-	{
-		Destroy (this.gameObject);
-	}
 }
 

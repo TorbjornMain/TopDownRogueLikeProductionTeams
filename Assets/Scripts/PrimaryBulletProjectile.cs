@@ -22,15 +22,24 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 		}
 		if ((pws.isContinuous && hasStoppedFiring) || !pws.isContinuous) {
 			timeAlive += Time.deltaTime;
-			if (timeAlive > lifetime)
-				endEffect ();
+			if(timeAlive > lifetime)
+				endEffect (null);
 		}
 		base.Update ();
 	}
 
 	protected void OnTriggerEnter(Collider other)
 	{
-		endEffect ();
+		endEffect (other.gameObject);
+	}
+
+	private void endEffect(GameObject targ)
+	{
+		EndEffectData ed = new EndEffectData();
+		ed.targ = targ;
+		ed.pos = transform.position;
+		ed.rot = transform.rotation;
+		gameObject.SendMessage ("EndEffect", ed); 
 	}
 }
 

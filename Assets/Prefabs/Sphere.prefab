@@ -13,6 +13,9 @@ GameObject:
   - 23: {fileID: 2334908}
   - 54: {fileID: 5421704}
   - 114: {fileID: 11473050}
+  - 114: {fileID: 114000013021790134}
+  - 114: {fileID: 114000010988902936}
+  - 114: {fileID: 114000013939462224}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -100,13 +103,23 @@ MonoBehaviour:
   projectileSpeedCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: 1
+    - time: 0.087499976
+      value: 0.6000001
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
-      value: 1
+    - time: 0.3135156
+      value: 1.2598755
+      inSlope: -0.7984042
+      outSlope: -0.7984042
+      tangentMode: 0
+    - time: 0.5012462
+      value: 0.34941483
+      inSlope: -2.33531
+      outSlope: -2.33531
+      tangentMode: 0
+    - time: 0.9916667
+      value: 0.1125
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -221,3 +234,37 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188318}
   m_IsPrefabParent: 1
+--- !u!114 &114000010988902936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936861bb2d38a264eb083f73943429a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013021790134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ff4315a1d008940acf0188b254b260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
+--- !u!114 &114000013939462224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24e84a187c2b3c48b40fb012e35ae84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

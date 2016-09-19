@@ -5,6 +5,7 @@ using System.Collections;
 public class RenderableHealthBar : MonoBehaviour {
 
 	public float offset = 0.1f;
+	[System.NonSerialized]
 	public DamageableItem dmg;
 	public HealthBar healthBarPrefab;
 	[System.NonSerialized]
@@ -16,6 +17,10 @@ public class RenderableHealthBar : MonoBehaviour {
 		healthBarInstance = Instantiate<HealthBar> (healthBarPrefab);
 		dmg = GetComponent<DamageableItem> ();
 		EnemyManager.healthBars.Add(this);
+	}
+
+	void Update(){
+		healthBarInstance.percentFilled = dmg.health / dmg.maxHealth;
 	}
 
 	void OnDestroy () {
