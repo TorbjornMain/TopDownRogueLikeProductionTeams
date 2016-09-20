@@ -5,6 +5,6 @@ using System.Collections;
 public class DestroyOnDeath : MonoBehaviour {
 	void Die()
 	{
-		Destroy (this);
+		Destroy (gameObject);
 	}
 }

@@ -15,7 +15,6 @@ GameObject:
   - 114: {fileID: 11473050}
   - 114: {fileID: 114000013021790134}
   - 114: {fileID: 114000010988902936}
-  - 114: {fileID: 114000013939462224}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5992305, y: -0.1707328, z: -2.0030782}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -98,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419859053ea3a39458e909dc9390c9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
-  isPiercing: 0
+  lifetime: 1
+  isPiercing: 1
   projectileSpeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -108,8 +107,8 @@ MonoBehaviour:
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 0.3135156
-      value: 1.2598755
+    - time: 0.31692755
+      value: 0.53106564
       inSlope: -0.7984042
       outSlope: -0.7984042
       tangentMode: 0
@@ -118,8 +117,8 @@ MonoBehaviour:
       inSlope: -2.33531
       outSlope: -2.33531
       tangentMode: 0
-    - time: 0.9916667
-      value: 0.1125
+    - time: 0.9882547
+      value: -0.0126491785
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -257,14 +256,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 1
---- !u!114 &114000013939462224
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e84a187c2b3c48b40fb012e35ae84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

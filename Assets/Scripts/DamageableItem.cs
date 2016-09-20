@@ -16,7 +16,7 @@ public class DamageableItem : MonoBehaviour {
 		set {
 			_health = Mathf.Clamp (value, 0, _maxHealth);
 			if (_health == 0) {
-				Die ();
+				die ();
 			}
 		}
 	}
@@ -47,7 +47,7 @@ public class DamageableItem : MonoBehaviour {
 		health += value;
 	}
 
-	void Die()
+	void die()
 	{
 		gameObject.SendMessage ("Die", SendMessageOptions.DontRequireReceiver);
 	}

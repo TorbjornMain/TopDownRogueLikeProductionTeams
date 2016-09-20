@@ -94,10 +94,10 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: 
-    damage: 10
-    spread: 0
-    numProjectiles: 1
-    speed: 3
+    damage: 1
+    spread: 0.1
+    numProjectiles: 6
+    speed: 200
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
   barrelPos: {x: 0, y: 1, z: 0}
   barrelDir: {x: 0, y: 1, z: 0}

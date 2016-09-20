@@ -40,7 +40,7 @@ GameObject:
   - 222: {fileID: 222000011593550736}
   - 114: {fileID: 114000011593819112}
   m_Layer: 0
-  m_Name: Image
+  m_Name: CurrentHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,11 +138,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 224000012257587164}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 2, y: 0}
   m_SizeDelta: {x: 40, y: 5}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224000012257587164
 RectTransform:
   m_ObjectHideFlags: 1

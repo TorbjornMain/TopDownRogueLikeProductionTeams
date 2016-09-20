@@ -9,9 +9,11 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 	public float beamRange = 10.0f, beamWidth = 0.1f;
 	private LineRenderer lr;
 	protected RaycastHit rc = new RaycastHit();
+	private LayerMask hitLayer;
 
 	protected override void Start ()
 	{
+		hitLayer = ~((1 << pws.gameObject.layer) | LayerMask.GetMask ("PlayerBullet", "EnemyBullet", "NeutralBullet", "Item"));
 		lr = GetComponent<LineRenderer>();
 		lifeLoopWidthCurve.preWrapMode = WrapMode.Loop;
 		lifeLoopWidthCurve.postWrapMode = WrapMode.Loop;
@@ -27,7 +29,7 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 		if (isPiercing) {
 			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, LayerMask.GetMask ("Terrain"));
 		} else {
-			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, ~(1 << pws.gameObject.layer));
+			raycastHit = Physics.Raycast (transform.position, transform.forward, out rc, beamRange, hitLayer);
 		}
 		if (raycastHit) {
 			range = rc.distance;
@@ -42,10 +44,35 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 			lrWidth = fadeInWidthCurve.Evaluate (timeAlive / fadeInTime) * beamWidth;
 		} else if (timeAlive < lifetime + fadeInTime || (pws.isContinuous && !hasStoppedFiring)) {
 			lrWidth = lifeLoopWidthCurve.Evaluate ((timeAlive - fadeInTime) / lifeLoopFrequency) * beamWidth;
+
+			RaycastHit[] rci = Physics.BoxCastAll (transform.position, new Vector3 (lrWidth / 2, 0.5f, 1.0f), transform.forward, transform.rotation, range, hitLayer);
+			EndEffectData ed;
+			foreach (var item in rci) {
+				ed = new EndEffectData ();
+				ed.targ = item.collider.gameObject;
+				ed.pos = item.point;
+				ed.rot = transform.rotation;
+				if (pws.isContinuous) {
+					ed.magnitude = pws.Stats.damage * Time.deltaTime;
+				} else {
+					ed.magnitude = pws.Stats.damage * (Time.deltaTime / lifetime);
+				}
+				SendMessage ("EndEffect", ed);
+			}
+
+			ed = new EndEffectData ();
+			ed.targ = null;
+			ed.pos = transform.position + transform.forward * range;
+			ed.rot = transform.rotation;
+			ed.magnitude = pws.Stats.damage;
+			SendMessage ("EndEffect", ed);
+
 		} else {
 			lrWidth = fadeOutWidthCurve.Evaluate ((timeAlive - (lifetime + fadeInTime)) / fadeOutTime) * beamWidth;
 		}
 		lr.SetWidth (lrWidth, lrWidth);
+
+
 
 
 		timeAlive += Time.deltaTime;
@@ -54,16 +81,13 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 			hasStoppedFiring = true;
 		}
 		if (pws.isContinuous) {
-			//Do Boxcast and apply damage to all enemies hit (damage * speed * Time.deltaTime)
 			if (!hasStoppedFiring)
 				lifetime = timeAlive - fadeInTime;
 
-//			EndEffectData ed;
-//			ed.targ = null;
-//			ed.pos = transform.position + transform.forward * range;
-//			ed.rot = transform.rotation;
-//			SendMessage ("EndEffect", ed);
 		}
+
+
+
 
 		if(timeAlive >= fadeInTime + lifetime + fadeOutTime)
 		{

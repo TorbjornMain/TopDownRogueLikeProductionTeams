@@ -39,6 +39,7 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 		ed.targ = targ;
 		ed.pos = transform.position;
 		ed.rot = transform.rotation;
+		ed.magnitude = pws.Stats.damage;
 		gameObject.SendMessage ("EndEffect", ed); 
 	}
 }

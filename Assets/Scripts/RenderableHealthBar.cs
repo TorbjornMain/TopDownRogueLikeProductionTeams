@@ -25,5 +25,7 @@ public class RenderableHealthBar : MonoBehaviour {
 
 	void OnDestroy () {
 		EnemyManager.healthBars.Remove(this);
+		if(healthBarInstance != null)
+			Destroy (healthBarInstance.gameObject);
 	}
 }
