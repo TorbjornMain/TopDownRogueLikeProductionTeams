@@ -32,6 +32,7 @@ public class Transport : MonoBehaviour {
 			footRotVec = (direction.normalized + footRotVec).normalized;
 			transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), Vector3.Slerp (transform.forward, footRotVec, stats.turnRate)).eulerAngles.y, 0);
 			mainBody.Move ((transform.forward * stats.speed * Time.deltaTime));
+			mainBody.Move (-new Vector3 (0, mainBody.transform.position.y, 0));
 		} else if (mainBody.velocity.magnitude > 0) {
 			Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), Vector3.Slerp (transform.forward, mainBody.velocity, stats.turnRate * 2)).eulerAngles.y, 0);
 		}
