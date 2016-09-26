@@ -88,7 +88,56 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 		}
 
 
+		generateCorridors (rooms);
 
+
+	}
+
+	void generateCorridors(ref List<Partition> rooms)
+	{
+		bool keepRooming = false;
+		while (!keepRooming) {
+			int roomA = (int)(Random.value * rooms.Count), roomB = (int)(Random.value * rooms.Count);
+			Vector2 roomOffset = rooms [roomB].offset - rooms [roomA].offset, pathA, pathB, pathStep;
+			if (Mathf.Abs (roomOffset.x) > Mathf.Abs (roomOffset.y)) {
+				if (roomOffset.x > 0) {
+					pathA = new Vector2 (rooms [roomA].bottomRight.x, Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y));
+					pathB = new Vector2 (rooms [roomB].topLeft.x, Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y));
+				} else {
+					pathA = new Vector2 (rooms [roomA].topLeft.x, Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y));
+					pathB = new Vector2 (rooms [roomB].bottomRight.x, Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y));
+				}
+
+				pathStep = pathA - pathB;
+
+				for(int i = 1; i < (int)(pathStep.x / 2); i++)
+				{
+					passabilityGrid [(int)(pathA.x + i), (int)(pathA.y)] = true;
+					passabilityGrid [(int)(pathA.x + i - 1), (int)(pathB.y)] = true;
+				}
+				for (int i = 1; i < (int)(pathStep.y); i++) {
+					passabilityGrid [(int)(pathStep.x / 2 + pathA.x), (int)(pathA.x + i)] = true; 
+				}
+
+			} else {
+				if (roomOffset.y > 0) {
+					pathA = new Vector2 (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x), rooms [roomA].bottomRight.y);
+					pathB = new Vector2 (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x), rooms [roomB].topLeft.y);
+				} else {
+					pathA = new Vector2 (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x), rooms [roomA].topLeft.y);
+					pathB = new Vector2 (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x), rooms [roomB].bottomRight.y);
+				}
+
+				pathStep = pathA - pathB;
+			}
+
+
+
+
+
+
+
+		}
 	}
 
 	void OnDrawGizmos()
