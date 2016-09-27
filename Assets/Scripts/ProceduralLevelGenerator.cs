@@ -117,10 +117,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 				for(int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.x / 2)); i++)
 				{
 					passabilityGrid [Mathf.RoundToInt(pathA.x + (i * stepSign.x)), Mathf.RoundToInt(pathA.y)] = true;
-					passabilityGrid [Mathf.RoundToInt(pathA.x + pathStep.x/2 + (i * stepSign.x)), Mathf.RoundToInt(pathB.y)] = true;
+					passabilityGrid [Mathf.RoundToInt(pathA.x + (pathStep.x/2) + (i * stepSign.x)), Mathf.RoundToInt(pathB.y)] = true;
 				}
 				for (int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.y)); i++) {
-					passabilityGrid [Mathf.RoundToInt(pathStep.x / 2 + pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
+					passabilityGrid [Mathf.RoundToInt((pathStep.x / 2) + pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
 				}
 			} else {
 				if (roomOffset.y > 0) {
