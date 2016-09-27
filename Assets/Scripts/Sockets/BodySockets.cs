@@ -126,6 +126,8 @@ public class BodySockets : MonoBehaviour
 
 	void OnDrawGizmos()
 	{
+		if (primaryWeaponSockets == null)
+			return;
 		if (primaryWeaponSockets.Length != 0) {
 			Gizmos.color = Color.magenta;
 

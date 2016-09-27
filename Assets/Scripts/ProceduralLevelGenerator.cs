@@ -29,19 +29,19 @@ public class Partition
 		ratio = Random.Range (0.3f, 0.7f);
 		if (numSplits > 0) {
 			if (dirToggle) {
-				a = new Partition ((int)(this.width * ratio), this.height, numSplits - 1, !dirToggle, offset);
-				b = new Partition ((int)(this.width * (1 - ratio)), this.height, numSplits - 1, !dirToggle, offset + new Vector2(width * ratio, 0));
+				a = new Partition (Mathf.RoundToInt(this.width * ratio), this.height, numSplits - 1, !dirToggle, offset);
+				b = new Partition (Mathf.RoundToInt(this.width * (1 - ratio)), this.height, numSplits - 1, !dirToggle, offset + new Vector2(Mathf.RoundToInt(width * ratio), 0));
 			} else {
-				a = new Partition (this.width, (int)(this.height * ratio), numSplits - 1, !dirToggle, offset);
-				b = new Partition (this.width, (int)(this.height * (1 - ratio)), numSplits - 1, !dirToggle, offset + new Vector2(0, height * ratio));
+				a = new Partition (this.width, Mathf.RoundToInt(this.height * ratio), numSplits - 1, !dirToggle, offset);
+				b = new Partition (this.width, Mathf.RoundToInt(this.height * (1 - ratio)), numSplits - 1, !dirToggle, offset + new Vector2(0, Mathf.RoundToInt(height * ratio)));
 			}
 		} else {
 			if (width < 5 || height < 5) {
 				topLeft = new Vector2 (0, 0);
 				bottomRight = new Vector2 (width, height);
 			} else {
-				topLeft = new Vector2 (Random.Range (1, width / 3), Random.Range (1, height / 3));
-				bottomRight = new Vector2 (width - Random.Range (1, width / 3), height - Random.Range (1, height / 3));
+				topLeft = new Vector2 (Mathf.RoundToInt(Random.Range (1, width / 3)), Mathf.RoundToInt(Random.Range (1, height / 3)));
+				bottomRight = new Vector2 (width - Mathf.RoundToInt(Random.Range (1, width / 3)), height - Mathf.RoundToInt(Random.Range (1, height / 3)));
 			}
 		}
 	}
@@ -76,7 +76,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 	public void generateLevel()
 	{
 		passabilityGrid = new bool[width, height];
-		BSPTree = new Partition (width, height, (int)Mathf.Log(Mathf.ClosestPowerOfTwo(numRooms), 2));
+		BSPTree = new Partition (width, height, Mathf.RoundToInt(Mathf.Log(Mathf.ClosestPowerOfTwo(numRooms), 2)));
 		List<Partition> rooms = BSPTree.recoverRooms ();
 
 		foreach (var item in rooms) {
@@ -88,7 +88,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 		}
 
 
-		generateCorridors (rooms);
+		generateCorridors (ref rooms);
 
 
 	}
@@ -98,47 +98,102 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 		bool keepRooming = false;
 		while (!keepRooming) {
 			int roomA = (int)(Random.value * rooms.Count), roomB = (int)(Random.value * rooms.Count);
-			Vector2 roomOffset = rooms [roomB].offset - rooms [roomA].offset, pathA, pathB, pathStep;
+			while (roomA == roomB) {
+				roomA = (int)(Random.value * rooms.Count); roomB = (int)(Random.value * rooms.Count);
+			}
+			Vector2 roomOffset = rooms [roomB].offset - rooms [roomA].offset, pathA, pathB, pathStep, stepSign;
 			if (Mathf.Abs (roomOffset.x) > Mathf.Abs (roomOffset.y)) {
 				if (roomOffset.x > 0) {
-					pathA = new Vector2 (rooms [roomA].bottomRight.x, Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y));
-					pathB = new Vector2 (rooms [roomB].topLeft.x, Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y));
+					pathA = rooms[roomA].offset + new Vector2 (rooms [roomA].bottomRight.x, Mathf.Round(Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
+					pathB = rooms[roomB].offset + new Vector2 (rooms [roomB].topLeft.x, Mathf.Round(Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
 				} else {
-					pathA = new Vector2 (rooms [roomA].topLeft.x, Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y));
-					pathB = new Vector2 (rooms [roomB].bottomRight.x, Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y));
+					pathA = rooms[roomA].offset + new Vector2 (rooms [roomA].topLeft.x, Mathf.Round(Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
+					pathB = rooms[roomB].offset + new Vector2 (rooms [roomB].bottomRight.x, Mathf.Round(Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
 				}
 
-				pathStep = pathA - pathB;
+				pathStep = pathB - pathA;
+				stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
 
-				for(int i = 1; i < (int)(pathStep.x / 2); i++)
+				for(int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.x / 2)); i++)
 				{
-					passabilityGrid [(int)(pathA.x + i), (int)(pathA.y)] = true;
-					passabilityGrid [(int)(pathA.x + i - 1), (int)(pathB.y)] = true;
+					passabilityGrid [Mathf.RoundToInt(pathA.x + (i * stepSign.x)), Mathf.RoundToInt(pathA.y)] = true;
+					passabilityGrid [Mathf.RoundToInt(pathA.x + pathStep.x/2 + (i * stepSign.x)), Mathf.RoundToInt(pathB.y)] = true;
 				}
-				for (int i = 1; i < (int)(pathStep.y); i++) {
-					passabilityGrid [(int)(pathStep.x / 2 + pathA.x), (int)(pathA.x + i)] = true; 
+				for (int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.y)); i++) {
+					passabilityGrid [Mathf.RoundToInt(pathStep.x / 2 + pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
 				}
-
 			} else {
 				if (roomOffset.y > 0) {
-					pathA = new Vector2 (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x), rooms [roomA].bottomRight.y);
-					pathB = new Vector2 (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x), rooms [roomB].topLeft.y);
+					pathA = rooms[roomA].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].bottomRight.y);
+					pathB = rooms[roomB].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].topLeft.y);
 				} else {
-					pathA = new Vector2 (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x), rooms [roomA].topLeft.y);
-					pathB = new Vector2 (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x), rooms [roomB].bottomRight.y);
+					pathA = rooms[roomA].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].topLeft.y);
+					pathB = rooms[roomB].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].bottomRight.y);
 				}
 
-				pathStep = pathA - pathB;
+				pathStep = pathB - pathA;
+				stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
+
+				for(int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.y / 2)); i++)
+				{
+					passabilityGrid [Mathf.RoundToInt(pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
+					passabilityGrid [Mathf.RoundToInt(pathB.x), Mathf.RoundToInt(pathA.y + (pathStep.y / 2) + (stepSign.y * i))] = true; 
+				}
+				for (int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.x)); i++) {
+					passabilityGrid [Mathf.RoundToInt(pathA.x + (stepSign.x * i)), Mathf.RoundToInt(pathA.y + (pathStep.y/2))] = true;
+				}
 			}
 
-
-
-
-
+			if (floodFillCheck () == passableCount ()) {
+				keepRooming = !keepRooming;
+			}
 
 
 		}
 	}
+
+	int floodFillCheck()
+	{
+		int output = 0;
+		bool[,] checkedGrid = new bool[width, height];
+		int randomX = 0, randomY = 0;
+		while (!passabilityGrid [randomX, randomY]) {
+			randomX = Mathf.RoundToInt (Random.value * (width - 1));
+			randomY = Mathf.RoundToInt (Random.value * (height - 1));
+		}
+		Vector2 xy = new Vector2 (randomX, randomY);
+		Stack<Vector2> s = new Stack<Vector2>();
+		s.Push (xy);
+		while (s.Count > 0) {
+			xy = s.Pop ();
+			if (!checkedGrid [(int)xy.x, (int)xy.y] && passabilityGrid [(int)xy.x, (int)xy.y]) {
+				checkedGrid [(int)xy.x, (int)xy.y] = true;
+				output++;
+				if (xy.x < width - 1)
+					s.Push (new Vector2 (1, 0) + xy);
+				if (xy.x > 0)
+					s.Push (new Vector2 (-1, 0) + xy);
+				if (xy.y < height - 1)
+					s.Push (new Vector2 (0, 1) + xy);
+				if (xy.y > 0)
+					s.Push (new Vector2 (0, -1) + xy);
+			}
+		}
+
+
+		return output;
+	}
+
+	int passableCount()
+	{
+		int output = 0;
+		foreach (var item in passabilityGrid) {
+			if (item)
+				output++;
+		}
+		return output;
+	}
+
 
 	void OnDrawGizmos()
 	{
@@ -147,11 +202,8 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 			for (int x = 0; x < width; x++) {
 				for (int y = 0; y < height; y++) {
 					if (passabilityGrid [x, y]) {
-						Gizmos.color = Color.black;
-						Gizmos.DrawSphere (transform.TransformPoint(new Vector3 (x - (width/2), 0, y - (height/2))), 0.5f);
-					} else {
-						Gizmos.color = Color.red;
-						Gizmos.DrawSphere (transform.TransformPoint(new Vector3 (x - (width/2), 10, y - (height/2))), 0.5f);
+						Gizmos.color = new Color (0, y / (float)height, x / (float)width);
+						Gizmos.DrawSphere (transform.TransformPoint (new Vector3 (x - (width / 2), 0, y - (height / 2))), 0.5f);
 					}
 				}
 			}
