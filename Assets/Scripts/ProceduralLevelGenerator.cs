@@ -144,12 +144,45 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 				}
 			}
 
+			prune ();
+
 			if (floodFillCheck () == passableCount ()) {
 				keepRooming = !keepRooming;
 			}
 
 
 		}
+		for (int i = 0; i < 20; i++) {
+			prune ();
+		}
+	}
+
+	void prune()
+	{
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				if (passabilityGrid [x, y] == true) {
+					if (checkNeighbours (new Vector2 (x, y)) < 2) {
+						passabilityGrid [x, y] = false;
+					}
+				}
+			}
+		}
+	}
+
+	int checkNeighbours(Vector2 v)
+	{
+		int output = 0;
+		for (int x = -1; x <= 1; x++) {
+			for (int y = -1; y <= 1; y++) {
+				Vector2 scanVec = v + new Vector2 (x, y);
+				if (scanVec.x < 0 || scanVec.x >= width || scanVec.y < 0 || scanVec.y >= height || (x == 0 && y == 0))
+					continue;
+				else if (passabilityGrid [(int)scanVec.x, (int)scanVec.y])
+					output++;
+			}
+		}
+		return output;
 	}
 
 	int floodFillCheck()
@@ -202,7 +235,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 			for (int x = 0; x < width; x++) {
 				for (int y = 0; y < height; y++) {
 					if (passabilityGrid [x, y]) {
-						Gizmos.color = new Color (0, y / (float)height, x / (float)width);
+						Gizmos.color = Color.blue;
 						Gizmos.DrawSphere (transform.TransformPoint (new Vector3 (x - (width / 2), 0, y - (height / 2))), 0.5f);
 					}
 				}

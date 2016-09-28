@@ -3,13 +3,13 @@ using System.Collections;
 
 [RequireComponent(typeof(DamageableItem))]
 public class RenderableHealthBar : MonoBehaviour {
-
+	
 	public float offset = 0.1f;
 	[System.NonSerialized]
-	public DamageableItem dmg;
-	public HealthBar healthBarPrefab;
+	public DamageableItem dmg; //The DamageableItem component of the gameobject
+	public HealthBar healthBarPrefab; //The health bar prefab
 	[System.NonSerialized]
-	public HealthBar healthBarInstance;
+	public HealthBar healthBarInstance; //The instance of the health bar prefab
 
 
 	// Use this for initialization
