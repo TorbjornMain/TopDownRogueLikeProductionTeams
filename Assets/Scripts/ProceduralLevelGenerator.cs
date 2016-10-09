@@ -65,16 +65,26 @@ public class Partition //Class that recusrively generates a BSP tree, terminatin
 
 }
 
+
+[RequireComponent(typeof(MeshFilter))]
+[RequireComponent(typeof(MeshCollider))]
+[DisallowMultipleComponent]
 public class ProceduralLevelGenerator : MonoBehaviour {
 
 	private bool[,] passabilityGrid;
 
 	private Partition BSPTree;
 
-	public int width = 100, height = 100, numRooms = 10;
+	public int width = 100, height = 100, numRooms = 8, wallHeight = 1;
+	public float tileScale = 1;
+
+	private MeshFilter mf;
+	private MeshCollider mc;
 
 	public void Start()
 	{
+		mf = GetComponent<MeshFilter> ();
+		mc = GetComponent <MeshCollider> ();
 		generateLevel();
 	}
 
@@ -98,9 +108,62 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 	void generateMesh()
 	{
+		Mesh m = new Mesh ();
 		//TODO: GENERATE A MESH
+		List<Vector3> verticies = generateVerticies();
+		int[] indicies = generateIndicies();
+		m.SetVertices (verticies);
+		m.SetTriangles (indicies, 0);
+		m.RecalculateNormals ();
+		mf.mesh = m;
+		mc.sharedMesh = m;
 	}
 
+	int[] generateIndicies()
+	{
+		List<int> l = new List<int> ();
+		for (int x = 0; x < (width * 2) - 1; x++) {
+			for (int y = 0; y < (height * 2) - 1; y++) {
+				l.Add ((x) + ((y) * width * 2));
+				l.Add ((x + 1) + ((y) * width * 2));
+				l.Add ((x) + ((y + 1) * width * 2));
+				l.Add ((x + 1) + ((y) * width * 2));
+				l.Add ((x + 1) + ((y + 1) * width * 2));
+				l.Add ((x) + ((y + 1) * width * 2));
+			}
+		}
+		return l.ToArray ();
+	}
+
+	List<Vector3> generateVerticies()
+	{
+		bool[,] pg = doublePassabilityGrid();
+		List<Vector3> l = new List<Vector3>();
+		for (int x = 0; x < width * 2; x++) {
+			for (int y = 0; y < height * 2; y++) {
+				if ( pg [x, y]) {
+					l.Add(new Vector3((x - width) * tileScale/2, 0, (y - height) * tileScale/2));
+				} else {
+					l.Add(new Vector3((x - width) * tileScale/2, wallHeight, (y - height) * tileScale/2));
+				}
+			}
+		}
+		return l;
+	}
+
+	bool[,] doublePassabilityGrid()
+	{
+		bool[,] output = new bool[width * 2, height * 2];
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				output [(x * 2), (y * 2)] = passabilityGrid [x, y];
+				output [(x * 2) + 1, (y * 2)] = passabilityGrid [x, y];
+				output [(x * 2) + 1, (y * 2) + 1] = passabilityGrid [x, y];
+				output [(x * 2), (y * 2) + 1] = passabilityGrid [x, y];
+			}
+		}
+		return output;
+	}
 
 	void generateCorridors(ref List<Partition> rooms) //Generates the corridors (please dont touch this its extremely messy)
 	{
