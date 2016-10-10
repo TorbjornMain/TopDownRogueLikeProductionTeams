@@ -108,48 +108,81 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 	void generateMesh()
 	{
-		Mesh m = new Mesh ();
-		//TODO: GENERATE A MESH
-		List<Vector3> verticies = generateVerticies();
-		int[] indicies = generateIndicies();
-		m.SetVertices (verticies);
-		m.SetTriangles (indicies, 0);
-		m.RecalculateNormals ();
-		mf.mesh = m;
-		mc.sharedMesh = m;
-	}
 
-	int[] generateIndicies()
-	{
-		List<int> l = new List<int> ();
-		for (int x = 0; x < (width * 2) - 1; x++) {
-			for (int y = 0; y < (height * 2) - 1; y++) {
-				l.Add ((x) + ((y) * width * 2));
-				l.Add ((x + 1) + ((y) * width * 2));
-				l.Add ((x) + ((y + 1) * width * 2));
-				l.Add ((x + 1) + ((y) * width * 2));
-				l.Add ((x + 1) + ((y + 1) * width * 2));
-				l.Add ((x) + ((y + 1) * width * 2));
-			}
-		}
-		return l.ToArray ();
-	}
+		MeshMaker meshMaker = new MeshMaker ();
 
-	List<Vector3> generateVerticies()
-	{
-		bool[,] pg = doublePassabilityGrid();
-		List<Vector3> l = new List<Vector3>();
-		for (int x = 0; x < width * 2; x++) {
-			for (int y = 0; y < height * 2; y++) {
-				if ( pg [x, y]) {
-					l.Add(new Vector3((x - width) * tileScale/2, 0, (y - height) * tileScale/2));
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				List<Vector3> l = new List<Vector3>();
+				List<Vector2> uv =  new List<Vector2>();
+				if ( passabilityGrid [x, y] ) {
+					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), 0, ((y - height/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), 0, ((y - height/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), 0, ((y - height/2) * tileScale) + (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), 0, ((y - height/2) * tileScale) + (tileScale/2)));
+					uv.Add (new Vector2 (0, 0.75f));
+					uv.Add (new Vector2 (0.25f, 0.75f));
+					uv.Add (new Vector2 (0.25f, 1));
+					uv.Add (new Vector2 (0, 1));
+					meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
+
+
+					for (int x1 = -1; x1 <= 1; x1++) {
+						for (int y1 = -1; y1 <= 1; y1++) {
+							l.Clear ();
+							uv.Clear ();
+							Vector2 scanVec = new Vector2 (x + x1, y + y1);
+							if (scanVec.x < 0 || scanVec.x >= width || scanVec.y < 0 || scanVec.y >= height || (Mathf.Abs (x1) == Mathf.Abs (y1)))
+								continue;
+							else if (!passabilityGrid [(int)scanVec.x, (int)scanVec.y]) {
+								if (x1 != 0) {
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - height / 2) * tileScale) -  ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - height / 2) * tileScale) - ((tileScale * x1) / 2)));
+
+									uv.Add (new Vector2 (0.75f, 1));
+									uv.Add (new Vector2 (0.5f, 1));
+									uv.Add (new Vector2 (0.5f, 0.75f));
+									uv.Add (new Vector2 (0.75f, 0.75f));
+									meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
+
+								} else {
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * y1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) - ((tileScale * y1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) - ((tileScale * y1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * y1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
+
+									uv.Add (new Vector2 (0.75f, 1));
+									uv.Add (new Vector2 (0.5f, 1));
+									uv.Add (new Vector2 (0.5f, 0.75f));
+									uv.Add (new Vector2 (0.75f, 0.75f));
+									meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
+								}
+							}
+						}
+					}
+
+
+
 				} else {
-					l.Add(new Vector3((x - width) * tileScale/2, wallHeight, (y - height) * tileScale/2));
+					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), wallHeight, ((y - height/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), wallHeight, ((y - height/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), wallHeight, ((y - height/2) * tileScale) + (tileScale/2)));
+					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), wallHeight, ((y - height/2) * tileScale) + (tileScale/2)));
+					uv.Add (new Vector2 (0.25f, 0.75f));
+					uv.Add (new Vector2 (0.5f, 0.75f));
+					uv.Add (new Vector2 (0.5f, 1));
+					uv.Add (new Vector2 (0.25f, 1));
+					meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 				}
 			}
 		}
-		return l;
+
+		mf.mesh = meshMaker.mesh;
+		mc.sharedMesh = meshMaker.mesh;
 	}
+
 
 	bool[,] doublePassabilityGrid()
 	{
@@ -167,79 +200,79 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 	void generateCorridors(ref List<Partition> rooms) //Generates the corridors (please dont touch this its extremely messy)
 	{
-		bool keepRooming = false;
-		while (!keepRooming) {
-			int roomA = Random.Range (0, rooms.Count), roomB = Random.Range (0, rooms.Count); //picks random rooms
-			while ((roomA == roomB)) { //ensures rooms arent the same
-				roomB = Random.Range (0, rooms.Count);
-			}
-			//defining temp variables
-			Vector2 roomOffset = rooms [roomB].offset - rooms [roomA].offset, pathA, pathB, pathStep, stepSign;
+		if (rooms.Count > 2) {
+			bool keepRooming = false;
+			while (!keepRooming) {
+				int roomA = Random.Range (0, rooms.Count), roomB = Random.Range (0, rooms.Count); //picks random rooms
+				while ((roomA == roomB)) { //ensures rooms arent the same
+					roomB = Random.Range (0, rooms.Count);
+				}
+				//defining temp variables
+				Vector2 roomOffset = rooms [roomB].offset - rooms [roomA].offset, pathA, pathB, pathStep, stepSign;
 
-			//checking wether a vertical or horizontal path is required
-			if (Mathf.Abs (roomOffset.x) > Mathf.Abs (roomOffset.y)) {
-				// finds path offsets
-				if (roomOffset.x > 0) {
-					pathA = rooms[roomA].offset + new Vector2 (rooms [roomA].bottomRight.x, Mathf.Round(Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
-					pathB = rooms[roomB].offset + new Vector2 (rooms [roomB].topLeft.x, Mathf.Round(Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
+				//checking wether a vertical or horizontal path is required
+				if (Mathf.Abs (roomOffset.x) > Mathf.Abs (roomOffset.y)) {
+					// finds path offsets
+					if (roomOffset.x > 0) {
+						pathA = rooms [roomA].offset + new Vector2 (rooms [roomA].bottomRight.x, Mathf.Round (Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
+						pathB = rooms [roomB].offset + new Vector2 (rooms [roomB].topLeft.x, Mathf.Round (Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
+					} else {
+						pathA = rooms [roomA].offset + new Vector2 (rooms [roomA].topLeft.x, Mathf.Round (Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
+						pathB = rooms [roomB].offset + new Vector2 (rooms [roomB].bottomRight.x, Mathf.Round (Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
+					}
+					//calculates the path step (the distance along the x and y axes that the path needs to traverse)
+					pathStep = pathB - pathA;
+
+					//determines wether the offsets are positive or negative, to be used in for loops
+					stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
+
+
+					//creates path in the passability grid
+					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.x / 2)); i++) {
+						passabilityGrid [Mathf.RoundToInt (pathA.x + (i * stepSign.x)), Mathf.RoundToInt (pathA.y)] = true;
+						passabilityGrid [Mathf.RoundToInt (pathA.x + (pathStep.x / 2) + (i * stepSign.x)), Mathf.RoundToInt (pathB.y)] = true;
+					}
+					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.y)); i++) {
+						passabilityGrid [Mathf.RoundToInt ((pathStep.x / 2) + pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
+					}
 				} else {
-					pathA = rooms[roomA].offset + new Vector2 (rooms [roomA].topLeft.x, Mathf.Round(Random.Range (rooms [roomA].topLeft.y, rooms [roomA].bottomRight.y)));
-					pathB = rooms[roomB].offset + new Vector2 (rooms [roomB].bottomRight.x, Mathf.Round(Random.Range (rooms [roomB].topLeft.y, rooms [roomB].bottomRight.y)));
-				}
-				//calculates the path step (the distance along the x and y axes that the path needs to traverse)
-				pathStep = pathB - pathA;
+					//finds path offsets
+					if (roomOffset.y > 0) {
+						pathA = rooms [roomA].offset + new Vector2 (Mathf.Round (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].bottomRight.y);
+						pathB = rooms [roomB].offset + new Vector2 (Mathf.Round (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].topLeft.y);
+					} else {
+						pathA = rooms [roomA].offset + new Vector2 (Mathf.Round (Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].topLeft.y);
+						pathB = rooms [roomB].offset + new Vector2 (Mathf.Round (Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].bottomRight.y);
+					}
 
-				//determines wether the offsets are positive or negative, to be used in for loops
-				stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
+					//determines path step and stepsign as above
+					pathStep = pathB - pathA;
+					stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
 
-
-				//creates path in the passability grid
-				for(int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.x / 2)); i++)
-				{
-					passabilityGrid [Mathf.RoundToInt(pathA.x + (i * stepSign.x)), Mathf.RoundToInt(pathA.y)] = true;
-					passabilityGrid [Mathf.RoundToInt(pathA.x + (pathStep.x/2) + (i * stepSign.x)), Mathf.RoundToInt(pathB.y)] = true;
-				}
-				for (int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.y)); i++) {
-					passabilityGrid [Mathf.RoundToInt((pathStep.x / 2) + pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
-				}
-			} else {
-				//finds path offsets
-				if (roomOffset.y > 0) {
-					pathA = rooms[roomA].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].bottomRight.y);
-					pathB = rooms[roomB].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].topLeft.y);
-				} else {
-					pathA = rooms[roomA].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomA].topLeft.x, rooms [roomA].bottomRight.x)), rooms [roomA].topLeft.y);
-					pathB = rooms[roomB].offset + new Vector2 (Mathf.Round(Random.Range (rooms [roomB].topLeft.x, rooms [roomB].bottomRight.x)), rooms [roomB].bottomRight.y);
+					//generates path in passability grid
+					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.y / 2)); i++) {
+						passabilityGrid [Mathf.RoundToInt (pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
+						passabilityGrid [Mathf.RoundToInt (pathB.x), Mathf.RoundToInt (pathA.y + (pathStep.y / 2) + (stepSign.y * i))] = true; 
+					}
+					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.x)); i++) {
+						passabilityGrid [Mathf.RoundToInt (pathA.x + (stepSign.x * i)), Mathf.RoundToInt (pathA.y + (pathStep.y / 2))] = true;
+					}
 				}
 
-				//determines path step and stepsign as above
-				pathStep = pathB - pathA;
-				stepSign = new Vector2 (Mathf.Sign (pathStep.x), Mathf.Sign (pathStep.y));
+				//prunes "dead paths" that generate with holes in them
+				prune ();
 
-				//generates path in passability grid
-				for(int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.y / 2)); i++)
-				{
-					passabilityGrid [Mathf.RoundToInt(pathA.x), Mathf.RoundToInt(pathA.y + (i * stepSign.y))] = true; 
-					passabilityGrid [Mathf.RoundToInt(pathB.x), Mathf.RoundToInt(pathA.y + (pathStep.y / 2) + (stepSign.y * i))] = true; 
+				//checks if the dungeon is fully connected and stops generating paths if it is
+				if (floodFillCheck () == passableCount ()) {
+					keepRooming = !keepRooming;
 				}
-				for (int i = 0; i < Mathf.RoundToInt(Mathf.Abs(pathStep.x)); i++) {
-					passabilityGrid [Mathf.RoundToInt(pathA.x + (stepSign.x * i)), Mathf.RoundToInt(pathA.y + (pathStep.y/2))] = true;
-				}
+
+
 			}
-
-			//prunes "dead paths" that generate with holes in them
-			prune ();
-
-			//checks if the dungeon is fully connected and stops generating paths if it is
-			if (floodFillCheck () == passableCount ()) {
-				keepRooming = !keepRooming;
+			//prunes dead ends from the passability grid
+			for (int i = 0; i < 20; i++) {
+				prune ();
 			}
-
-
-		}
-		//prunes dead ends from the passability grid
-		for (int i = 0; i < 20; i++) {
-			prune ();
 		}
 	}
 
@@ -316,22 +349,6 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 				output++;
 		}
 		return output;
-	}
-
-
-	void OnDrawGizmos()
-	{
-		Gizmos.color = Color.black;
-		if (passabilityGrid != null) {
-			for (int x = 0; x < width; x++) {
-				for (int y = 0; y < height; y++) {
-					if (passabilityGrid [x, y]) {
-						Gizmos.color = Color.blue;
-						Gizmos.DrawSphere (transform.TransformPoint (new Vector3 (x - (width / 2), 0, y - (height / 2))), 0.5f);
-					}
-				}
-			}
-		}
 	}
 
 }

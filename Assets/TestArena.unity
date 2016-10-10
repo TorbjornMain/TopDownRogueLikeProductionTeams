@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692522, g: 0.49678677, b: 0.5750848, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692546, g: 0.49678695, b: 0.5750854, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 100
   height: 100
-  numRooms: 10
-  wallHeight: 5
-  tileScale: 1
+  numRooms: 64
+  wallHeight: 3
+  tileScale: 0.5
 --- !u!1 &2147468269
 GameObject:
   m_ObjectHideFlags: 0

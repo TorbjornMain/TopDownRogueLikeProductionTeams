@@ -88,18 +88,13 @@ MonoBehaviour:
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 0.50163424
-      value: 1.0500199
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
     - time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
     m_RotationOrder: 0
   fadeOutWidthCurve:
     serializedVersion: 2
@@ -118,7 +113,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   beamRange: 15
-  beamWidth: 0.05
+  beamWidth: 1
 --- !u!120 &12090280
 LineRenderer:
   m_ObjectHideFlags: 1

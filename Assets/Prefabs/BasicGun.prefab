@@ -98,10 +98,10 @@ MonoBehaviour:
     spread: 0.01
     numProjectiles: 1
     speed: 3
-  projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
+  projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
   barrelPos: {x: 0, y: 1, z: 0}
   barrelDir: {x: 0, y: 1, z: 0}
-  isContinuous: 0
+  isContinuous: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
