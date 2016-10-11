@@ -71,9 +71,23 @@ public class Partition //Class that recusrively generates a BSP tree, terminatin
 [DisallowMultipleComponent]
 public class ProceduralLevelGenerator : MonoBehaviour {
 
-	private bool[,] passabilityGrid;
+	private bool[,] _passabilityGrid;
 
-	private Partition BSPTree;
+	public bool[,] passabilityGrid
+	{
+		get
+		{
+			return _passabilityGrid;
+		}
+	}
+
+	private Partition _BSPTree;
+
+	public Partition BSPTree {
+		get {
+			return _BSPTree;
+		}
+	}
 
 	public int width = 100, height = 100, numRooms = 8, wallHeight = 1;
 	public float tileScale = 1;
@@ -85,19 +99,18 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 	{
 		mf = GetComponent<MeshFilter> ();
 		mc = GetComponent <MeshCollider> ();
-		generateLevel();
 	}
 
 	public void generateLevel()
 	{
-		passabilityGrid = new bool[width, height];
-		BSPTree = new Partition (width, height, Mathf.RoundToInt(Mathf.Log(Mathf.ClosestPowerOfTwo(numRooms), 2)));
-		List<Partition> rooms = BSPTree.recoverRooms ();
+		_passabilityGrid = new bool[width, height];
+		_BSPTree = new Partition (width, height, Mathf.RoundToInt(Mathf.Log(Mathf.ClosestPowerOfTwo(numRooms), 2)));
+		List<Partition> rooms = _BSPTree.recoverRooms ();
 
 		foreach (var item in rooms) {
 			for (int x = (int)item.topLeft.x; x < (int)item.bottomRight.x; x++) {
 				for (int y = (int)item.topLeft.y; y < (int)item.bottomRight.y; y++) {
-					passabilityGrid [x + (int)item.offset.x, y + (int)item.offset.y] = true;
+					_passabilityGrid [x + (int)item.offset.x, y + (int)item.offset.y] = true;
 				}
 			}
 		}
@@ -111,15 +124,17 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 		MeshMaker meshMaker = new MeshMaker ();
 
-		for (int x = 0; x < width; x++) {
-			for (int y = 0; y < height; y++) {
+		bool[,] extendedGrid = GrowPassabilityGrid();
+
+		for (int x = 0; x < width + 2; x++) {
+			for (int y = 0; y < height + 2; y++) {
 				List<Vector3> l = new List<Vector3>();
 				List<Vector2> uv =  new List<Vector2>();
-				if ( passabilityGrid [x, y] ) {
-					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), 0, ((y - height/2) * tileScale) - (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), 0, ((y - height/2) * tileScale) - (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), 0, ((y - height/2) * tileScale) + (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), 0, ((y - height/2) * tileScale) + (tileScale/2)));
+				if ( extendedGrid[x, y] ) {
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), 0, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), 0, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), 0, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), 0, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
 					uv.Add (new Vector2 (0, 0.75f));
 					uv.Add (new Vector2 (0.25f, 0.75f));
 					uv.Add (new Vector2 (0.25f, 1));
@@ -132,14 +147,14 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 							l.Clear ();
 							uv.Clear ();
 							Vector2 scanVec = new Vector2 (x + x1, y + y1);
-							if (scanVec.x < 0 || scanVec.x >= width || scanVec.y < 0 || scanVec.y >= height || (Mathf.Abs (x1) == Mathf.Abs (y1)))
+							if (scanVec.x < 0 || scanVec.x >= width + 2 || scanVec.y < 0 || scanVec.y >= height + 2 || (Mathf.Abs (x1) == Mathf.Abs (y1)))
 								continue;
-							else if (!passabilityGrid [(int)scanVec.x, (int)scanVec.y]) {
+							else if (!extendedGrid [(int)scanVec.x, (int)scanVec.y]) {
 								if (x1 != 0) {
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - height / 2) * tileScale) -  ((tileScale * x1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * x1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * x1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - height / 2) * tileScale) - ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - (height+2) / 2) * tileScale) -  ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), wallHeight, ((y - (height+2) / 2) * tileScale) + ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * x1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - (height+2) / 2) * tileScale) - ((tileScale * x1) / 2)));
 
 									uv.Add (new Vector2 (0.75f, 1));
 									uv.Add (new Vector2 (0.5f, 1));
@@ -148,10 +163,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 									meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 
 								} else {
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * y1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) - ((tileScale * y1) / 2), wallHeight, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) - ((tileScale * y1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
-									l.Add (new Vector3 (((x - width / 2) * tileScale) + ((tileScale * y1) / 2), 0, ((y - height / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * y1) / 2), wallHeight, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) - ((tileScale * y1) / 2), wallHeight, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) - ((tileScale * y1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
+									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * y1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
 
 									uv.Add (new Vector2 (0.75f, 1));
 									uv.Add (new Vector2 (0.5f, 1));
@@ -166,10 +181,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 
 				} else {
-					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), wallHeight, ((y - height/2) * tileScale) - (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), wallHeight, ((y - height/2) * tileScale) - (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) + (tileScale/2), wallHeight, ((y - height/2) * tileScale) + (tileScale/2)));
-					l.Add(new Vector3(((x - width/2) * tileScale) - (tileScale/2), wallHeight, ((y - height/2) * tileScale) + (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
+					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
 					uv.Add (new Vector2 (0.25f, 0.75f));
 					uv.Add (new Vector2 (0.5f, 0.75f));
 					uv.Add (new Vector2 (0.5f, 1));
@@ -184,15 +199,12 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 	}
 
 
-	bool[,] doublePassabilityGrid()
+	bool[,] GrowPassabilityGrid()
 	{
-		bool[,] output = new bool[width * 2, height * 2];
+		bool[,] output = new bool[width + 2, height  + 2];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				output [(x * 2), (y * 2)] = passabilityGrid [x, y];
-				output [(x * 2) + 1, (y * 2)] = passabilityGrid [x, y];
-				output [(x * 2) + 1, (y * 2) + 1] = passabilityGrid [x, y];
-				output [(x * 2), (y * 2) + 1] = passabilityGrid [x, y];
+				output [x + 1, y + 1] = _passabilityGrid [x, y];
 			}
 		}
 		return output;
@@ -200,7 +212,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 	void generateCorridors(ref List<Partition> rooms) //Generates the corridors (please dont touch this its extremely messy)
 	{
-		if (rooms.Count > 2) {
+		if (rooms.Count > 1) {
 			bool keepRooming = false;
 			while (!keepRooming) {
 				int roomA = Random.Range (0, rooms.Count), roomB = Random.Range (0, rooms.Count); //picks random rooms
@@ -229,11 +241,11 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 					//creates path in the passability grid
 					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.x / 2)); i++) {
-						passabilityGrid [Mathf.RoundToInt (pathA.x + (i * stepSign.x)), Mathf.RoundToInt (pathA.y)] = true;
-						passabilityGrid [Mathf.RoundToInt (pathA.x + (pathStep.x / 2) + (i * stepSign.x)), Mathf.RoundToInt (pathB.y)] = true;
+						_passabilityGrid [Mathf.RoundToInt (pathA.x + (i * stepSign.x)), Mathf.RoundToInt (pathA.y)] = true;
+						_passabilityGrid [Mathf.RoundToInt (pathA.x + (pathStep.x / 2) + (i * stepSign.x)), Mathf.RoundToInt (pathB.y)] = true;
 					}
 					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.y)); i++) {
-						passabilityGrid [Mathf.RoundToInt ((pathStep.x / 2) + pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
+						_passabilityGrid [Mathf.RoundToInt ((pathStep.x / 2) + pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
 					}
 				} else {
 					//finds path offsets
@@ -251,11 +263,11 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 
 					//generates path in passability grid
 					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.y / 2)); i++) {
-						passabilityGrid [Mathf.RoundToInt (pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
-						passabilityGrid [Mathf.RoundToInt (pathB.x), Mathf.RoundToInt (pathA.y + (pathStep.y / 2) + (stepSign.y * i))] = true; 
+						_passabilityGrid [Mathf.RoundToInt (pathA.x), Mathf.RoundToInt (pathA.y + (i * stepSign.y))] = true; 
+						_passabilityGrid [Mathf.RoundToInt (pathB.x), Mathf.RoundToInt (pathA.y + (pathStep.y / 2) + (stepSign.y * i))] = true; 
 					}
 					for (int i = 0; i < Mathf.RoundToInt (Mathf.Abs (pathStep.x)); i++) {
-						passabilityGrid [Mathf.RoundToInt (pathA.x + (stepSign.x * i)), Mathf.RoundToInt (pathA.y + (pathStep.y / 2))] = true;
+						_passabilityGrid [Mathf.RoundToInt (pathA.x + (stepSign.x * i)), Mathf.RoundToInt (pathA.y + (pathStep.y / 2))] = true;
 					}
 				}
 
@@ -280,10 +292,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 	{
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				if (passabilityGrid [x, y] == true) {
+				if (_passabilityGrid [x, y] == true) {
 					if (checkNeighbours (new Vector2 (x, y)) < 2) {
 						//kills cells without at least 2 direct neighbours
-						passabilityGrid [x, y] = false;
+						_passabilityGrid [x, y] = false;
 					}
 				}
 			}
@@ -299,7 +311,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 				Vector2 scanVec = v + new Vector2 (x, y);
 				if (scanVec.x < 0 || scanVec.x >= width || scanVec.y < 0 || scanVec.y >= height || (Mathf.Abs(x) == Mathf.Abs(y)))
 					continue;
-				else if (passabilityGrid [(int)scanVec.x, (int)scanVec.y])
+				else if (_passabilityGrid [(int)scanVec.x, (int)scanVec.y])
 					output++;
 			}
 		}
@@ -312,7 +324,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 		bool[,] checkedGrid = new bool[width, height];
 		int randomX = 0, randomY = 0;
 		//finds a passable location on the grid
-		while (!passabilityGrid [randomX, randomY]) {
+		while (!_passabilityGrid [randomX, randomY]) {
 			randomX = Mathf.RoundToInt (Random.value * (width - 1));
 			randomY = Mathf.RoundToInt (Random.value * (height - 1));
 		}
@@ -323,7 +335,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 		//uses a stack to check surrounding tiles to see if they are passable, flagging ones that have been checked
 		while (s.Count > 0) {
 			xy = s.Pop ();
-			if (!checkedGrid [(int)xy.x, (int)xy.y] && passabilityGrid [(int)xy.x, (int)xy.y]) {
+			if (!checkedGrid [(int)xy.x, (int)xy.y] && _passabilityGrid [(int)xy.x, (int)xy.y]) {
 				checkedGrid [(int)xy.x, (int)xy.y] = true;
 				output++;
 				if (xy.x < width - 1)
@@ -344,7 +356,7 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 	int passableCount() //counts total number of passable squares in the grid
 	{
 		int output = 0;
-		foreach (var item in passabilityGrid) {
+		foreach (var item in _passabilityGrid) {
 			if (item)
 				output++;
 		}
