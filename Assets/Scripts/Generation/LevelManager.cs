@@ -6,6 +6,9 @@ public class LevelManager : MonoBehaviour {
 	public ProceduralLevelGenerator proceduralLevel;
 	public GameObject playerPrefab;
 	private GameObject playerInstance;
+	public List<SpawnableObject> props;
+	public List<SpawnableObject> enemies;
+	public uint maxDifficulty, minDifficulty;
 	bool first = true;
 
 

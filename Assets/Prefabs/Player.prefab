@@ -14,7 +14,7 @@ GameObject:
   - 81: {fileID: 8197520}
   m_Layer: 0
   m_Name: PlayerCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6abdce38da69d8340b9d84f9fa84c558, type: 2}
+  - {fileID: 2100000, guid: a42a157af1d58da4caff381859ff3025, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2013566}
-  cameraOffset: {x: 0, y: 10, z: -7}
-  cameraAngle: {x: 50, y: 0, z: 0}
+  cameraOffset: {x: 0, y: 20, z: -5}
+  cameraAngle: {x: 70, y: 0, z: 0}
   mainBody: {fileID: 11480744}
   speed: 5
 --- !u!114 &11480744
