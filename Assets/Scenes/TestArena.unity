@@ -225,13 +225,14 @@ MonoBehaviour:
   playerPrefab: {fileID: 136374, guid: ae489e85fabb4274f9a400264e35f42d, type: 2}
   propPrefabs:
   - {fileID: 114000011726885358, guid: b4dc4d1c09cc2b345bb8e9d0dc884c83, type: 2}
+  - {fileID: 114000011726885358, guid: 959dcaff3a9a2d04fa3dffc50eb76c5e, type: 2}
   enemyPrefabs:
   - {fileID: 114000013023413850, guid: 4d16d4db234671641b523ba947c288ab, type: 2}
   maxDifficulty: 0
   minDifficulty: 0
-  minProps: 90
+  minProps: 30
   minEnemies: 90
-  maxProps: 110
+  maxProps: 40
   maxEnemies: 110
 --- !u!4 &174344666
 Transform:
