@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class MainMenuButton : MonoBehaviour {
+public class MainMenuButtonFader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +14,13 @@ public class MainMenuButton : MonoBehaviour {
 	
 	}
 
-    void changeColour()
+    public void ChangeColour()
     {
         GetComponent<RawImage>().color = new Color32(255,255,255,100);
+    }
+
+    public void ChangeColourBack()
+    {
+        GetComponent<RawImage>().color = new Color32(255, 255, 255, 255);
     }
 }
