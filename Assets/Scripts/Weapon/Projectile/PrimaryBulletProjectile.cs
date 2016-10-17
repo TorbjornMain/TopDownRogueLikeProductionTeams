@@ -31,6 +31,8 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 	protected void OnTriggerEnter(Collider other)
 	{
 		endEffect (other.gameObject);
+		if (!isPiercing || (other.gameObject.layer == LayerMask.NameToLayer("Terrain")))
+			Destroy (gameObject);
 	}
 
 	private void endEffect(GameObject targ)

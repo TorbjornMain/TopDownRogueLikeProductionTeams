@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class mainMenuButton : MonoBehaviour {
+public class MainMenuButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

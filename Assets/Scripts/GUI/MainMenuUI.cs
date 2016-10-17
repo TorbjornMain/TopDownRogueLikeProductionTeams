@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class mainMenuUI : MonoBehaviour {
+public class MainMenuUI : MonoBehaviour {
 
     //public GameObject mainMenu;
     public Texture mainMenu;
