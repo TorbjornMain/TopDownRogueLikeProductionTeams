@@ -194,7 +194,7 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 20, z: -5}
   cameraAngle: {x: 70, y: 0, z: 0}
   mainBody: {fileID: 11480744}
-  speed: 5
+  speed: 10
 --- !u!114 &11480744
 MonoBehaviour:
   m_ObjectHideFlags: 1
