@@ -37,7 +37,7 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 			Destroy (gameObject);
 	}
 
-	protected void OnCollisionEnter(Collider other)
+	protected void OnCollisionEnter(Collision other)
 	{
 		endEffect (other.gameObject);
 	}
