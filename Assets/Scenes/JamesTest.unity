@@ -236,7 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proceduralLevel: {fileID: 1814993766}
-  playerPrefab: {fileID: 136374, guid: ae489e85fabb4274f9a400264e35f42d, type: 2}
+  playerPrefab: {fileID: 1000011210795040, guid: 864a8dec98717c343be47c91be90c751,
+    type: 2}
   propPrefabs:
   - {fileID: 114000012547039134, guid: e2f13a7d7510b914dbbfe85de1b11e2c, type: 2}
   - {fileID: 114000011845120338, guid: 6afdf9092c41bdd459105ebffdbf92c2, type: 2}
@@ -600,34 +601,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 909169845}
---- !u!1 &1054113335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1054113336}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1054113336
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054113335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.476326, y: 58.999084, z: 87.9766}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
 --- !u!1 &1276672520
 GameObject:
   m_ObjectHideFlags: 0
