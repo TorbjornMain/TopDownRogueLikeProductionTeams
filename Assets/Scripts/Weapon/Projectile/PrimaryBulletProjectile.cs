@@ -37,6 +37,11 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 			Destroy (gameObject);
 	}
 
+	protected void OnCollisionEnter(Collider other)
+	{
+		endEffect (other.gameObject);
+	}
+
 	private void endEffect(GameObject targ)
 	{
 		EndEffectData ed = new EndEffectData();
@@ -45,6 +50,15 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 		ed.rot = transform.rotation;
 		ed.magnitude = pws.Stats.damage;
 		gameObject.SendMessage ("EndEffect", ed); 
+	}
+
+	virtual protected void bounceEffect(GameObject targ)
+	{
+		EndEffectData ed = new EndEffectData();
+		ed.pos = transform.position;
+		ed.rot = transform.rotation;
+		ed.magnitude = pws.Stats.damage;
+		gameObject.SendMessage ("BounceEffect", ed); 
 	}
 }
 
