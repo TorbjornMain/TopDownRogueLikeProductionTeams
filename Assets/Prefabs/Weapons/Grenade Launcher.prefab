@@ -341,7 +341,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Grenade Launcher
-    damage: 25
+    damage: 50
     spread: 0
     numProjectiles: 1
     speed: 1

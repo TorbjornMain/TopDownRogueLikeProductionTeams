@@ -111,7 +111,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Laser Cannon
-    damage: 10
+    damage: 20
     spread: 0
     numProjectiles: 1
     speed: 1

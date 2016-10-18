@@ -374,7 +374,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Standard Projectile Gun
-    damage: 10
+    damage: 20
     spread: 0
     numProjectiles: 1
     speed: 3
