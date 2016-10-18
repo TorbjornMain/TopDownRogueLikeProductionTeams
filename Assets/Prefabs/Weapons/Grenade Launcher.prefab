@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000010772705222}
   - 114: {fileID: 114000011993848200}
   m_Layer: 0
-  m_Name: Noob Tube
+  m_Name: Grenade Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,28 +288,28 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013317297498}
-  m_Mesh: {fileID: 4300004, guid: cbb02df48aadde5458405d98a0efbe7c, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 4832b8b69e8e7834380950bdade15a16, type: 3}
 --- !u!33 &33000010723327850
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013295141356}
-  m_Mesh: {fileID: 4300006, guid: cbb02df48aadde5458405d98a0efbe7c, type: 3}
+  m_Mesh: {fileID: 4300006, guid: 4832b8b69e8e7834380950bdade15a16, type: 3}
 --- !u!33 &33000013128279756
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010536442526}
-  m_Mesh: {fileID: 4300002, guid: cbb02df48aadde5458405d98a0efbe7c, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 4832b8b69e8e7834380950bdade15a16, type: 3}
 --- !u!33 &33000013828257420
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011029704534}
-  m_Mesh: {fileID: 4300000, guid: cbb02df48aadde5458405d98a0efbe7c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4832b8b69e8e7834380950bdade15a16, type: 3}
 --- !u!95 &95000012716264646
 Animator:
   serializedVersion: 3
@@ -318,7 +318,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010500600674}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: cbb02df48aadde5458405d98a0efbe7c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 4832b8b69e8e7834380950bdade15a16, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -340,8 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMods: []
   baseStats:
-    name: Noob Tube
-    damage: 100
+    name: Grenade Launcher
+    damage: 25
     spread: 0
     numProjectiles: 1
     speed: 1

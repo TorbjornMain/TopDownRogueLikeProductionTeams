@@ -9,48 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013420017924}
+  m_RootGameObject: {fileID: 1000013799008484}
   m_IsPrefabParent: 1
---- !u!1 &1000013420017924
+--- !u!1 &1000013799008484
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012170188032}
-  - 33: {fileID: 33000011467190766}
-  - 65: {fileID: 65000014126164054}
-  - 23: {fileID: 23000010500540040}
-  - 114: {fileID: 114000010532836254}
-  - 114: {fileID: 114000011726885358}
-  - 114: {fileID: 114000012790335778}
-  m_Layer: 12
-  m_Name: Prop
+  - 4: {fileID: 4000013332814400}
+  - 33: {fileID: 33000013371426530}
+  - 23: {fileID: 23000012841365888}
+  - 95: {fileID: 95000013773394514}
+  - 114: {fileID: 114000010529752508}
+  - 114: {fileID: 114000010658044914}
+  m_Layer: 0
+  m_Name: Laser Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000012170188032
+--- !u!4 &4000013332814400
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.147926, y: 81.62245, z: 132.48053}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_GameObject: {fileID: 1000013799008484}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5805602, y: 4.7324495, z: 7.0500674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000010500540040
+--- !u!23 &23000012841365888
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
+  m_GameObject: {fileID: 1000013799008484}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,13 +57,13 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 122853134bfb4c649942fc996da0a55a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedWireframeHidden: 0
@@ -74,61 +73,61 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000011467190766
+--- !u!33 &33000013371426530
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65000014126164054
-BoxCollider:
+  m_GameObject: {fileID: 1000013799008484}
+  m_Mesh: {fileID: 4300000, guid: edffc84b05921a94ca0f879e01dd5661, type: 3}
+--- !u!95 &95000013773394514
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1000013799008484}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114000010532836254
+  m_Avatar: {fileID: 9000000, guid: edffc84b05921a94ca0f879e01dd5661, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010529752508
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
+  m_GameObject: {fileID: 1000013799008484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
+  m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 100
---- !u!114 &114000011726885358
+  weaponMods: []
+  baseStats:
+    name: Laser Cannon
+    damage: 10
+    spread: 0
+    numProjectiles: 1
+    speed: 1
+  projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
+  barrelPos: {x: 0, y: 0, z: 0.9}
+  barrelDir: {x: 0, y: 0, z: 1}
+  isContinuous: 1
+--- !u!114 &114000010658044914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
+  m_GameObject: {fileID: 1000013799008484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff40077e5962a7488a08ad3c432bb71, type: 3}
+  m_Script: {fileID: 11500000, guid: 079dfbcf4198cd84995f57a99bc5a7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 2
-  height: 2
-  levelClass: 0
-  heightOffset: 0.5
---- !u!114 &114000012790335778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013420017924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d2384daa96f034cb655eadb1c57ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: -0.7}

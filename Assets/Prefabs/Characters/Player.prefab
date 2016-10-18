@@ -207,11 +207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000011993848200, guid: 6a3b7e0757ce0404db210978a035468d,
+  - primaryWeapon: {fileID: 114000012631860830, guid: 4337e42e8aa837448912fbdad0c91b7f,
       type: 2}
     offset: {x: 0.4, y: 0, z: 0}
     side: 1
-  - primaryWeapon: {fileID: 11456746, guid: 5e0465edf7862e04296eca89e7a68cbd, type: 2}
+  - primaryWeapon: {fileID: 114000012631860830, guid: 4337e42e8aa837448912fbdad0c91b7f,
+      type: 2}
     offset: {x: -0.4, y: 0, z: 0}
     side: 0
   transportSocket:
