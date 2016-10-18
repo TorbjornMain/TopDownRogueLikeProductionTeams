@@ -22,8 +22,10 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 		}
 		if ((pws.isContinuous && hasStoppedFiring) || !pws.isContinuous) {
 			timeAlive += Time.deltaTime;
-			if(timeAlive > lifetime)
+			if (timeAlive > lifetime) {
 				endEffect (null);
+				Destroy (gameObject);
+			}
 		}
 		base.Update ();
 	}
