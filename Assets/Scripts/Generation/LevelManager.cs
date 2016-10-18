@@ -61,6 +61,8 @@ public class LevelManager : MonoBehaviour {
 
 	void spawnFromList(List<SpawnableObject> spawnList, uint numSpawns, ref List<SpawnableObject> outputList)
 	{
+		if (spawnList.Count == 0)
+			return;
 		
 		spawnList.Sort ();
 
@@ -86,8 +88,8 @@ public class LevelManager : MonoBehaviour {
 
 		if (!cantSpawn) {
 			for (int i = 0; i < numSpawns; i++) {
-				int randItem = Random.Range (min, max + 1);
-				int itemWidth = (int)propPrefabs[randItem].width, itemHeight = (int)propPrefabs[randItem].height;
+				int randItem = Random.Range (min, max);
+				int itemWidth = (int)spawnList[randItem].width, itemHeight = (int)spawnList[randItem].height;
 				int roomNumber = Random.Range (0, rooms.Count);
 				int roomX = 0, roomY = 0;
 				bool placeable = false;
@@ -108,7 +110,7 @@ public class LevelManager : MonoBehaviour {
 				}
 				for (int x = 0; x < itemWidth; x++) {
 					for (int y = 0; y < itemHeight; y++) {
-						placeableGrid [roomX + x, roomY + x] = false;
+						placeableGrid [roomX + x, roomY + y] = false;
 					}
 				}
 

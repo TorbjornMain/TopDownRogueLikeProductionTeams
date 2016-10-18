@@ -20,6 +20,8 @@ public class EnemyAIController : MonoBehaviour {
 	public float aggroThreshold = 0.2f;
 	public float aggroGainRate = 1;
 	public float aggroDecayRate = 1;
+	public float wanderDistance = 4;
+	public float wanderStagnation = 6;
 
 	private float aggro = 0.0f;
 	private EnemyAIState state = EnemyAIState.Wander;
@@ -27,7 +29,8 @@ public class EnemyAIController : MonoBehaviour {
 	private SpawnableObject sp;
 	private DamageableItem dmg;
 
-
+	private Vector3 wanderDest = new Vector3 ();
+	private float wanderTime = 0.0f;
 
 
 	// Use this for initialization
@@ -58,7 +61,13 @@ public class EnemyAIController : MonoBehaviour {
 
 		switch (state) {
 		case EnemyAIState.Wander:
-			
+			if (wanderTime <= 0) {
+				Vector3 r = Random.onUnitSphere;
+				r.y = 0;
+				wanderDest = transform.position + r * wanderDistance;
+				wanderTime = Random.value * wanderStagnation;
+			}
+			bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
 			break;
 		case EnemyAIState.Pursue:
 			bs.transportSocket.transport.nodeObject.Drive((sp.lm.playerInstance.transform.position - this.transform.position).normalized);
@@ -70,6 +79,6 @@ public class EnemyAIController : MonoBehaviour {
 			break;
 		}
 
-
+		wanderTime -= Time.deltaTime;
 	}
 }
