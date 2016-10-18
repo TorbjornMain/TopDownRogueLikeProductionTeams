@@ -6,10 +6,10 @@ public class LevelManager : MonoBehaviour {
 	public ProceduralLevelGenerator proceduralLevel;
 	public GameObject playerPrefab;
 	private GameObject _playerInstance;
-	public GameObject playerInstance
+	public BodySockets playerInstance
 	{
 		get {
-			return _playerInstance;
+			return _playerInstance.GetComponentInChildren<BodySockets>();
 		}
 	}
 	public List<SpawnableObject> propPrefabs;

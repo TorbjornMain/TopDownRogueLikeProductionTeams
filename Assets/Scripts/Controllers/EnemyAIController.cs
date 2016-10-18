@@ -47,6 +47,7 @@ public class EnemyAIController : MonoBehaviour {
 			aggro += aggroGainRate * Time.deltaTime;
 		} else {
 			aggro -= aggroDecayRate * Time.deltaTime;
+			aggro = Mathf.Max (aggro, 0);
 		}
 
 		if (aggro > aggroThreshold) {
@@ -67,7 +68,9 @@ public class EnemyAIController : MonoBehaviour {
 				wanderDest = transform.position + r * wanderDistance;
 				wanderTime = Random.value * wanderStagnation;
 			}
-			bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
+			if ((wanderDest - transform.position).magnitude > 0.1) {
+				bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
+			}
 			break;
 		case EnemyAIState.Pursue:
 			bs.transportSocket.transport.nodeObject.Drive((sp.lm.playerInstance.transform.position - this.transform.position).normalized);
@@ -78,7 +81,7 @@ public class EnemyAIController : MonoBehaviour {
 		default:
 			break;
 		}
-
+		print (playerDistance);
 		wanderTime -= Time.deltaTime;
 	}
 }
