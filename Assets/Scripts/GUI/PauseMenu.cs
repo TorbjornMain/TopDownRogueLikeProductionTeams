@@ -12,12 +12,11 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
 	    if(Input.GetButtonDown("Cancel"))
         {
-            print("escape pushed");
             ToggleActive();
         }
 	}
 
-    void ToggleActive()
+    public void ToggleActive()
     {
         if (pauseMenu.activeInHierarchy == true)
         {
