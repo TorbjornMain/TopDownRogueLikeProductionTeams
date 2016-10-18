@@ -24,6 +24,8 @@ GameObject:
   - 23: {fileID: 23000013181044682}
   - 54: {fileID: 54000012682314270}
   - 114: {fileID: 114000011275235834}
+  - 114: {fileID: 114000011224759912}
+  - 114: {fileID: 114000014258725078}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -95,6 +97,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114000011224759912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012404096280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ff4315a1d008940acf0188b254b260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!114 &114000011275235834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,6 +139,17 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   baseProjectileSpeed: 6
+--- !u!114 &114000014258725078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012404096280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936861bb2d38a264eb083f73943429a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136000011803810176
 CapsuleCollider:
   m_ObjectHideFlags: 1

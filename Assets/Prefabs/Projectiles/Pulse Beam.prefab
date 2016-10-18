@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 114000012516592914}
   - 114: {fileID: 114000012839068620}
   m_Layer: 9
-  m_Name: Beam
+  m_Name: Pulse Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,21 +61,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 0.1
   isPiercing: 0
-  fadeInTime: 0.2
+  fadeInTime: 0.5
   fadeOutTime: 0.2
   lifeLoopFrequency: 0.15
   fadeInWidthCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: 0
+    - time: -0.002630136
+      value: 0.14148936
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+    - time: 0.97246367
+      value: -0.00077325106
+      inSlope: -0.16412006
+      outSlope: 6.787535
+      tangentMode: 1
     - time: 1
-      value: 0.9470588
-      inSlope: 2
-      outSlope: 2
+      value: 0.9411397
+      inSlope: 3.2150173
+      outSlope: 3.2150173
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

@@ -6,6 +6,12 @@ public class LevelManager : MonoBehaviour {
 	public ProceduralLevelGenerator proceduralLevel;
 	public GameObject playerPrefab;
 	private GameObject _playerInstance;
+	public GameObject playerInstance
+	{
+		get {
+			return _playerInstance;
+		}
+	}
 	public List<SpawnableObject> propPrefabs;
 	public List<SpawnableObject> enemyPrefabs;
 	private List<SpawnableObject> enemyInstances;
