@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     type: 0
-    speed: 20
+    speed: 12
     turnRate: 100
 --- !u!1001 &100100000
 Prefab:
