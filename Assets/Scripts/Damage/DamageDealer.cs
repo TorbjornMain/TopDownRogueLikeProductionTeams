@@ -12,6 +12,7 @@ public class DamageDealer : MonoBehaviour {
 
 	public float DealDamage(DamageInfo dmgInfo)
 	{
+		dmgInfo.target.SendMessage ("Damaged", -dmgInfo.baseDamage * damageMultiplier, SendMessageOptions.DontRequireReceiver);
 		dmgInfo.target.changeHealth (-dmgInfo.baseDamage * damageMultiplier);
 		return -dmgInfo.baseDamage * damageMultiplier;
 	}

@@ -25,10 +25,16 @@ public class EnemyAIController : MonoBehaviour {
 	private EnemyAIState state = EnemyAIState.Wander;
 	private BodySockets bs;
 	private SpawnableObject sp;
+	private DamageableItem dmg;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		bs = GetComponent<BodySockets> ();
 		sp = GetComponent<SpawnableObject> ();
+		dmg = GetComponent<DamageableItem> ();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +44,30 @@ public class EnemyAIController : MonoBehaviour {
 			aggro += aggroGainRate * Time.deltaTime;
 		} else {
 			aggro -= aggroDecayRate * Time.deltaTime;
+		}
+
+		if (aggro > aggroThreshold) {
+			if (dmg.health / dmg.maxHealth < fleeThreshold) {
+				state = EnemyAIState.Flee;
+			} else {
+				state = EnemyAIState.Pursue;
+			}
+		} else {
+			state = EnemyAIState.Wander;
+		}
+
+		switch (state) {
+		case EnemyAIState.Wander:
+			
+			break;
+		case EnemyAIState.Pursue:
+			bs.transportSocket.transport.nodeObject.Drive((sp.lm.playerInstance.transform.position - this.transform.position).normalized);
+			break;
+		case EnemyAIState.Flee:
+			bs.transportSocket.transport.nodeObject.Drive((this.transform.position - sp.lm.playerInstance.transform.position).normalized);
+			break;
+		default:
+			break;
 		}
 
 
