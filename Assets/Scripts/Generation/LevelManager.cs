@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour {
 
 	public ProceduralLevelGenerator proceduralLevel;
 	public GameObject playerPrefab;
-	private GameObject playerInstance;
+	private GameObject _playerInstance;
 	public List<SpawnableObject> propPrefabs;
 	public List<SpawnableObject> enemyPrefabs;
 	private List<SpawnableObject> enemyInstances;
@@ -18,10 +18,10 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerInstance = Instantiate<GameObject> (playerPrefab);
+		_playerInstance = Instantiate<GameObject> (playerPrefab);
 		enemyInstances = new List<SpawnableObject>();
 		propInstances = new List<SpawnableObject>();
-		playerInstance.SetActive(false);
+		_playerInstance.SetActive(false);
 
 	}
 	
@@ -44,12 +44,12 @@ public class LevelManager : MonoBehaviour {
 		int roomX = (int)rooms[roomNumber].offset.x + Random.Range ((int)rooms [roomNumber].topLeft.x, (int)rooms [roomNumber].bottomRight.x), roomY = (int)rooms[roomNumber].offset.y + Random.Range ((int)rooms [roomNumber].topLeft.y, (int)rooms [roomNumber].bottomRight.y) ;
 
 		placeableGrid [roomX, roomY] = false;
-		playerInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2), 0, roomY- (proceduralLevel.height/2)) * proceduralLevel.tileScale);
+		_playerInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2), 0, roomY- (proceduralLevel.height/2)) * proceduralLevel.tileScale);
 
 		spawnFromList (enemyPrefabs, (uint)Random.Range (minEnemies, maxEnemies), ref enemyInstances);
 		spawnFromList (propPrefabs, (uint)Random.Range (minProps, maxProps), ref propInstances);
 
-		playerInstance.SetActive (true);
+		_playerInstance.SetActive (true);
 
 	}
 
@@ -81,33 +81,33 @@ public class LevelManager : MonoBehaviour {
 		if (!cantSpawn) {
 			for (int i = 0; i < numSpawns; i++) {
 				int randItem = Random.Range (min, max + 1);
-				int itemSize = (int)propPrefabs[randItem].size;
+				int itemWidth = (int)propPrefabs[randItem].width, itemHeight = (int)propPrefabs[randItem].height;
 				int roomNumber = Random.Range (0, rooms.Count);
 				int roomX = 0, roomY = 0;
 				bool placeable = false;
 				while (!placeable) {
 					roomNumber = Random.Range (0, rooms.Count);
-					roomX = (int)rooms [roomNumber].offset.x + Random.Range ((int)rooms [roomNumber].topLeft.x + 1, (int)rooms [roomNumber].bottomRight.x - itemSize);
-					roomY = (int)rooms[roomNumber].offset.y + Random.Range ((int)rooms [roomNumber].topLeft.y + 1, (int)rooms [roomNumber].bottomRight.y - itemSize);
+					roomX = (int)rooms [roomNumber].offset.x + Random.Range ((int)rooms [roomNumber].topLeft.x + 1, (int)rooms [roomNumber].bottomRight.x - itemWidth);
+					roomY = (int)rooms[roomNumber].offset.y + Random.Range ((int)rooms [roomNumber].topLeft.y + 1, (int)rooms [roomNumber].bottomRight.y - itemHeight);
 					int numPlaceable = 0;
-					for (int x = 0; x < itemSize; x++) {
-						for (int y = 0; y < itemSize; y++) {
+					for (int x = 0; x < itemWidth; x++) {
+						for (int y = 0; y < itemHeight; y++) {
 							if (placeableGrid [roomX + x, roomY + y])
 								numPlaceable++;
 						}
 					}
-					if (numPlaceable == (itemSize * itemSize)) {
+					if (numPlaceable == (itemWidth * itemHeight)) {
 						placeable = true;
 					}
 				}
-				for (int x = 0; x < itemSize; x++) {
-					for (int y = 0; y < itemSize; y++) {
+				for (int x = 0; x < itemWidth; x++) {
+					for (int y = 0; y < itemHeight; y++) {
 						placeableGrid [roomX + x, roomY + x] = false;
 					}
 				}
 
 				outputList.Add(Instantiate<SpawnableObject> (spawnList [randItem]));
-				outputList [outputList.Count - 1].transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2) + itemSize/2, outputList[outputList.Count - 1].heightOffset, roomY- (proceduralLevel.height/2) + itemSize/2) * proceduralLevel.tileScale);
+				outputList [outputList.Count - 1].transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2) + itemWidth/2, outputList[outputList.Count - 1].heightOffset, roomY- (proceduralLevel.height/2) + itemHeight/2) * proceduralLevel.tileScale);
 			}
 		}
 	}
