@@ -49,7 +49,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 	{
 		if (isFiring && !isContinuous) {
 			if (shotTime <= 0) {
-				shotTime += 1 / (1 + Stats.speed);
+				shotTime += 1 / (Stats.speed);
 				for (int i = 0; i < Stats.numProjectiles; i++) {
 					SpawnBullet ();
 				}
