@@ -119,7 +119,7 @@ GameObject:
   - 81: {fileID: 81000013773544934}
   m_Layer: 0
   m_Name: PlayerCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,16 +600,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000012631860830, guid: 4337e42e8aa837448912fbdad0c91b7f,
+  - primaryWeapon: {fileID: 114000014223911984, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
       type: 2}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
-  - primaryWeapon: {fileID: 114000012631860830, guid: 4337e42e8aa837448912fbdad0c91b7f,
+  - primaryWeapon: {fileID: 114000014223911984, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
       type: 2}
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
   transportSocket:
-    transport: {fileID: 11405796, guid: 7c6af17156f63ce428d799d48fd54afa, type: 2}
+    transport: {fileID: 114000013245109078, guid: d66d0f1edfda4bd4e9d14cc09c888d0a,
+      type: 2}
     offset: {x: 0, y: -1.7, z: 0}
 --- !u!114 &114000010990877740
 MonoBehaviour:
