@@ -49,7 +49,7 @@ GameObject:
   - 143: {fileID: 14358186}
   m_Layer: 8
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,11 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000010658044914, guid: dc6a2f5a2969bd44a92a501dfd5ea007,
+  - primaryWeapon: {fileID: 114000011993848200, guid: 6a3b7e0757ce0404db210978a035468d,
       type: 2}
     offset: {x: 0.4, y: 0, z: 0}
     side: 1
-  - primaryWeapon: {fileID: 114000010658044914, guid: dc6a2f5a2969bd44a92a501dfd5ea007,
+  - primaryWeapon: {fileID: 114000011993848200, guid: 6a3b7e0757ce0404db210978a035468d,
       type: 2}
     offset: {x: -0.4, y: 0, z: 0}
     side: 0

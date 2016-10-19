@@ -68,20 +68,31 @@ public class EnemyAIController : MonoBehaviour {
 				wanderDest = transform.position + r * wanderDistance;
 				wanderTime = Random.value * wanderStagnation;
 			}
-			if ((wanderDest - transform.position).magnitude > 0.1) {
-				bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
-			}
+
 			break;
 		case EnemyAIState.Pursue:
-			bs.transportSocket.transport.nodeObject.Drive((sp.lm.playerInstance.transform.position - this.transform.position).normalized);
+			if (wanderTime <= 0) {
+				Vector3 r = Random.onUnitSphere;
+				r.y = 0;
+				wanderDest = transform.position + (r + ((sp.lm.playerInstance.transform.position - this.transform.position).normalized * aggro)).normalized * wanderDistance;
+				wanderTime = Random.value * wanderStagnation/ (aggro + 0.1f);
+			}
+
 			break;
 		case EnemyAIState.Flee:
-			bs.transportSocket.transport.nodeObject.Drive((this.transform.position - sp.lm.playerInstance.transform.position).normalized);
+			if (wanderTime <= 0) {
+				Vector3 r = Random.onUnitSphere;
+				r.y = 0;
+				wanderDest = transform.position + (r + (( this.transform.position - sp.lm.playerInstance.transform.position).normalized * aggro)).normalized * wanderDistance;
+				wanderTime = Random.value * wanderStagnation / (aggro + 0.1f);
+			}
 			break;
 		default:
 			break;
 		}
-		print (playerDistance);
+		if ((wanderDest - transform.position).magnitude > 0.3) {
+			bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
+		}
 		wanderTime -= Time.deltaTime;
 	}
 }
