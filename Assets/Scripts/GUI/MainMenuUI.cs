@@ -25,6 +25,7 @@ public class MainMenuUI : MonoBehaviour {
             startGamePanel.SetActive(true);
             optionsPanel.SetActive(true);
             quitPanel.SetActive(true);
+            imageSwapped = true;
         }
     }
 }
