@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000010990877740}
   - 143: {fileID: 143000013593862972}
   - 114: {fileID: 114000010083594644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013418597150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014192692104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014239860208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013982328246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010249905082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014247849656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013294227844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010973626762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010131658528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LBicep1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013399345048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LBicep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010972532056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - 4: {fileID: 4000014003170508}
   - 33: {fileID: 33000013111335346}
   - 23: {fileID: 23000013062679964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LShoulder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010389755196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LShoulder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011885908112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -364,7 +364,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010016667590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -600,18 +600,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000014223911984, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
-      type: 2}
+  - primaryWeapon: {fileID: 0}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
-  - primaryWeapon: {fileID: 114000014223911984, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
-      type: 2}
+  - primaryWeapon: {fileID: 0}
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
   transportSocket:
-    transport: {fileID: 114000013245109078, guid: d66d0f1edfda4bd4e9d14cc09c888d0a,
+    transport: {fileID: 114000013487310358, guid: d13014a2a6a49fb47b9264bdc1b3b2f6,
       type: 2}
-    offset: {x: 0, y: -1.7, z: 0}
+    offset: {x: 0, y: -0.59, z: 0}
+  dropRate: 0.05
 --- !u!114 &114000010990877740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,10 +644,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_Height: 5
+  m_Radius: 1
+  m_SlopeLimit: 10
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -1, z: 0}

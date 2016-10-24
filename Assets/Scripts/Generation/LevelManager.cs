@@ -117,7 +117,7 @@ public class LevelManager : MonoBehaviour {
 				}
 
 				outputList.Add(Instantiate<SpawnableObject> (spawnList [randItem]));
-				outputList [outputList.Count - 1].transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2) + itemWidth/2, outputList[outputList.Count - 1].heightOffset, roomY- (proceduralLevel.height/2) + itemHeight/2) * proceduralLevel.tileScale);
+				outputList [outputList.Count - 1].transform.position = proceduralLevel.transform.position + (new Vector3 ((roomX - (proceduralLevel.width/2) + itemWidth/2)* proceduralLevel.tileScale, outputList[outputList.Count - 1].heightOffset, (roomY- (proceduralLevel.height/2) + itemHeight/2)* proceduralLevel.tileScale) );
 				outputList [outputList.Count - 1].lm = this;
 			}
 		}

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d9e23efbedf2ec3419f5a63ef4ba51ed
-timeCreated: 1477289948
+guid: 8070a332c9b3d58438dd3b383e9d970d
+timeCreated: 1477289539
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: LLeg2
+    4300000: pasted__torso
     9500000: //RootNode
   materials:
     importMaterials: 1
