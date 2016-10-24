@@ -73,7 +73,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 			relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
 
 		} else {
-			relativeSpread = Quaternion.Euler (new Vector3 (0, (-Stats.spread/2) + (Stats.spread * (bulletNumber/Stats.numProjectiles)), 0));
+			relativeSpread = Quaternion.Euler (new Vector3 (0, (360 *(-Stats.spread/2)) + (360 * 2 * Stats.spread * (((float)bulletNumber)/Stats.numProjectiles)), 0));
 		}
 		g.transform.rotation = Quaternion.FromToRotation (new Vector3 (0, 0, 1), transform.TransformDirection (barrelDir)) * relativeSpread;
 		g.pws = this;
