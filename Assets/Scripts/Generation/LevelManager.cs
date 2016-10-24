@@ -90,7 +90,7 @@ public class LevelManager : MonoBehaviour {
 
 		if (!cantSpawn) {
 			for (int i = 0; i < numSpawns; i++) {
-				int randItem = Random.Range (min, max);
+				int randItem = Random.Range (min, max + 1);
 				int itemWidth = (int)spawnList[randItem].width, itemHeight = (int)spawnList[randItem].height;
 				int roomNumber = Random.Range (0, rooms.Count);
 				int roomX = 0, roomY = 0;
