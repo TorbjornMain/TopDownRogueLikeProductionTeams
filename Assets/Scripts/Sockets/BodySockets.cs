@@ -32,6 +32,7 @@ public class BodySockets : MonoBehaviour
 	public PrimaryWeaponSocket[] primaryWeaponSockets;
 	public TransportSocket transportSocket;
 	private CharacterController mainBody;
+	public float dropRate = 0.05f;
 
 	void Start()
 	{
@@ -69,15 +70,17 @@ public class BodySockets : MonoBehaviour
 
 	public void DetachTransport(bool discard)
 	{
-		if (!discard) {
-			transportSocket.transport.isAttached = false;
-			transportSocket.transport.gameObject.layer = LayerMask.NameToLayer ("Item");
-			transportSocket.transport.nodeObject.mainBody = null;
-		} else {
-			Destroy (transportSocket.transport.nodeObject.gameObject);
-		}
+		if (transportSocket.transport) {
+			if (!discard) {
+				transportSocket.transport.isAttached = false;
+				transportSocket.transport.gameObject.layer = LayerMask.NameToLayer ("Item");
+				transportSocket.transport.nodeObject.mainBody = null;
+			} else {
+				Destroy (transportSocket.transport.nodeObject.gameObject);
+			}
 
-		transportSocket.transport = null;
+			transportSocket.transport = null;
+		}
 	}
 		
 
@@ -95,16 +98,18 @@ public class BodySockets : MonoBehaviour
 		primaryWeaponSockets [index].primaryWeapon = weapon;
 	}
 
-	public void DetatchPrimaryWeapon(int index, bool discard)
+	public void DetachPrimaryWeapon(int index, bool discard)
 	{
-		if (!discard) {
-			primaryWeaponSockets [index].primaryWeapon.isAttached = false;
-			primaryWeaponSockets [index].primaryWeapon.gameObject.layer = LayerMask.NameToLayer ("Item");
-			primaryWeaponSockets [index].primaryWeapon.transform.SetParent (null);
-		} else {
-			Destroy (primaryWeaponSockets [index].primaryWeapon.nodeObject.gameObject);
+		if (primaryWeaponSockets [index].primaryWeapon) {
+			if (!discard) {
+				primaryWeaponSockets [index].primaryWeapon.isAttached = false;
+				primaryWeaponSockets [index].primaryWeapon.gameObject.layer = LayerMask.NameToLayer ("Item");
+				primaryWeaponSockets [index].primaryWeapon.transform.SetParent (null);
+			} else {
+				Destroy (primaryWeaponSockets [index].primaryWeapon.nodeObject.gameObject);
+			}
+			primaryWeaponSockets [index].primaryWeapon = null;
 		}
-		primaryWeaponSockets [index].primaryWeapon = null;
 	}
 
 	public void StartFirePrimary()
@@ -123,6 +128,22 @@ public class BodySockets : MonoBehaviour
 		}
 	}
 
+
+	void OnDestroy()
+	{
+		if (Random.value <= dropRate) {
+			int rand = Random.Range(0, primaryWeaponSockets.Length + 1);
+			if (rand == primaryWeaponSockets.Length) {
+				DetachTransport (false);
+			} else {
+				DetachPrimaryWeapon (rand, false);
+			}
+		}
+		DetachTransport (true);
+		for (int i = 0; i < primaryWeaponSockets.Length; i++) {
+			DetachPrimaryWeapon (i, true);
+		}
+	}
 
 	void OnDrawGizmos()
 	{

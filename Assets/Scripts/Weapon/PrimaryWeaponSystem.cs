@@ -51,7 +51,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 			if (shotTime <= 0) {
 				shotTime += 1 / (Stats.speed);
 				for (int i = 0; i < Stats.numProjectiles; i++) {
-					SpawnBullet ();
+					SpawnBullet (i);
 				}
 			}
 			shotTime -= Time.deltaTime;
@@ -64,11 +64,17 @@ public class PrimaryWeaponSystem : MonoBehaviour
 
 	}
 
-	void SpawnBullet()
+	void SpawnBullet(int bulletNumber = 0)
 	{
 		PrimaryProjectile g = Instantiate<PrimaryProjectile> (projectilePrefab);
 		g.transform.position = transform.TransformPoint (barrelPos);
-		Quaternion relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
+		Quaternion relativeSpread;
+		if (Stats.numProjectiles == 1) {
+			relativeSpread = Quaternion.Euler (new Vector3 (0, (Random.value - 0.5f) * 360 * Stats.spread, 0));
+
+		} else {
+			relativeSpread = Quaternion.Euler (new Vector3 (0, (-Stats.spread/2) + (Stats.spread * (bulletNumber/Stats.numProjectiles)), 0));
+		}
 		g.transform.rotation = Quaternion.FromToRotation (new Vector3 (0, 0, 1), transform.TransformDirection (barrelDir)) * relativeSpread;
 		g.pws = this;
 		g.relativeSpread = relativeSpread;
