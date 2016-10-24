@@ -111,13 +111,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMods: []
   baseStats:
-    name: Projectile Gun
-    damage: 10
-    spread: 0.25
-    numProjectiles: 2
-    speed: 1
+    name: Shotgun
+    damage: 25
+    spread: 0.1
+    numProjectiles: 4
+    speed: 0.75
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
-  barrelPos: {x: 0.05, y: 18.1, z: 93.53}
+  barrelPos: {x: 0.05, y: 10, z: 93.53}
   barrelDir: {x: 0, y: 0, z: 1}
   isContinuous: 0
 --- !u!114 &114000013350220768

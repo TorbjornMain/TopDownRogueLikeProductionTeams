@@ -15,6 +15,6 @@ public class StartButton : MonoBehaviour {
 	}
 
     public void StartGame() {
-        SceneManager.LoadSceneAsync("TestArena", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("RileyArena", LoadSceneMode.Single);
     }
 }

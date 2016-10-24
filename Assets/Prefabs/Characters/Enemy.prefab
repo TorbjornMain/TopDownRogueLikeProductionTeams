@@ -183,6 +183,7 @@ MonoBehaviour:
   transportSocket:
     transport: {fileID: 11405796, guid: 834102117052828468f519f90a335d98, type: 2}
     offset: {x: 0, y: -0.5, z: 0}
+  dropRate: 0.15
 --- !u!143 &143000012097911484
 CharacterController:
   m_ObjectHideFlags: 1
