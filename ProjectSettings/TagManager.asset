@@ -22,9 +22,9 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - NeutralBullet
-  - 
-  - 
-  - 
+  - NeutralCollide
+  - PlayerMelee
+  - EnemyMelee
   - 
   - 
   - 

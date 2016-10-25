@@ -57,6 +57,9 @@ public class EnemyAIController : MonoBehaviour {
 				state = EnemyAIState.Pursue;
 			}
 		} else {
+
+			bs.CeaseFirePrimary ();
+
 			state = EnemyAIState.Wander;
 		}
 
