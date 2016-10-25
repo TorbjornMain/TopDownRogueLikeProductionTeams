@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000011845120338}
   - 136: {fileID: 136000010423765292}
   - 114: {fileID: 114000011199496048}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Flame Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
