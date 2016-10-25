@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MusicSlider : MonoBehaviour {
-    float volume = 1.0f;
-
+    float volume = 1f;
+    Slider musicSlider;
 	// Use this for initialization
 	void Start () {
-	
+        musicSlider = GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -14,8 +15,9 @@ public class MusicSlider : MonoBehaviour {
 	
 	}
 
-    void SaveSliderValue()
+    public void SaveSliderValue()
     {
+        volume = musicSlider.value;
         PlayerPrefs.SetFloat("SliderVolumeLevel", volume);
     }
 }
