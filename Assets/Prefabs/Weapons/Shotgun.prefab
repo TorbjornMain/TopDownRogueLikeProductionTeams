@@ -114,10 +114,10 @@ MonoBehaviour:
     name: Shotgun
     damage: 25
     spread: 0.1
-    numProjectiles: 4
+    numProjectiles: 10
     speed: 0.75
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
-  barrelPos: {x: 0.05, y: 10, z: 93.53}
+  barrelPos: {x: 0, y: 0.2, z: 0.9}
   barrelDir: {x: 0, y: 0, z: 1}
   isContinuous: 0
 --- !u!114 &114000013350220768
@@ -131,4 +131,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079dfbcf4198cd84995f57a99bc5a7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: -40.46, z: -103.86}
+  offset: {x: 0, y: -0.4, z: -0.8}

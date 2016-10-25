@@ -600,14 +600,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 0}
+  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+      type: 2}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
-  - primaryWeapon: {fileID: 0}
+  - primaryWeapon: {fileID: 114000013350220768, guid: 38f2a6bcfcf62be478b1fddf10d39df0,
+      type: 2}
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
   transportSocket:
-    transport: {fileID: 114000013487310358, guid: d13014a2a6a49fb47b9264bdc1b3b2f6,
+    transport: {fileID: 114000013652321144, guid: bdba96d8d4eed344dbf7618af84fc4d9,
       type: 2}
     offset: {x: 0, y: -0.59, z: 0}
   dropRate: 0.05

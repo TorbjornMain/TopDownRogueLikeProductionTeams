@@ -41,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1000012645651664}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7857285, y: 5.886567, z: 3.3132567}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   width: 1
   height: 1
   levelClass: 0
-  heightOffset: 0.5
+  heightOffset: 1.5
 --- !u!114 &114000012913367546
 MonoBehaviour:
   m_ObjectHideFlags: 1
