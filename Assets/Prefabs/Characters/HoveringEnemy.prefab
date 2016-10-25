@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9244437, y: 2.4651833, z: 1.883188}
-  m_Center: {x: -0.000002682209, y: 1.2325916, z: -0.20636046}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95000012853134332
 Animator:
   serializedVersion: 3
@@ -141,7 +141,7 @@ MonoBehaviour:
   transportSocket:
     transport: {fileID: 114000013216729922, guid: 19da9bc0578508b46bda0d7a7b88f1b5,
       type: 2}
-    offset: {x: 0, y: -0.5, z: 0}
+    offset: {x: 0, y: -0, z: 0}
   dropRate: 0.15
 --- !u!114 &114000011758753326
 MonoBehaviour:
@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0.1
-  healthBarPrefab: {fileID: 0}
+  healthBarPrefab: {fileID: 114000013922741290, guid: 46fae96e1cc9c954a942231b90da0a48,
+    type: 2}
 --- !u!114 &114000014057291422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,7 +203,7 @@ MonoBehaviour:
   width: 1
   height: 1
   levelClass: 0
-  heightOffset: 0.5
+  heightOffset: 0
 --- !u!143 &143000012951473318
 CharacterController:
   m_ObjectHideFlags: 1
@@ -213,7 +214,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 10
+  m_Height: 5
   m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3

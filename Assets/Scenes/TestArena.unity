@@ -244,6 +244,7 @@ MonoBehaviour:
   - {fileID: 114000011845120338, guid: 6afdf9092c41bdd459105ebffdbf92c2, type: 2}
   enemyPrefabs:
   - {fileID: 114000013023413850, guid: 4d16d4db234671641b523ba947c288ab, type: 2}
+  - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}
   maxDifficulty: 0
   minDifficulty: 0
   minProps: 40
