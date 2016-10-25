@@ -84,6 +84,7 @@ public class BodySockets : MonoBehaviour
 				transportSocket.transport.isAttached = false;
 				transportSocket.transport.gameObject.layer = LayerMask.NameToLayer ("Item");
 				transportSocket.transport.nodeObject.mainBody = null;
+				transportSocket.transport.nodeObject.StartCoroutine ("Despawn");
 			} else {
 				Destroy (transportSocket.transport.nodeObject.gameObject);
 			}

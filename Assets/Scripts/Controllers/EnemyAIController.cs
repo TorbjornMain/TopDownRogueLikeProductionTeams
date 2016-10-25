@@ -19,12 +19,14 @@ public class EnemyAIController : MonoBehaviour {
 	public float fleeThreshold = 0.2f;
 	public float aggroThreshold = 0.2f;
 	public float triggerHappiness = 1.0f;
-	public float aggroGainRate = 1;
-	public float aggroDecayRate = 1;
+	public float triggerInertia = 1.0f;
+	public float aggroGainRate = 0.1f;
+	public float aggroDecayRate = 0.1f;
 	public float wanderDistance = 4;
 	public float wanderStagnation = 6;
 
 
+	private float timeInState = 0.0f;
 	private float aggro = 0.0f;
 	private EnemyAIState state = EnemyAIState.Wander;
 	private BodySockets bs;
@@ -59,11 +61,19 @@ public class EnemyAIController : MonoBehaviour {
 				state = EnemyAIState.Pursue;
 			}
 			this.transform.rotation = Quaternion.LookRotation ((sp.lm.playerInstance.transform.position - transform.position).normalized);
-
-
+			if (bs.isFiring && Random.value < (timeInState/triggerInertia) / (1 + (triggerHappiness * aggro))) {
+				timeInState = 0.0f;
+				bs.CeaseFirePrimary ();
+			}
+			if (!bs.isFiring && Random.value < (triggerHappiness * aggro * timeInState) / triggerInertia) {
+				timeInState = 0.0f;
+				bs.StartFirePrimary ();
+			}
+			timeInState += Time.deltaTime;
 		} else {
 			bs.CeaseFirePrimary ();
 			state = EnemyAIState.Wander;
+			timeInState = 0.0f;
 		}
 
 		switch (state) {
