@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Restart : MonoBehaviour {
+public class MusicSlider : MonoBehaviour {
+    float volume = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +14,8 @@ public class Restart : MonoBehaviour {
 	
 	}
 
-    public void RestartRun()
+    void SaveSliderValue()
     {
-        SceneManager.LoadSceneAsync("RileyArena", LoadSceneMode.Single);
+        PlayerPrefs.SetFloat("SliderVolumeLevel", volume);
     }
 }
