@@ -7,9 +7,9 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BeamMat
-  m_Shader: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: a51d37f8adb8c914fb71eab88ecd0b15, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
-        name: _Ramp
+        name: _SpecGlossMap
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -95,9 +95,6 @@ Material:
         name: _DstBlend
       second: 0
     - first:
-        name: _EdgeLength
-      second: 10
-    - first:
         name: _GlossMapScale
       second: 1
     - first:
@@ -120,16 +117,10 @@ Material:
       second: 1
     - first:
         name: _Outline
-      second: 0.003
+      second: 0.005
     - first:
         name: _Parallax
       second: 0.02
-    - first:
-        name: _Shininess
-      second: 0.078125
-    - first:
-        name: _Smoothness
-      second: 0.5
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -148,7 +139,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
@@ -157,7 +148,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _SpecColor
-      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - first:
         name: _TintColor
-      second: {r: 0.034482475, g: 0, b: 1, a: 0.5}
+      second: {r: 0.47750863, g: 0.72573084, b: 1, a: 0.5}

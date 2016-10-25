@@ -143,7 +143,7 @@ MonoBehaviour:
     offset: {x: 1.35, y: 0.75, z: 0.2}
     side: 0
   transportSocket:
-    transport: {fileID: 114000013216729922, guid: 19da9bc0578508b46bda0d7a7b88f1b5,
+    transport: {fileID: 114000013487310358, guid: c0f938a7b43d8674490bd54b3e7dd7b5,
       type: 2}
     offset: {x: 0, y: -0, z: 0}
   dropRate: 1
