@@ -16,6 +16,6 @@ public class Restart : MonoBehaviour {
 
     public void RestartRun()
     {
-        SceneManager.LoadSceneAsync("TestArena", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("RileyArena", LoadSceneMode.Single);
     }
 }

@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000010299205132}
   - 136: {fileID: 136000010315076730}
   - 114: {fileID: 114000012913367546}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

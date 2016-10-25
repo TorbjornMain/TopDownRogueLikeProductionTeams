@@ -18,10 +18,12 @@ public class EnemyAIController : MonoBehaviour {
 	public float aggroRadius = 10.0f;
 	public float fleeThreshold = 0.2f;
 	public float aggroThreshold = 0.2f;
+	public float triggerHappiness = 1.0f;
 	public float aggroGainRate = 1;
 	public float aggroDecayRate = 1;
 	public float wanderDistance = 4;
 	public float wanderStagnation = 6;
+
 
 	private float aggro = 0.0f;
 	private EnemyAIState state = EnemyAIState.Wander;
@@ -56,10 +58,11 @@ public class EnemyAIController : MonoBehaviour {
 			} else {
 				state = EnemyAIState.Pursue;
 			}
+			this.transform.rotation = Quaternion.LookRotation ((sp.lm.playerInstance.transform.position - transform.position).normalized);
+
+
 		} else {
-
 			bs.CeaseFirePrimary ();
-
 			state = EnemyAIState.Wander;
 		}
 

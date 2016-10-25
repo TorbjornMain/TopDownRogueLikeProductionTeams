@@ -38,9 +38,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011813563004}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PlayerNew
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - 124: {fileID: 124000013347069548}
   - 92: {fileID: 92000010523136750}
   - 81: {fileID: 81000013773544934}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -600,11 +600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000010658044914, guid: 2e7870adfc7ad7b4fbac80851a67a042,
+  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
       type: 2}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
-  - primaryWeapon: {fileID: 114000010658044914, guid: 2e7870adfc7ad7b4fbac80851a67a042,
+  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
       type: 2}
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 20000010580387844}
-  cameraOffset: {x: 0, y: 27, z: -5}
+  cameraOffset: {x: 0, y: 20, z: -5}
   cameraAngle: {x: 70, y: 0, z: 0}
   mainBody: {fileID: 114000010083594644}
   speed: 5
