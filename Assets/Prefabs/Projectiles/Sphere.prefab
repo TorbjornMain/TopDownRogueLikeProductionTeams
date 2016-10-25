@@ -102,30 +102,20 @@ MonoBehaviour:
   projectileSpeedCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0.087499976
-      value: 0.6000001
+    - time: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 0.31692755
-      value: 0.53106564
-      inSlope: -0.7984042
-      outSlope: -0.7984042
-      tangentMode: 0
-    - time: 0.5012462
-      value: 0.34941483
-      inSlope: -2.33531
-      outSlope: -2.33531
-      tangentMode: 0
-    - time: 0.99845195
-      value: 0.6920304
+    - time: 1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  baseProjectileSpeed: 60
+  baseProjectileSpeed: 40
 --- !u!135 &13567810
 SphereCollider:
   m_ObjectHideFlags: 1

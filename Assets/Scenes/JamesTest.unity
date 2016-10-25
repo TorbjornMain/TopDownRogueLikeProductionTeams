@@ -36,7 +36,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1276672521}
   m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
 --- !u!157 &3
 LightmapSettings:
@@ -387,7 +387,7 @@ MonoBehaviour:
   - {fileID: 114000012547039134, guid: e2f13a7d7510b914dbbfe85de1b11e2c, type: 2}
   - {fileID: 114000011845120338, guid: 6afdf9092c41bdd459105ebffdbf92c2, type: 2}
   enemyPrefabs:
-  - {fileID: 114000013023413850, guid: 4d16d4db234671641b523ba947c288ab, type: 2}
+  - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}
   maxDifficulty: 0
   minDifficulty: 0
   minProps: 30
@@ -1051,6 +1051,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013327963344, guid: 0ba22de19d0102e4d9b03b06c245bace,
     type: 2}
   m_PrefabInternal: {fileID: 442439746}
+--- !u!1 &510826956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 2115597840}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 510826957}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510826957
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 2115597840}
+  m_GameObject: {fileID: 510826956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2115597841}
+  m_Father: {fileID: 938811220}
+  m_RootOrder: 2
 --- !u!1 &575676805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1569,7 @@ Transform:
   m_Children:
   - {fileID: 442439747}
   - {fileID: 1879665814}
-  - {fileID: 2115597841}
+  - {fileID: 510826957}
   - {fileID: 2014889403}
   - {fileID: 128164828}
   m_Father: {fileID: 998832624}
@@ -2555,7 +2584,7 @@ MonoBehaviour:
   height: 100
   numRooms: 16
   wallHeight: 2
-  tileScale: 2
+  tileScale: 4
 --- !u!1001 &1838931555
 Prefab:
   m_ObjectHideFlags: 0
@@ -2648,6 +2677,21 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010042998728, guid: a4c4fb7e792c042428fdedac5222edb9,
     type: 2}
   m_PrefabInternal: {fileID: 657395405}
+--- !u!1 &1884027301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 2115597840}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2115597841}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &1969565515 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013619183802, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
@@ -2917,11 +2961,20 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d13014a2a6a49fb47b9264bdc1b3b2f6, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2115597841 stripped
+--- !u!4 &2115597841
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4000011057806438, guid: d13014a2a6a49fb47b9264bdc1b3b2f6,
     type: 2}
   m_PrefabInternal: {fileID: 2115597840}
+  m_GameObject: {fileID: 1884027301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 510826957}
+  m_RootOrder: 0
 --- !u!1 &2140281257
 GameObject:
   m_ObjectHideFlags: 0
