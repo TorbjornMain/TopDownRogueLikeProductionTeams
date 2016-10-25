@@ -33,6 +33,15 @@ public class BodySockets : MonoBehaviour
 	public TransportSocket transportSocket;
 	private CharacterController mainBody;
 	public float dropRate = 0.05f;
+	private bool _isFiring;
+	public bool isFiring
+	{
+		get
+		{
+			return _isFiring;
+		}
+	}
+
 
 	void Start()
 	{
@@ -118,6 +127,7 @@ public class BodySockets : MonoBehaviour
 			if(item.primaryWeapon != null)
 			item.primaryWeapon.nodeObject.isFiring = true;
 		}
+		_isFiring = true;
 	}
 
 	public void CeaseFirePrimary()
@@ -126,6 +136,7 @@ public class BodySockets : MonoBehaviour
 			if(item.primaryWeapon != null)
 			item.primaryWeapon.nodeObject.isFiring = false;
 		}
+		_isFiring = false;
 	}
 
 
