@@ -1779,7 +1779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 981177936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18481, y: -31.4, z: 4.5}
+  m_LocalPosition: {x: -0.18481, y: -31.4, z: -2.8}
   m_LocalScale: {x: 10.184825, y: 3.7721581, z: 10.184827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -2225,6 +2225,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010083594644, guid: 864a8dec98717c343be47c91be90c751,
+        type: 2}
+      propertyPath: transportSocket.transport
+      value: 
+      objectReference: {fileID: 114000013487310358, guid: c0f938a7b43d8674490bd54b3e7dd7b5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 864a8dec98717c343be47c91be90c751, type: 2}
   m_IsPrefabParent: 0
