@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PrimaryWeaponSystem : MonoBehaviour
+public class PrimaryWeaponSystem : EquippableItem
 {
 	public List<Modifier> weaponMods;
 	public GunStats baseStats;
@@ -45,7 +45,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 	}
 
 
-	void Update()
+	protected override void Update()
 	{
 		if (isFiring && !isContinuous) {
 			if (shotTime <= 0) {
@@ -62,6 +62,7 @@ public class PrimaryWeaponSystem : MonoBehaviour
 				shotTime = 0;
 		}
 
+		base.Update ();
 	}
 
 	void SpawnBullet(int bulletNumber = 0)

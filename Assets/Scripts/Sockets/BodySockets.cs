@@ -32,7 +32,7 @@ public class BodySockets : MonoBehaviour
 	public PrimaryWeaponSocket[] primaryWeaponSockets;
 	public TransportSocket transportSocket;
 	private CharacterController mainBody;
-	public float dropRate = 0.05f;
+
 	private bool _isFiring;
 	public bool isFiring
 	{
@@ -64,7 +64,7 @@ public class BodySockets : MonoBehaviour
 	{
 		if(transportSocket.transport != null)
 		{
-		transportSocket.transport.transform.position = transform.TransformPoint(transportSocket.offset) + transportSocket.transport.transform.rotation * Vector3.Scale(-transportSocket.transport.offset, transportSocket.transport.transform.lossyScale);
+			transportSocket.transport.transform.position = transform.TransformPoint(transportSocket.offset) + transportSocket.transport.transform.rotation * Vector3.Scale(-transportSocket.transport.offset, transportSocket.transport.transform.lossyScale);
 		}
 	}
 
@@ -114,7 +114,10 @@ public class BodySockets : MonoBehaviour
 			if (!discard) {
 				primaryWeaponSockets [index].primaryWeapon.isAttached = false;
 				primaryWeaponSockets [index].primaryWeapon.gameObject.layer = LayerMask.NameToLayer ("Item");
-				primaryWeaponSockets [index].primaryWeapon.transform.SetParent (null);
+				primaryWeaponSockets [index].primaryWeapon.transform.position -= primaryWeaponSockets [index].offset;
+				primaryWeaponSockets [index].primaryWeapon.transform.parent = null;
+				primaryWeaponSockets [index].primaryWeapon.nodeObject.enabled = true;
+				primaryWeaponSockets [index].primaryWeapon.nodeObject.StartCoroutine ("Despawn");
 			} else {
 				Destroy (primaryWeaponSockets [index].primaryWeapon.nodeObject.gameObject);
 			}
@@ -143,14 +146,6 @@ public class BodySockets : MonoBehaviour
 
 	void OnDestroy()
 	{
-		if (Random.value <= dropRate) {
-			int rand = Random.Range(0, primaryWeaponSockets.Length + 1);
-			if (rand == primaryWeaponSockets.Length) {
-				DetachTransport (false);
-			} else {
-				DetachPrimaryWeapon (rand, false);
-			}
-		}
 		DetachTransport (true);
 		for (int i = 0; i < primaryWeaponSockets.Length; i++) {
 			DetachPrimaryWeapon (i, true);

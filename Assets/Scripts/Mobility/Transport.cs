@@ -18,7 +18,7 @@ public class TransportStats
 
 [DisallowMultipleComponent()]
 [RequireComponent(typeof(MeshRenderer))]
-public class Transport : MonoBehaviour {
+public class Transport : EquippableItem {
 
 	private Vector3 footRotVec;
 
@@ -27,30 +27,6 @@ public class Transport : MonoBehaviour {
 
 	public TransportStats stats;
 
-	public float itemFadeTime = 10.0f;
-
-
-	private MeshRenderer mr;
-
-	void Start()
-	{
-		mr = new MeshRenderer ();
-	}
-
-	void Update()
-	{
-		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
-			transform.rotation = Quaternion.Euler (0, transform.rotation.eulerAngles.y + 180 * Time.deltaTime, 0);
-		}
-
-	}
-
-	IEnumerator Despawn()
-	{
-		yield return new WaitForSeconds (itemFadeTime);
-		Destroy (this.gameObject);
-
-	}
 
 	public void Drive(Vector3 direction)
 	{

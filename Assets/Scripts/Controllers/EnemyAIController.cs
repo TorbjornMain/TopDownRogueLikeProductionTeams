@@ -107,7 +107,9 @@ public class EnemyAIController : MonoBehaviour {
 			break;
 		}
 		if ((wanderDest - transform.position).magnitude > 0.3) {
-			bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
+			if (bs.transportSocket.transport != null) {
+				bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
+			}
 		}
 		wanderTime -= Time.deltaTime;
 	}
