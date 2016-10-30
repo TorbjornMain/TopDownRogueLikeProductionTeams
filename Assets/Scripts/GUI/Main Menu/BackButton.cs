@@ -10,6 +10,8 @@ public class BackButton : MonoBehaviour {
     public GameObject quitPanel;
     public GameObject controlsPanel;
     public GameObject backPanel;
+    public GameObject musicSlider;
+    public GameObject soundSlider;
 
     // Use this for initialization
     void Start () {
@@ -29,5 +31,7 @@ public class BackButton : MonoBehaviour {
         quitPanel.SetActive(true);
         controlsPanel.SetActive(false);
         backPanel.SetActive(false);
+        musicSlider.SetActive(false);
+        soundSlider.SetActive(false);
     }
 }

@@ -11,6 +11,8 @@ public class OptionsButton : MonoBehaviour {
     public GameObject quitPanel;
     public GameObject controlsPanel;
     public GameObject backPanel;
+    public GameObject musicSlider;
+    public GameObject soundSlider;
 
     // Use this for initialization
     void Start () {
@@ -30,5 +32,7 @@ public class OptionsButton : MonoBehaviour {
         quitPanel.SetActive(false);
         controlsPanel.SetActive(true);
         backPanel.SetActive(true);
+        musicSlider.SetActive(true);
+        soundSlider.SetActive(true);
     }
 }

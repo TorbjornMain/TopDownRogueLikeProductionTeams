@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 114000011755947118}
   - 114: {fileID: 114000011758753326}
   - 65: {fileID: 65000014123753342}
+  - 114: {fileID: 114000010142083352}
   m_Layer: 9
   m_Name: HoveringEnemy
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010142083352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011392713948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07a9901ee3568045a9ebd0a0d378279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate: 1
 --- !u!114 &114000011544554774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +159,6 @@ MonoBehaviour:
     transport: {fileID: 114000013487310358, guid: c0f938a7b43d8674490bd54b3e7dd7b5,
       type: 2}
     offset: {x: 0, y: -0, z: 0}
-  dropRate: 1
 --- !u!114 &114000011758753326
 MonoBehaviour:
   m_ObjectHideFlags: 1
