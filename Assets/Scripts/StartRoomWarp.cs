@@ -2,24 +2,13 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class StartRoomWarp : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+public class StartRoomWarp : MonoBehaviour
+{
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
-            print("player walked through portal");
-            SceneManager.LoadSceneAsync("RileyArena", LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync("TestArena", LoadSceneMode.Single);
         }
     }
 }
