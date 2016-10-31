@@ -22,7 +22,9 @@ GameObject:
   - 33: {fileID: 33000012997293988}
   - 23: {fileID: 23000012521319994}
   - 95: {fileID: 95000010240534946}
-  m_Layer: 0
+  - 114: {fileID: 114000011264071874}
+  - 65: {fileID: 65000014017425338}
+  m_Layer: 16
   m_Name: JunkCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1000011298324214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 22.30245, y: 7.2074175, z: 25.349512}
+  m_LocalScale: {x: 70, y: 23, z: 80}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +80,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011298324214}
   m_Mesh: {fileID: 4300000, guid: fb7ed06d060335e43a29d9ab34d7a02d, type: 3}
+--- !u!65 &65000014017425338
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011298324214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10000002, y: 0.15574601, z: 0.10408001}
+  m_Center: {x: 0.000000011175871, y: 0.06945935, z: 0.0020163897}
 --- !u!95 &95000010240534946
 Animator:
   serializedVersion: 3
@@ -95,3 +109,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011264071874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011298324214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff40077e5962a7488a08ad3c432bb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 2
+  height: 3
+  levelClass: 0
+  heightOffset: 0.5
