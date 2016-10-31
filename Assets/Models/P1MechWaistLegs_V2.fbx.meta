@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6c7b72a9c3bc36e4b83ffa983705bbae
-timeCreated: 1477890391
+guid: 0d85529cd5fa8eb4e9fab841f9301cf9
+timeCreated: 1477891242
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,27 +9,31 @@ ModelImporter:
     100002: Lankle
     100004: Lfoot
     100006: Lknee
-    100008: Lthigh
-    100010: pelvis
-    100012: Rankle
-    100014: Rfoot
-    100016: Rknee
-    100018: Rthigh
-    100020: //RootNode
+    100008: LLeg2
+    100010: Lthigh
+    100012: //RootNode
+    100014: pelvis
+    100016: Rankle
+    100018: Rfoot
+    100020: Rknee
+    100022: Rthigh
     400000: hip
     400002: Lankle
     400004: Lfoot
     400006: Lknee
-    400008: Lthigh
-    400010: pelvis
-    400012: Rankle
-    400014: Rfoot
-    400016: Rknee
-    400018: Rthigh
-    400020: //RootNode
+    400008: LLeg2
+    400010: Lthigh
+    400012: //RootNode
+    400014: pelvis
+    400016: Rankle
+    400018: Rfoot
+    400020: Rknee
+    400022: Rthigh
+    4300000: LLeg2
     7400000: Take 001
     9500000: //RootNode
     11100000: //RootNode
+    13700000: LLeg2
   materials:
     importMaterials: 1
     materialName: 0
@@ -73,8 +77,8 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
-  copyAvatar: 0
+  importAnimation: 0
+  copyAvatar: 1
   humanDescription:
     human: []
     skeleton: []
