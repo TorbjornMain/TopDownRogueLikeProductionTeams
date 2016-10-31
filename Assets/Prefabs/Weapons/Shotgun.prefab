@@ -423,7 +423,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Shotgun
-    damage: 10
+    damage: 25
     spread: 0.1
     numProjectiles: 4
     speed: 0.75
