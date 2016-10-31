@@ -16,6 +16,7 @@ public class DropItemsOnDeath : MonoBehaviour {
 
 	void Die ()
 	{
+		bs.CeaseFirePrimary ();
 		if (Random.value <= dropRate) {
 			int rand = Random.Range (0, bs.primaryWeaponSockets.Length + 1);
 			if (rand == bs.primaryWeaponSockets.Length) {

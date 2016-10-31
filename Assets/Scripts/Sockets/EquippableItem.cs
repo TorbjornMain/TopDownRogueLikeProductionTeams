@@ -19,6 +19,8 @@ public class EquippableItem : MonoBehaviour {
 
 	}
 
+
+
 	IEnumerator Despawn()
 	{
 		yield return new WaitForSeconds (itemFadeTime);

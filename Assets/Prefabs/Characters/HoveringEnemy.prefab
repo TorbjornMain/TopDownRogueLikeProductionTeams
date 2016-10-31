@@ -203,9 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6470163280460f846941905f529c09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0.1
-  healthBarPrefab: {fileID: 114000013922741290, guid: 46fae96e1cc9c954a942231b90da0a48,
+  heightOffset: 0
+  widgetPrefab: {fileID: 1000011486221338, guid: 46fae96e1cc9c954a942231b90da0a48,
     type: 2}
+  offset: 0.1
 --- !u!114 &114000014057291422
 MonoBehaviour:
   m_ObjectHideFlags: 1

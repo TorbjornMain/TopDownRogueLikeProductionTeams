@@ -102,8 +102,8 @@ GameObject:
   - 223: {fileID: 19930100}
   - 114: {fileID: 19930099}
   - 114: {fileID: 19930098}
-  - 114: {fileID: 19930101}
   - 114: {fileID: 19930102}
+  - 114: {fileID: 19930101}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 19930096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d64cda75009104fbbf7456f11bce8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5eb816d44d0d4478315777668f01bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &19930102

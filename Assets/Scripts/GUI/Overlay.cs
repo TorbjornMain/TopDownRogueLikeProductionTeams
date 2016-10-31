@@ -2,13 +2,13 @@
 using System.Collections;
 
 [RequireComponent(typeof(RectTransform))]
-public class EnemyHealthBarDisplay : MonoBehaviour {
+public class Overlay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Camera.main != null) {
-			foreach (var item in EnemyManager.healthBars) {
-				Vector3 screenPos = Camera.main.WorldToScreenPoint (item.transform.position + new Vector3(0, item.offset, 0));
-				RectTransform rt = item.healthBarInstance.GetComponent<RectTransform> ();
+			foreach (var item in OverlayManager.widgets) {
+				Vector3 screenPos = Camera.main.WorldToScreenPoint (item.transform.position + new Vector3(0, item.heightOffset, 0));
+				RectTransform rt = item.widgetInstance.GetComponent<RectTransform> ();
 				if (rt.parent == null) {
 					rt.SetParent (gameObject.GetComponent<RectTransform> ());
 				}

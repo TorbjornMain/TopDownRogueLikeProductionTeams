@@ -2,30 +2,26 @@
 using System.Collections;
 
 [RequireComponent(typeof(DamageableItem))]
-public class RenderableHealthBar : MonoBehaviour {
+public class RenderableHealthBar : OverlayWidget {
 	
 	public float offset = 0.1f;
 	[System.NonSerialized]
 	public DamageableItem dmg; //The DamageableItem component of the gameobject
-	public HealthBar healthBarPrefab; //The health bar prefab
-	[System.NonSerialized]
-	public HealthBar healthBarInstance; //The instance of the health bar prefab
 
+	private HealthBar hb;
 
 	// Use this for initialization
-	void Start () {
-		healthBarInstance = Instantiate<HealthBar> (healthBarPrefab);
+	protected override void Start () {
+		base.Start ();
 		dmg = GetComponent<DamageableItem> ();
-		EnemyManager.healthBars.Add(this);
+		OverlayManager.widgets.Add (this);
+		if ((hb = widgetInstance.GetComponent<HealthBar> ()) == null) {
+			print ("No health bar, prep for errors");
+		}
 	}
 
-	void Update(){
-		healthBarInstance.percentFilled = dmg.health / dmg.maxHealth;
-	}
-
-	void OnDestroy () {
-		EnemyManager.healthBars.Remove(this);
-		if(healthBarInstance != null)
-			Destroy (healthBarInstance.gameObject);
+	protected override void Update() {
+		base.Update ();
+		hb.percentFilled = dmg.health / dmg.maxHealth;
 	}
 }
