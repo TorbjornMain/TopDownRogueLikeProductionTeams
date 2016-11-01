@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000014067304614}
   - 33: {fileID: 33000013024660974}
   - 23: {fileID: 23000013862194352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunMount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 114000010637898528}
   - 114: {fileID: 114000010101201078}
   - 65: {fileID: 65000013290096180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TurretWeak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 4000012886204568}
   - 33: {fileID: 33000012439079564}
   - 23: {fileID: 23000011266611720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,11 @@ MonoBehaviour:
   primaryWeaponSockets:
   - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
       type: 2}
-    offset: {x: 0, y: 2.65, z: -1.2}
+    offset: {x: 0.9, y: 2.5, z: 0}
+    side: 0
+  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+      type: 2}
+    offset: {x: -0.9, y: 2.5, z: 0}
     side: 0
   transportSocket:
     transport: {fileID: 0}
