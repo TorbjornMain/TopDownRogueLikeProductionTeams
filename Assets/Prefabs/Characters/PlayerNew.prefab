@@ -609,7 +609,7 @@ MonoBehaviour:
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
   transportSocket:
-    transport: {fileID: 114000013432531324, guid: e17dba031eecb4644b48b2ffed307318,
+    transport: {fileID: 114000013432531324, guid: 3f60db5543a0fe74e8d8ffe7969f098c,
       type: 2}
     offset: {x: 0, y: -0.59, z: 0}
 --- !u!114 &114000010990877740
