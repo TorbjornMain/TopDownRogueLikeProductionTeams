@@ -13,6 +13,7 @@ public class OverlayWidget : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Start () {
 		widgetInstance = Instantiate<GameObject> (widgetPrefab);
+		OverlayManager.widgets.Add(this);
 	}
 	
 	// Update is called once per frame
