@@ -17,7 +17,6 @@ public class TransportStats
 }
 
 [DisallowMultipleComponent()]
-[RequireComponent(typeof(MeshRenderer))]
 public class Transport : EquippableItem {
 
 	private Vector3 footRotVec;

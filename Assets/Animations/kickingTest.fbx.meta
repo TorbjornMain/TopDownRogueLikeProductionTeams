@@ -1,38 +1,37 @@
 fileFormatVersion: 2
-guid: 0d85529cd5fa8eb4e9fab841f9301cf9
-timeCreated: 1477891242
+guid: dccf294712568e54182ded24b708175f
+timeCreated: 1477964711
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: hip
-    100002: Lankle
-    100004: Lfoot
-    100006: Lknee
-    100008: LLeg2
-    100010: Lthigh
-    100012: //RootNode
+    100002: //RootNode
+    100004: Lankle
+    100006: Lfoot
+    100008: Lknee
+    100010: LLeg2
+    100012: Lthigh
     100014: pelvis
     100016: Rankle
     100018: Rfoot
     100020: Rknee
     100022: Rthigh
     400000: hip
-    400002: Lankle
-    400004: Lfoot
-    400006: Lknee
-    400008: LLeg2
-    400010: Lthigh
-    400012: //RootNode
+    400002: //RootNode
+    400004: Lankle
+    400006: Lfoot
+    400008: Lknee
+    400010: LLeg2
+    400012: Lthigh
     400014: pelvis
     400016: Rankle
     400018: Rfoot
     400020: Rknee
     400022: Rthigh
     4300000: LLeg2
-    7400000: Walk
+    7400000: Take 001
     9500000: //RootNode
-    11100000: //RootNode
     13700000: LLeg2
   materials:
     importMaterials: 1
@@ -43,12 +42,12 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: hip
+    motionNodeName: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -56,17 +55,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 80
+      lastFrame: 81
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -106,7 +105,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -130,7 +129,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     human: []
     skeleton: []
@@ -143,7 +142,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6c7b72a9c3bc36e4b83ffa983705bbae,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 431235f03ce5f8a45a9b4a55d62c2eea,
     type: 3}
   animationType: 2
   humanoidOversampling: 1
