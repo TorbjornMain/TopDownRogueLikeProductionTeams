@@ -242,6 +242,7 @@ MonoBehaviour:
   propPrefabs:
   - {fileID: 114000012547039134, guid: e2f13a7d7510b914dbbfe85de1b11e2c, type: 2}
   - {fileID: 114000011845120338, guid: 6afdf9092c41bdd459105ebffdbf92c2, type: 2}
+  - {fileID: 114000011264071874, guid: e21a968bb77618042b71d1e6449f316f, type: 2}
   enemyPrefabs:
   - {fileID: 114000010085162610, guid: 8dc2ac484920ebe45929b8e7649cc3af, type: 2}
   - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}

@@ -182,9 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dc9928c74e5ee47961bd77cf19b4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemFadeTime: 10
   stats:
     type: 0
-    speed: 10
+    speed: 7
     turnRate: 1
 --- !u!198 &198000011170233294
 ParticleSystem:
