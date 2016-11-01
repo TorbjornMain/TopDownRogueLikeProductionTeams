@@ -177,7 +177,7 @@ MonoBehaviour:
   triggerInertia: 5
   aggroGainRate: 1
   aggroDecayRate: 1
-  wanderDistance: 4
+  wanderDistance: 6
   wanderStagnation: 6
 --- !u!114 &114000012378877942
 MonoBehaviour:
