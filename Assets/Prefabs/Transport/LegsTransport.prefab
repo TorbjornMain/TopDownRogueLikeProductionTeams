@@ -61,7 +61,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: cb21b9e5d8b8ebb49a3bc2fea216ed61, type: 2}
   - {fileID: 2100000, guid: 11377a972ed942048a9ecc0bd4aeb34f, type: 2}
   - {fileID: 2100000, guid: 97eac20578d9f314599f394f6d69801d, type: 2}
-  - {fileID: 2100000, guid: 07de070fc08250a4aa79b7404224b734, type: 2}
+  - {fileID: 2100000, guid: e78a821e6ad8d894d94df7ba4ea99d92, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -83,7 +83,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012682705474}
-  m_Mesh: {fileID: 4300000, guid: d9e23efbedf2ec3419f5a63ef4ba51ed, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0d85529cd5fa8eb4e9fab841f9301cf9, type: 3}
 --- !u!95 &95000013041730888
 Animator:
   serializedVersion: 3
@@ -92,8 +92,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012682705474}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d9e23efbedf2ec3419f5a63ef4ba51ed, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 6c7b72a9c3bc36e4b83ffa983705bbae, type: 3}
+  m_Controller: {fileID: 9100000, guid: de3477a7e4d7f3247821f7536820bada, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dc9928c74e5ee47961bd77cf19b4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemFadeTime: 10
   stats:
     type: 1
     speed: 12
@@ -127,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3eb2c7ad6a20f4da1b5190dc62d2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.25, y: 2.85, z: 0}
