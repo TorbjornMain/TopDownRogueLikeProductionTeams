@@ -24,6 +24,7 @@ GameObject:
   - 95: {fileID: 95000013041730888}
   - 114: {fileID: 114000012415483832}
   - 114: {fileID: 114000013432531324}
+  - 114: {fileID: 114000010092982644}
   m_Layer: 0
   m_Name: LegsTransport
   m_TagString: Untagged
@@ -101,6 +102,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010092982644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012682705474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2b520bdd87f7848bb78f6408a95300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012415483832
 MonoBehaviour:
   m_ObjectHideFlags: 1

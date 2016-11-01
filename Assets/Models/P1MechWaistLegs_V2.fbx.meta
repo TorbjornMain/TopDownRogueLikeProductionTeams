@@ -30,7 +30,8 @@ ModelImporter:
     400020: Rknee
     400022: Rthigh
     4300000: LLeg2
-    7400000: Take 001
+    7400000: Walk
+    7400002: Stand
     9500000: //RootNode
     11100000: //RootNode
     13700000: LLeg2
@@ -54,7 +55,111 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 81
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/pelvis
+        weight: 1
+      - path: hip/pelvis/Lthigh
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle/Lfoot
+        weight: 1
+      - path: hip/pelvis/Rthigh
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle/Rfoot
+        weight: 1
+      - path: LLeg2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: Stand
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/pelvis
+        weight: 1
+      - path: hip/pelvis/Lthigh
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle/Lfoot
+        weight: 1
+      - path: hip/pelvis/Rthigh
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle/Rfoot
+        weight: 1
+      - path: LLeg2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -89,7 +194,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: hip
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6c7b72a9c3bc36e4b83ffa983705bbae,
     type: 3}
