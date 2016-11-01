@@ -11,6 +11,7 @@ public class GunStats
 	public float spread;
 	public int numProjectiles;
 	public float speed;
+	public string description;
 
 	public void Zero()
 	{
@@ -19,6 +20,7 @@ public class GunStats
 		spread = 0;
 		numProjectiles = 0;
 		speed = 0;
+		description = "";
 	}
 
 	public static GunStats operator + (GunStats g1, GunStats g2)
@@ -27,8 +29,9 @@ public class GunStats
 		g.name = g1.name + " " + g2.name;
 		g.damage = Mathf.Max(0, g1.damage - 1 + g2.damage - 1);
 		g.spread = Mathf.Max(0, g1.spread - 1 + g2.spread - 1);
-		g.numProjectiles = Mathf.Max(0, g1.numProjectiles + g2.numProjectiles);
-		g.speed = Mathf.Max(0, g1.speed + g2.speed);
+		g.numProjectiles = Mathf.Max(1, g1.numProjectiles + g2.numProjectiles);
+		g.speed = Mathf.Max(0.01f, g1.speed + g2.speed);
+		g.description = g1.description;
 		return g;
 	}
 
@@ -40,6 +43,7 @@ public class GunStats
 		g.spread = g1.spread * g2.spread;
 		g.numProjectiles = g1.numProjectiles + g2.numProjectiles;
 		g.speed = g1.speed * g2.speed;
+		g.description = g1.description;
 		return g;
 	}
 
@@ -51,6 +55,7 @@ public class GunStats
 		r.spread = g.spread;
 		r.numProjectiles = g.numProjectiles;
 		r.speed = g.speed;
+		r.description = g.description;
 		return r;
 	}
 }

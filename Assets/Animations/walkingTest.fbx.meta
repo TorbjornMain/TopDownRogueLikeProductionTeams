@@ -1,35 +1,36 @@
 fileFormatVersion: 2
-guid: c12ddd56d0f7d29439c431acd7292d1c
-timeCreated: 1477962907
+guid: 431235f03ce5f8a45a9b4a55d62c2eea
+timeCreated: 1477964602
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Lankle
-    100002: Lfoot
-    100004: Lknee
-    100006: LLeg2
-    100008: Lthigh
-    100010: //RootNode
+    100000: hip
+    100002: Lankle
+    100004: Lfoot
+    100006: Lknee
+    100008: LLeg2
+    100010: Lthigh
     100012: pelvis
     100014: Rankle
     100016: Rfoot
     100018: Rknee
-    100020: Root_hip
-    100022: Rthigh
-    400000: Lankle
-    400002: Lfoot
-    400004: Lknee
-    400006: LLeg2
-    400008: Lthigh
-    400010: //RootNode
+    100020: Rthigh
+    100022: //RootNode
+    400000: hip
+    400002: Lankle
+    400004: Lfoot
+    400006: Lknee
+    400008: LLeg2
+    400010: Lthigh
     400012: pelvis
     400014: Rankle
     400016: Rfoot
     400018: Rknee
-    400020: Root_hip
-    400022: Rthigh
+    400020: Rthigh
+    400022: //RootNode
     4300000: LLeg2
+    7400000: Take 001
     9500000: //RootNode
     13700000: LLeg2
   materials:
@@ -52,7 +53,59 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 81
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/pelvis
+        weight: 1
+      - path: hip/pelvis/Lthigh
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle
+        weight: 1
+      - path: hip/pelvis/Lthigh/Lknee/Lankle/Lfoot
+        weight: 1
+      - path: hip/pelvis/Rthigh
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle
+        weight: 1
+      - path: hip/pelvis/Rthigh/Rknee/Rankle/Rfoot
+        weight: 1
+      - path: LLeg2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []

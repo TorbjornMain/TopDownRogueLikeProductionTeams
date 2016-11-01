@@ -60,7 +60,7 @@ public class EnemyAIController : MonoBehaviour {
 			} else {
 				state = EnemyAIState.Pursue;
 			}
-			this.transform.rotation = Quaternion.LookRotation ((sp.lm.playerInstance.transform.position - transform.position).normalized);
+			this.transform.rotation = Quaternion.Euler (new Vector3 (0, Quaternion.LookRotation ((sp.lm.playerInstance.transform.position - transform.position).normalized).eulerAngles.y, 0));
 			if (bs.isFiring && Random.value < (timeInState/triggerInertia) / (1 + (triggerHappiness * aggro))) {
 				timeInState = 0.0f;
 				bs.CeaseFirePrimary ();
@@ -106,7 +106,7 @@ public class EnemyAIController : MonoBehaviour {
 		default:
 			break;
 		}
-		if ((wanderDest - transform.position).magnitude > 0.3) {
+		if ((wanderDest - transform.position).magnitude >= 1) {
 			if (bs.transportSocket.transport != null) {
 				bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
 			}

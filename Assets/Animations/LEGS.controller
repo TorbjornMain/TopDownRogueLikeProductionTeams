@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: LEGS
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: speed
+  - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -43,7 +43,7 @@ BlendTree:
     m_DirectBlendParameter: speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6c7b72a9c3bc36e4b83ffa983705bbae, type: 3}
+    m_Motion: {fileID: 7400000, guid: 0d85529cd5fa8eb4e9fab841f9301cf9, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -51,14 +51,14 @@ BlendTree:
     m_DirectBlendParameter: speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6c7b72a9c3bc36e4b83ffa983705bbae, type: 3}
+    m_Motion: {fileID: 7400000, guid: 0d85529cd5fa8eb4e9fab841f9301cf9, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: speed
     m_Mirror: 0
-  m_BlendParameter: speed
+  m_BlendParameter: Speed
   m_BlendParameterY: speed
   m_MinThreshold: 0
   m_MaxThreshold: 2
