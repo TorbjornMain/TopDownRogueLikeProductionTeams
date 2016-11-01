@@ -931,7 +931,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e2b497eab42f0c42a6dc36675e95bb3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7d470efdd9707f342ac38d81f65aa10b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1860,8 +1860,8 @@ Transform:
   - {fileID: 1540199845}
   - {fileID: 1241672234}
   - {fileID: 1496889231}
-  - {fileID: 191709741}
   - {fileID: 1427283402}
+  - {fileID: 191709741}
   m_Father: {fileID: 1932701502}
   m_RootOrder: 1
 --- !u!1 &605326553
@@ -2979,6 +2979,7 @@ MonoBehaviour:
     spread: 0.1
     numProjectiles: 4
     speed: 0.75
+    description: 
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
   barrelPos: {x: 0, y: 1.59, z: 1.2}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -3252,6 +3253,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 0
     speed: 0
+    description: 
   projectilePrefab: {fileID: 0}
   barrelPos: {x: -1.32, y: 0, z: 1.33}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -3730,6 +3732,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 3
+    description: 
   projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
   barrelPos: {x: 0, y: 0, z: 0.9}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -7575,6 +7578,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 4
+    description: 
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
   barrelPos: {x: 0, y: 0, z: 0.9}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -7874,6 +7878,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 1
+    description: 
   projectilePrefab: {fileID: 114000011275235834, guid: e18d1c1c585034e41aa52a822b33621f,
     type: 2}
   barrelPos: {x: 0, y: 0.03, z: 0.94}
@@ -8335,6 +8340,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 0.8
+    description: 
   projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
   barrelPos: {x: 0.26, y: 0.2, z: 1.8}
   barrelDir: {x: 0, y: 0, z: 1}
