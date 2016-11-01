@@ -14,7 +14,6 @@ public class RenderableHealthBar : OverlayWidget {
 	protected override void Start () {
 		base.Start ();
 		dmg = GetComponent<DamageableItem> ();
-		OverlayManager.widgets.Add (this);
 		if ((hb = widgetInstance.GetComponent<HealthBar> ()) == null) {
 			print ("No health bar, prep for errors");
 		}
