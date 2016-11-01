@@ -22,7 +22,7 @@ public class EnemyAIController : MonoBehaviour {
 	public float triggerInertia = 1.0f;
 	public float aggroGainRate = 0.1f;
 	public float aggroDecayRate = 0.1f;
-	public float wanderDistance = 4;
+	public float wanderDistance = 5;
 	public float wanderStagnation = 6;
 
 
@@ -106,7 +106,7 @@ public class EnemyAIController : MonoBehaviour {
 		default:
 			break;
 		}
-		if ((wanderDest - transform.position).magnitude >= 1) {
+		if ((wanderDest - transform.position).magnitude >= 2.6) {
 			if (bs.transportSocket.transport != null) {
 				bs.transportSocket.transport.nodeObject.Drive ((wanderDest - transform.position).normalized);
 			}
