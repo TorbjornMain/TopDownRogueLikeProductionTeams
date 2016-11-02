@@ -24,6 +24,8 @@ GameObject:
   - 95: {fileID: 95000010367045110}
   - 114: {fileID: 114000010173685248}
   - 114: {fileID: 114000010216997726}
+  - 114: {fileID: 114000014045543406}
+  - 65: {fileID: 65000010931623788}
   m_Layer: 0
   m_Name: Pulse Cannon
   m_TagString: Untagged
@@ -80,6 +82,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012822893234}
   m_Mesh: {fileID: 4300000, guid: b95db80376bec984485aa945166a5b44, type: 3}
+--- !u!65 &65000010931623788
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822893234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9508756, y: 0.9816416, z: 2.2030687}
+  m_Center: {x: 0.30653372, y: 0.17244503, z: 0.59536564}
 --- !u!95 &95000010367045110
 Animator:
   serializedVersion: 3
@@ -108,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemFadeTime: 10
   weaponMods: []
   baseStats:
     name: Pulse Cannon
@@ -115,6 +130,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 0.8
+    description: 
   projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
   barrelPos: {x: 0.26, y: 0.2, z: 1.8}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -131,3 +147,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &114000014045543406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822893234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aba42774a271b46b7cbe5b48dfe217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
+    type: 2}

@@ -73,6 +73,8 @@ GameObject:
   - 95: {fileID: 95000010580700750}
   - 114: {fileID: 114000014101917150}
   - 114: {fileID: 114000013698308498}
+  - 114: {fileID: 114000013179873874}
+  - 65: {fileID: 65000010688111122}
   m_Layer: 0
   m_Name: Grenade Launcher
   m_TagString: Untagged
@@ -117,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011245130308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.81, y: 3, z: 13}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -310,6 +312,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010681653576}
   m_Mesh: {fileID: 4300000, guid: 1bde77c2515ac174288c008490f312aa, type: 3}
+--- !u!65 &65000010688111122
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011245130308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95000010580700750
 Animator:
   serializedVersion: 3
@@ -327,6 +341,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000013179873874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011245130308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aba42774a271b46b7cbe5b48dfe217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
+    type: 2}
 --- !u!114 &114000013698308498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemFadeTime: 10
   weaponMods: []
   baseStats:
     name: Grenade Launcher
@@ -357,6 +386,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 1
+    description: 
   projectilePrefab: {fileID: 114000011275235834, guid: e18d1c1c585034e41aa52a822b33621f,
     type: 2}
   barrelPos: {x: 0, y: 0.03, z: 0.94}

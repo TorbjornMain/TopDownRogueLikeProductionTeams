@@ -24,6 +24,8 @@ GameObject:
   - 95: {fileID: 95000014197138526}
   - 114: {fileID: 114000012264080906}
   - 114: {fileID: 114000013735883374}
+  - 114: {fileID: 114000013410261210}
+  - 65: {fileID: 65000010932271136}
   m_Layer: 0
   m_Name: ProjectileGun
   m_TagString: Untagged
@@ -81,6 +83,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012936048284}
   m_Mesh: {fileID: 4300000, guid: 5c36c79ba18cfe946b5686ea27fb36e0, type: 3}
+--- !u!65 &65000010932271136
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012936048284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39863008, y: 1.2836454, z: 2.0352492}
+  m_Center: {x: 0.000000022351742, y: 0.06877461, z: -0.13100919}
 --- !u!95 &95000014197138526
 Animator:
   serializedVersion: 3
@@ -109,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemFadeTime: 10
   weaponMods: []
   baseStats:
     name: Projectile Gun
@@ -116,10 +131,25 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 4
+    description: 
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
   barrelPos: {x: 0, y: 0.2, z: 0.9}
   barrelDir: {x: 0, y: 0, z: 1}
   isContinuous: 0
+--- !u!114 &114000013410261210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012936048284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aba42774a271b46b7cbe5b48dfe217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
+    type: 2}
 --- !u!114 &114000013735883374
 MonoBehaviour:
   m_ObjectHideFlags: 1

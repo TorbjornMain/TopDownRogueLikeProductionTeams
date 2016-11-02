@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider))]
 public class EquippableItem : MonoBehaviour {
 	public float itemFadeTime = 10.0f;
 

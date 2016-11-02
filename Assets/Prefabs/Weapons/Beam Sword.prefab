@@ -39,6 +39,7 @@ GameObject:
   - 95: {fileID: 95000011702991306}
   - 114: {fileID: 114000013185311978}
   - 114: {fileID: 114000013644007884}
+  - 114: {fileID: 114000012674959104}
   m_Layer: 0
   m_Name: Beam Sword
   m_TagString: Untagged
@@ -260,6 +261,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000012674959104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013352568548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aba42774a271b46b7cbe5b48dfe217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
+    type: 2}
 --- !u!114 &114000013185311978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +294,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 0
     speed: 0
+    description: 
   projectilePrefab: {fileID: 0}
   barrelPos: {x: -1.32, y: 0, z: 1.33}
   barrelDir: {x: 0, y: 0, z: 1}

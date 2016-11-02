@@ -144,6 +144,8 @@ GameObject:
   - 95: {fileID: 95000010410506188}
   - 114: {fileID: 114000012362178438}
   - 114: {fileID: 114000010407364372}
+  - 114: {fileID: 114000012353955132}
+  - 65: {fileID: 65000014188800574}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -379,6 +381,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013580275310}
   m_Mesh: {fileID: 4300002, guid: 5fe8a7b80b9560f45ad7be404da2c35d, type: 3}
+--- !u!65 &65000014188800574
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013412987150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 2}
+  m_Center: {x: 0, y: 1, z: -0.3}
 --- !u!95 &95000010410506188
 Animator:
   serializedVersion: 3
@@ -408,6 +422,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 1.18, z: -1.36}
+--- !u!114 &114000012353955132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013412987150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aba42774a271b46b7cbe5b48dfe217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
+    type: 2}
 --- !u!114 &114000012362178438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +455,7 @@ MonoBehaviour:
     spread: 0.1
     numProjectiles: 4
     speed: 0.75
+    description: 
   projectilePrefab: {fileID: 11473050, guid: 965285d7e13935d4a82939e9f2a5d930, type: 2}
   barrelPos: {x: 0, y: 1.59, z: 1.2}
   barrelDir: {x: 0, y: 0, z: 1}

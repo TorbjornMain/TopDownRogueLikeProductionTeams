@@ -9,14 +9,14 @@ public class GunCardOverlayWidget :	OverlayWidget {
 
 	protected override void Start () {
 		base.Start ();
-		pws = GetComponent<DamageableItem> ();
+		pws = GetComponent<PrimaryWeaponSystem> ();
 		if ((sc = widgetInstance.GetComponent<WeaponStatCard> ()) == null) {
-			sc.Name = pws.Stats.name;
-			sc.Damage = "Damage: " & pws.Stats.damage.ToString ();
-			sc.Spread = "Spread: " & pws.Stats.spread.ToString ();
-			sc.NumberProjectiles = "Number of Projectiles: " & pws.Stats.numProjectiles.ToString ();
-			sc.FireRate = "Fire Rate: " & pws.Stats.speed.ToString ();
-			sc.Description = pws.Stats.description;
+			sc.Name.text = pws.Stats.name;
+			sc.Damage.text = "Damage: " + pws.Stats.damage.ToString ();
+			sc.Spread.text = "Spread: " + pws.Stats.spread.ToString ();
+			sc.NumberProjectiles.text = "Number of Projectiles: " + pws.Stats.numProjectiles.ToString ();
+			sc.FireRate.text = "Fire Rate: " + pws.Stats.speed.ToString ();
+			sc.Description.text = pws.Stats.description;
 		}
 		sc.gameObject.SetActive (false);
 	}
