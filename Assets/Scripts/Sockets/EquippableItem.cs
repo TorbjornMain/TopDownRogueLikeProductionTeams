@@ -28,7 +28,7 @@ public class EquippableItem : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEntera(Collider other)
 	{
 		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
 
