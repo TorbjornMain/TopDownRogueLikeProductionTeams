@@ -18,17 +18,26 @@ public class GunCardOverlayWidget :	OverlayWidget {
 			sc.FireRate.text = "Fire Rate: " + pws.Stats.speed.ToString ();
 			sc.Description.text = pws.Stats.description;
 		}
+		OverlayManager.widgets.Remove(this);
 		sc.gameObject.SetActive (false);
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
+		OverlayManager.widgets.Add(this);
 		sc.gameObject.SetActive (true);
+		sc.Name.text = pws.Stats.name;
+		sc.Damage.text = "Damage: " + pws.Stats.damage.ToString ();
+		sc.Spread.text = "Spread: " + pws.Stats.spread.ToString ();
+		sc.NumberProjectiles.text = "Number of Projectiles: " + pws.Stats.numProjectiles.ToString ();
+		sc.FireRate.text = "Fire Rate: " + pws.Stats.speed.ToString ();
+		sc.Description.text = pws.Stats.description;
 	}
 
 
 	void OnTriggerExit(Collider other)
 	{
+		OverlayManager.widgets.Remove(this);
 		sc.gameObject.SetActive (false);
 	}
 
