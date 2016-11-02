@@ -20,7 +20,20 @@ public class EquippableItem : MonoBehaviour {
 
 	}
 
+	void OnTriggerEnter(Collider other)
+	{
+		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
 
+		}
+	}
+
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
+
+		}
+	}
 
 	IEnumerator Despawn()
 	{
