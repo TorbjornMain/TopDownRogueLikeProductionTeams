@@ -23,6 +23,7 @@ GameObject:
   - 23: {fileID: 23000011307278974}
   - 95: {fileID: 95000011264405076}
   - 114: {fileID: 114000012865023326}
+  - 65: {fileID: 65000010167284214}
   m_Layer: 16
   m_Name: TrashHeap
   m_TagString: Untagged
@@ -79,6 +80,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011663506928}
   m_Mesh: {fileID: 4300000, guid: 2435e0c2d785bfd449fe5f8d51f4de2c, type: 3}
+--- !u!65 &65000010167284214
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011663506928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45129654, y: 36, z: 0.5204134}
+  m_Center: {x: 0, y: 0, z: 0.0030853301}
 --- !u!95 &95000011264405076
 Animator:
   serializedVersion: 3
