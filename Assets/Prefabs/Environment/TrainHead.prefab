@@ -23,6 +23,7 @@ GameObject:
   - 23: {fileID: 23000012014700058}
   - 95: {fileID: 95000010783475612}
   - 114: {fileID: 114000012862268882}
+  - 65: {fileID: 65000013304574822}
   m_Layer: 16
   m_Name: TrainHead
   m_TagString: Untagged
@@ -79,6 +80,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012238255286}
   m_Mesh: {fileID: 4300000, guid: 6c167bd4cc531ed489805f9cfe8307eb, type: 3}
+--- !u!65 &65000013304574822
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012238255286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7132883, y: 8.473339, z: 19.38633}
+  m_Center: {x: 0.00000047683716, y: 4.3535995, z: 1.3068352}
 --- !u!95 &95000010783475612
 Animator:
   serializedVersion: 3
