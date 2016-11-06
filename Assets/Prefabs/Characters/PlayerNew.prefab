@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000010216997726, guid: e5bcd8699b92b5c4eb4ad39a3b808cb3,
+  - primaryWeapon: {fileID: 114000011448110602, guid: 8ba7defc1510444429ad1d7a5fdb1556,
       type: 2}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
