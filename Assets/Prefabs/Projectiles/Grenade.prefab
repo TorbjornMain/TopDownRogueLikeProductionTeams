@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012851496342}
   - 33: {fileID: 33000010759871274}
+  - 136: {fileID: 136000013996613222}
   - 23: {fileID: 23000012408035086}
   - 95: {fileID: 95000010480967604}
   - 54: {fileID: 54000013532877946}
@@ -129,10 +130,25 @@ MonoBehaviour:
   isPiercing: 1
   projectileSpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - time: -0.019478444
+      value: 1.0007052
+      inSlope: -0.4942255
+      outSlope: -0.4942255
+      tangentMode: 10
+    - time: 0.7917222
+      value: 0.5997892
+      inSlope: -2.0258908
+      outSlope: -2.0258908
+      tangentMode: 10
+    - time: 0.97078234
+      value: -0.037227392
+      inSlope: -3.5575562
+      outSlope: -3.5575562
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   baseProjectileSpeed: 6
 --- !u!114 &114000012875611448
 MonoBehaviour:
@@ -157,3 +173,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 1
+--- !u!136 &136000013996613222
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010361988172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
