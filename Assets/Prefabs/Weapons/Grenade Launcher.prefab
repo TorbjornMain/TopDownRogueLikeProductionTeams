@@ -387,7 +387,7 @@ MonoBehaviour:
     numProjectiles: 1
     speed: 1
     description: 
-  projectilePrefab: {fileID: 114000011275235834, guid: e18d1c1c585034e41aa52a822b33621f,
+  projectilePrefab: {fileID: 114000010559783996, guid: ac6c20bfd88244a4bb3e488564139f7f,
     type: 2}
   barrelPos: {x: 0, y: 0.03, z: 0.94}
   barrelDir: {x: 0, y: 0, z: 1}

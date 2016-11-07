@@ -4499,7 +4499,7 @@ Prefab:
         type: 2}
       propertyPath: transportSocket.transport
       value: 
-      objectReference: {fileID: 114000013652321144, guid: bdba96d8d4eed344dbf7618af84fc4d9,
+      objectReference: {fileID: 114000010660953830, guid: 0c7fb6e02b5bdcd4f80f92b680b1b9bc,
         type: 2}
     - target: {fileID: 1000011210795040, guid: 864a8dec98717c343be47c91be90c751, type: 2}
       propertyPath: m_TagString
@@ -4517,14 +4517,12 @@ Prefab:
         type: 2}
       propertyPath: primaryWeaponSockets.Array.data[0].primaryWeapon
       value: 
-      objectReference: {fileID: 114000010407364372, guid: 65814abbed409ca48bc993cfd44ece23,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 114000010083594644, guid: 864a8dec98717c343be47c91be90c751,
         type: 2}
       propertyPath: primaryWeaponSockets.Array.data[1].primaryWeapon
       value: 
-      objectReference: {fileID: 114000010407364372, guid: 65814abbed409ca48bc993cfd44ece23,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 864a8dec98717c343be47c91be90c751, type: 2}
   m_IsPrefabParent: 0
