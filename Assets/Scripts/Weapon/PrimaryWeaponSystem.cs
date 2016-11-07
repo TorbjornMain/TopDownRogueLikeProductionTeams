@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+[RequireComponent(typeof(PrimaryWeaponNode))]
 public class PrimaryWeaponSystem : EquippableItem
 {
 	public List<Modifier> weaponMods;
@@ -87,6 +89,26 @@ public class PrimaryWeaponSystem : EquippableItem
 		else
 			g.gameObject.layer = LayerMask.NameToLayer ("NeutralBullet");
 
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
+			if (Input.GetButtonDown ("EquipLeft")) {
+				
+				BodySockets oBS = other.GetComponent<BodySockets> ();
+				oBS.DetachPrimaryWeapon (0, false);
+				oBS.AttachPrimaryWeapon (0, GetComponent<PrimaryWeaponNode>());
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+			}
+			if (Input.GetButtonDown ("EquipRight")) {
+				
+				BodySockets oBS = other.GetComponent<BodySockets> ();
+				oBS.DetachPrimaryWeapon (1, false);
+				oBS.AttachPrimaryWeapon (1, GetComponent<PrimaryWeaponNode>());
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+			}
+		}
 	}
 
 	void OnDrawGizmos ()

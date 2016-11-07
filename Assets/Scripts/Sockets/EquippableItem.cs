@@ -20,25 +20,14 @@ public class EquippableItem : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
 
-		}
-	}
-
-
-	void OnTriggerEntera(Collider other)
-	{
-		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
-
-		}
-	}
 
 	IEnumerator Despawn()
 	{
 		yield return new WaitForSeconds (itemFadeTime);
-		Destroy (this.gameObject);
+		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
+			Destroy (this.gameObject);
+		}
 
 	}
 }

@@ -36,6 +36,15 @@ public class GunCardOverlayWidget :	OverlayWidget {
 		}
 	}
 
+	protected override void Update()
+	{
+		if (gameObject.layer != LayerMask.NameToLayer ("Item")) {
+			if (OverlayManager.widgets.Contains (this)) {
+				OverlayManager.widgets.Remove (this);
+			}
+			sc.gameObject.SetActive (false);
+		}
+	}
 
 	void OnTriggerExit(Collider other)
 	{
@@ -46,3 +55,4 @@ public class GunCardOverlayWidget :	OverlayWidget {
 	}
 
 }
+//send help
