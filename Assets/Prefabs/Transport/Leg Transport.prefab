@@ -418,7 +418,7 @@ MonoBehaviour:
   stats:
     type: 1
     speed: 15
-    turnRate: 0
+    turnRate: 1
 --- !u!137 &137000010943983372
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
