@@ -41,6 +41,7 @@ GameObject:
   - 95: {fileID: 95000013066997862}
   - 114: {fileID: 114000013929315970}
   - 114: {fileID: 114000013652321144}
+  - 114: {fileID: 114000014102015296}
   m_Layer: 0
   m_Name: TankTreads
   m_TagString: Untagged
@@ -184,9 +185,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemFadeTime: 10
   stats:
+    name: Tank Treads
     type: 0
     speed: 7
     turnRate: 1
+    description: AWWW YISS
+--- !u!114 &114000014102015296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012589980474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5731120b36585084997551624cebc09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 1
+  widgetPrefab: {fileID: 1000010056007038, guid: 31ebd0982dc536949b563c4169acac8d,
+    type: 2}
 --- !u!198 &198000011170233294
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -11,9 +11,11 @@ public enum TransportType
 [System.Serializable]
 public class TransportStats
 {
+	public string name;
 	public TransportType type;
 	public float speed;
 	public float turnRate;
+	public string description;
 }
 
 [DisallowMultipleComponent()]
@@ -36,6 +38,18 @@ public class Transport : EquippableItem {
 	void Start()
 	{
 		previousPos = transform.position;
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
+			if (Input.GetButtonDown ("EquipLeft") || Input.GetButtonDown("EquipRight")) {
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+				BodySockets oBS = other.GetComponent<BodySockets> ();
+				oBS.DetachTransport (false);
+				oBS.AttachTransport (GetComponent<TransportNode>());
+			}
+		}
 	}
 
 	public void Drive(Vector3 direction)

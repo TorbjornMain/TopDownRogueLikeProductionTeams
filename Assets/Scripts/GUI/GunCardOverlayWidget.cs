@@ -39,7 +39,8 @@ public class GunCardOverlayWidget :	OverlayWidget {
 	void OnAttach()
 	{
 		OverlayManager.widgets.Remove (this);
-		sc.gameObject.SetActive (false);
+		if (sc != null)
+			sc.gameObject.SetActive (false);
 	}
 
 	void OnTriggerExit(Collider other)
