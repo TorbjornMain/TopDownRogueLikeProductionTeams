@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class ControlsBackButton : MonoBehaviour {
-    public GameObject controlsPanel;
-    public GameObject backPanel;
-    public GameObject controlsBackPanel;
+    public GameObject optionsEmpty;
     public GameObject controlsImage;
 
     // Use this for initialization
@@ -20,8 +18,7 @@ public class ControlsBackButton : MonoBehaviour {
 
     public void BackPressed()
     {
-        controlsPanel.SetActive(true);
-        backPanel.SetActive(true);
-        controlsBackPanel.SetActive(false);
+        optionsEmpty.SetActive(true);
+        controlsImage.SetActive(false);
     }
 }
