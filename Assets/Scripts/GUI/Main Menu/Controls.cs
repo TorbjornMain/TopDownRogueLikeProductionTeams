@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Controls : MonoBehaviour {
-    public GameObject controlsPanel;
-    public GameObject backPanel;
-    public GameObject controlsBackPanel;
+    public GameObject optionsEmpty;
     public GameObject imagePanel;
     // Use this for initialization
     void Start () {
@@ -19,9 +17,7 @@ public class Controls : MonoBehaviour {
 
     public void ControlsPressed()
     {
-        controlsPanel.SetActive(false);
-        backPanel.SetActive(false);
-        controlsBackPanel.SetActive(true);
+        optionsEmpty.SetActive(false);
         imagePanel.SetActive(true);
     }
 }
