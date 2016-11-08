@@ -71,6 +71,7 @@ public class BodySockets : MonoBehaviour
 
 	public void AttachTransport(TransportNode transport)
 	{
+		transport.SendMessage ("OnAttach", SendMessageOptions.DontRequireReceiver);
 		transportSocket.transport = transport;
 		transport.gameObject.layer = gameObject.layer;
 		transport.nodeObject.mainBody = mainBody;
@@ -80,6 +81,7 @@ public class BodySockets : MonoBehaviour
 	public void DetachTransport(bool discard)
 	{
 		if (transportSocket.transport) {
+			transportSocket.transport.SendMessage ("OnDetach", SendMessageOptions.DontRequireReceiver);
 			if (!discard) {
 				transportSocket.transport.isAttached = false;
 				transportSocket.transport.gameObject.layer = LayerMask.NameToLayer ("Item");
