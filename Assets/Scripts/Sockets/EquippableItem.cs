@@ -4,11 +4,11 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class EquippableItem : MonoBehaviour {
 	public float itemFadeTime = 10.0f;
-
+	private Collider col;
 
 	// Use this for initialization
 	void Start () {
-		
+		col = GetComponent<Collider> ();
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,17 @@ public class EquippableItem : MonoBehaviour {
 
 	}
 
+	protected virtual void OnAttach()
+	{
+		if(col != null)
+		col.enabled = false;
+	}
 
+	protected virtual void OnDetach()
+	{
+		if(col != null)
+		col.enabled = true;
+	}
 
 	IEnumerator Despawn()
 	{
