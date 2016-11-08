@@ -4,8 +4,7 @@ using System.Collections;
 
 public class OptionsButton : MonoBehaviour {
 
-    public RawImage logo;
-    public Texture options;
+    public GameObject images;
     public GameObject startGamePanel;
     public GameObject optionsPanel;
     public GameObject quitPanel;
@@ -26,7 +25,6 @@ public class OptionsButton : MonoBehaviour {
 
     public void OptionsPressed()
     {
-        logo.GetComponent<RawImage>().texture = options;
         startGamePanel.SetActive(false);
         optionsPanel.SetActive(false);
         quitPanel.SetActive(false);
@@ -34,5 +32,6 @@ public class OptionsButton : MonoBehaviour {
         backPanel.SetActive(true);
         musicSlider.SetActive(true);
         soundSlider.SetActive(true);
+        images.SetActive(false);
     }
 }
