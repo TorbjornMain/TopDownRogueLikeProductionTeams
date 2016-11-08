@@ -95,18 +95,22 @@ public class PrimaryWeaponSystem : EquippableItem
 	{
 		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
 			if (Input.GetButtonDown ("EquipLeft")) {
-				
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+				transform.localPosition = Vector3.zero;
+				transform.localScale = Vector3.one;
 				BodySockets oBS = other.GetComponent<BodySockets> ();
 				oBS.DetachPrimaryWeapon (0, false);
 				oBS.AttachPrimaryWeapon (0, GetComponent<PrimaryWeaponNode>());
-				transform.localRotation = Quaternion.Euler (0, 0, 0);
+
 			}
 			if (Input.GetButtonDown ("EquipRight")) {
-				
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+				transform.localPosition = Vector3.zero;
+				transform.localScale = Vector3.one;
 				BodySockets oBS = other.GetComponent<BodySockets> ();
 				oBS.DetachPrimaryWeapon (1, false);
 				oBS.AttachPrimaryWeapon (1, GetComponent<PrimaryWeaponNode>());
-				transform.localRotation = Quaternion.Euler (0, 0, 0);
+
 			}
 		}
 	}

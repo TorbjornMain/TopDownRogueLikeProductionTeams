@@ -231,7 +231,7 @@ MonoBehaviour:
   width: 1
   height: 1
   levelClass: 0
-  heightOffset: 0
+  heightOffset: 0.5
 --- !u!114 &114000010637898528
 MonoBehaviour:
   m_ObjectHideFlags: 1

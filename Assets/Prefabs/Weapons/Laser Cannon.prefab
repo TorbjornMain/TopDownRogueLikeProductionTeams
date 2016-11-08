@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000010529752508}
   - 114: {fileID: 114000010658044914}
   - 114: {fileID: 114000011294655624}
-  - 65: {fileID: 65000012620507614}
+  - 135: {fileID: 135000012584519158}
   m_Layer: 0
   m_Name: Laser Cannon
   m_TagString: Untagged
@@ -82,18 +82,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013799008484}
   m_Mesh: {fileID: 4300000, guid: edffc84b05921a94ca0f879e01dd5661, type: 3}
---- !u!65 &65000012620507614
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013799008484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5469653, z: 1.6355882}
-  m_Center: {x: 0, y: 0.02348265, z: 0.067794114}
 --- !u!95 &95000013773394514
 Animator:
   serializedVersion: 3
@@ -161,3 +149,15 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+--- !u!135 &135000012584519158
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013799008484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8177941
+  m_Center: {x: 0, y: 0.02348265, z: 0.067794114}

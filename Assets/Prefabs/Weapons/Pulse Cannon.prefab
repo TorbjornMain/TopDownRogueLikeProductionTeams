@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000010173685248}
   - 114: {fileID: 114000010216997726}
   - 114: {fileID: 114000014045543406}
-  - 65: {fileID: 65000010931623788}
+  - 135: {fileID: 135000012277668006}
   m_Layer: 0
   m_Name: Pulse Cannon
   m_TagString: Untagged
@@ -82,18 +82,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012822893234}
   m_Mesh: {fileID: 4300000, guid: b95db80376bec984485aa945166a5b44, type: 3}
---- !u!65 &65000010931623788
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012822893234}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9508756, y: 0.9816416, z: 2.2030687}
-  m_Center: {x: 0.30653372, y: 0.17244503, z: 0.59536564}
 --- !u!95 &95000010367045110
 Animator:
   serializedVersion: 3
@@ -161,3 +149,15 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+--- !u!135 &135000012277668006
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822893234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1015344
+  m_Center: {x: 0.30653372, y: 0.17244503, z: 0.59536564}

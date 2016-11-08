@@ -40,6 +40,7 @@ GameObject:
   - 114: {fileID: 114000013185311978}
   - 114: {fileID: 114000013644007884}
   - 114: {fileID: 114000012674959104}
+  - 135: {fileID: 135000013806327338}
   m_Layer: 0
   m_Name: Beam Sword
   m_TagString: Untagged
@@ -311,3 +312,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: -0.87}
+--- !u!135 &135000013806327338
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013352568548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}

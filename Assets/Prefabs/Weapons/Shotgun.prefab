@@ -145,7 +145,7 @@ GameObject:
   - 114: {fileID: 114000012362178438}
   - 114: {fileID: 114000010407364372}
   - 114: {fileID: 114000012353955132}
-  - 65: {fileID: 65000014188800574}
+  - 135: {fileID: 135000013647831290}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -381,18 +381,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013580275310}
   m_Mesh: {fileID: 4300002, guid: 5fe8a7b80b9560f45ad7be404da2c35d, type: 3}
---- !u!65 &65000014188800574
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013412987150}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 2}
-  m_Center: {x: 0, y: 1, z: -0.3}
 --- !u!95 &95000010410506188
 Animator:
   serializedVersion: 3
@@ -461,3 +449,15 @@ MonoBehaviour:
   barrelPos: {x: 0, y: 1.59, z: 1.2}
   barrelDir: {x: 0, y: 0, z: 1}
   isContinuous: 0
+--- !u!135 &135000013647831290
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013412987150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3
+  m_Center: {x: 0, y: 1, z: -0.3}

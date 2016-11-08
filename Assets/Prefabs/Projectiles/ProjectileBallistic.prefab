@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000013753133250}
   - 114: {fileID: 114000012620426238}
   - 114: {fileID: 114000013263911058}
-  - 135: {fileID: 135000013109425520}
+  - 65: {fileID: 65000012133336424}
   m_Layer: 0
   m_Name: ProjectileBallistic
   m_TagString: Untagged
@@ -98,6 +98,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65000012133336424
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012279923368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3318, y: 0.33218408, z: 1.148852}
+  m_Center: {x: 0, y: 0.00019203126, z: -0.22557954}
 --- !u!95 &95000010708261328
 Animator:
   serializedVersion: 3
@@ -149,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419859053ea3a39458e909dc9390c9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1.5
+  lifetime: 3
   isPiercing: 0
   projectileSpeedCurve:
     serializedVersion: 2
@@ -168,15 +180,3 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   baseProjectileSpeed: 40
---- !u!135 &135000013109425520
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012279923368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

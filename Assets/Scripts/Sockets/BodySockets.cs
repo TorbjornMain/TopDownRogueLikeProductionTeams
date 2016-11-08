@@ -101,16 +101,17 @@ public class BodySockets : MonoBehaviour
 		if (primaryWeaponSockets [index].side == SocketSide.Right) {
 			weapon.transform.localScale = Vector3.Scale (weapon.transform.localScale, new Vector3 (-1, 1, 1));
 		}
-
-		weapon.transform.SetParent (transform);
 		weapon.transform.rotation = transform.rotation * weapon.transform.localRotation;
 		weapon.transform.position = transform.TransformPoint(primaryWeaponSockets [index].offset) + weapon.transform.rotation * Vector3.Scale(-weapon.offset, weapon.transform.lossyScale);
+		weapon.transform.SetParent (transform);
+		weapon.SendMessage ("OnAttach", SendMessageOptions.DontRequireReceiver);
 		primaryWeaponSockets [index].primaryWeapon = weapon;
 	}
 
 	public void DetachPrimaryWeapon(int index, bool discard)
 	{
 		if (primaryWeaponSockets [index].primaryWeapon) {
+			primaryWeaponSockets[index].primaryWeapon.SendMessage ("OnDetach", SendMessageOptions.DontRequireReceiver);
 			if (!discard) {
 				primaryWeaponSockets [index].primaryWeapon.isAttached = false;
 				primaryWeaponSockets [index].primaryWeapon.gameObject.layer = LayerMask.NameToLayer ("Item");

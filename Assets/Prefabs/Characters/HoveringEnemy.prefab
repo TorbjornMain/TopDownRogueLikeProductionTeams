@@ -221,7 +221,7 @@ MonoBehaviour:
   width: 1
   height: 1
   levelClass: 0
-  heightOffset: 0
+  heightOffset: 0.5
 --- !u!143 &143000012951473318
 CharacterController:
   m_ObjectHideFlags: 1

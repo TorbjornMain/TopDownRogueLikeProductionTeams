@@ -124,8 +124,8 @@ GameObject:
   - 95: {fileID: 95000011571283380}
   - 114: {fileID: 114000010341814626}
   - 114: {fileID: 114000011448110602}
-  - 65: {fileID: 65000012196915096}
   - 114: {fileID: 114000012995518408}
+  - 135: {fileID: 135000011324467974}
   m_Layer: 0
   m_Name: Disco Gun
   m_TagString: Untagged
@@ -513,18 +513,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010379937288}
   m_Mesh: {fileID: 4300004, guid: 37557b58beb70b144b00ddc82b02547d, type: 3}
---- !u!65 &65000012196915096
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013383275438}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95000011571283380
 Animator:
   serializedVersion: 3
@@ -592,3 +580,15 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+--- !u!135 &135000011324467974
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013383275438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}

@@ -74,7 +74,7 @@ GameObject:
   - 114: {fileID: 114000014101917150}
   - 114: {fileID: 114000013698308498}
   - 114: {fileID: 114000013179873874}
-  - 65: {fileID: 65000010688111122}
+  - 135: {fileID: 135000012448676344}
   m_Layer: 0
   m_Name: Grenade Launcher
   m_TagString: Untagged
@@ -312,18 +312,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010681653576}
   m_Mesh: {fileID: 4300000, guid: 1bde77c2515ac174288c008490f312aa, type: 3}
---- !u!65 &65000010688111122
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011245130308}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95000010580700750
 Animator:
   serializedVersion: 3
@@ -392,3 +380,15 @@ MonoBehaviour:
   barrelPos: {x: 0, y: 0.03, z: 0.94}
   barrelDir: {x: 0, y: 0, z: 1}
   isContinuous: 0
+--- !u!135 &135000012448676344
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011245130308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9
+  m_Center: {x: 0, y: 0, z: 0}
