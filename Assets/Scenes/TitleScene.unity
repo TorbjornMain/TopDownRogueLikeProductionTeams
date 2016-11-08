@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &271204783
 AudioSource:
   m_ObjectHideFlags: 0
@@ -775,7 +775,7 @@ Transform:
   m_GameObject: {fileID: 453791219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7, y: 9, z: 649.2}
-  m_LocalScale: {x: 213.18611, y: 213.18625, z: 213.18625}
+  m_LocalScale: {x: 232.89014, y: 232.89032, z: 232.89032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1732,7 +1732,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: ae5511ba84022f24dbb891a98cdcefd2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 58e1207dbc89c8b4e830cf52a577b478, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
