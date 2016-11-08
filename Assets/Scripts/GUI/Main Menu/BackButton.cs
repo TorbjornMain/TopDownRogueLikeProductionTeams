@@ -3,14 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class BackButton : MonoBehaviour {
-    public GameObject startGamePanel;
-    public GameObject optionsPanel;
-    public GameObject quitPanel;
-    public GameObject controlsPanel;
-    public GameObject backPanel;
-    public GameObject musicSlider;
-    public GameObject soundSlider;
-    public GameObject imageEmpty;
+    public GameObject menuEmpty;
+    public GameObject optionsEmpty;
 
     // Use this for initialization
     void Start () {
@@ -24,13 +18,7 @@ public class BackButton : MonoBehaviour {
 
     public void BackPressed()
     {
-        startGamePanel.SetActive(true);
-        optionsPanel.SetActive(true);
-        quitPanel.SetActive(true);
-        imageEmpty.SetActive(true);
-        controlsPanel.SetActive(false);
-        backPanel.SetActive(false);
-        musicSlider.SetActive(false);
-        soundSlider.SetActive(false);
+        menuEmpty.SetActive(true);
+        optionsEmpty.SetActive(false);
     }
 }
