@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000011845120338}
   - 136: {fileID: 136000010423765292}
   - 114: {fileID: 114000011199496048}
+  - 114: {fileID: 114000013131034458}
   m_Layer: 16
   m_Name: Flame Barrel
   m_TagString: Untagged
@@ -125,6 +126,20 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 1.5
+--- !u!114 &114000013131034458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010611189206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e96eddff78cbc4f8e6d06af52887bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1000011474644598, guid: f2de06410135ded4490620cb89f597c6,
+    type: 2}
+  spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114000014009916978
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,6 +22,15 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 
 	protected override void Update ()
 	{
+		if (pws == null) {
+			Destroy (gameObject);
+			return;
+		}
+		if (pws.gameObject.layer == LayerMask.NameToLayer("Item")) {
+			Destroy (gameObject);
+			return;
+		}
+
 		transform.position = (pws.transform.TransformPoint (pws.barrelPos));
 		transform.rotation = (Quaternion.FromToRotation (new Vector3 (0, 0, 1), pws.transform.TransformDirection (pws.barrelDir)) * relativeSpread);
 		float range;
