@@ -19,10 +19,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012430151804}
-  - 95: {fileID: 95000010619463400}
   - 114: {fileID: 114000010990877740}
   - 143: {fileID: 143000013593862972}
   - 114: {fileID: 114000010083594644}
+  - 114: {fileID: 114000010265980242}
+  - 114: {fileID: 114000010126699300}
+  - 114: {fileID: 114000011141076948}
+  - 114: {fileID: 114000011246603702}
+  - 114: {fileID: 114000013550122488}
   m_Layer: 8
   m_Name: Player Core
   m_TagString: Untagged
@@ -571,23 +575,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011885908112}
   m_Enabled: 1
---- !u!95 &95000010619463400
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010016667590}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1e5c4e0a780c0d4459c919fec4b85b79, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010083594644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,6 +599,30 @@ MonoBehaviour:
     transport: {fileID: 114000010660953830, guid: 0c7fb6e02b5bdcd4f80f92b680b1b9bc,
       type: 2}
     offset: {x: 0, y: -0.59, z: 0}
+--- !u!114 &114000010126699300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010016667590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0853a1b51988e2944ad10eb37cb540f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000010265980242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010016667590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _health: 100
 --- !u!114 &114000010990877740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -628,6 +639,49 @@ MonoBehaviour:
   cameraAngle: {x: 70, y: 0, z: 0}
   mainBody: {fileID: 114000010083594644}
   speed: 5
+--- !u!114 &114000011141076948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010016667590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e96eddff78cbc4f8e6d06af52887bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1000011474644598, guid: f2de06410135ded4490620cb89f597c6,
+    type: 2}
+  spawnOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &114000011246603702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010016667590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd93f53bcec75249ba4afeab626d59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTime: 5
+  sceneName: Game Over
+  fader: {fileID: 114000013550122488}
+--- !u!114 &114000013550122488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010016667590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c8e0395a71bd84eb5b95f7d4bc30d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 0
+  widgetPrefab: {fileID: 1000012113094678, guid: dbd75db5e58aa7845b6d371ef7cab916,
+    type: 2}
+  followsObject: 0
 --- !u!124 &124000013347069548
 Behaviour:
   m_ObjectHideFlags: 1

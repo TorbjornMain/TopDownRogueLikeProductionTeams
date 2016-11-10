@@ -6,6 +6,7 @@ public class OverlayWidget : MonoBehaviour {
 
 	public float heightOffset;
 	public GameObject widgetPrefab;
+	public bool followsObject = true;
 	[System.NonSerialized]
 	public GameObject widgetInstance;
 

@@ -13,14 +13,11 @@ public class SceneTransitionOnDeath : MonoBehaviour {
 
 	IEnumerator Fade()
 	{
-		fadeImage.color -= new Color(0, 0, 0, Mathf.Clamp01 (Time.deltaTime / fadeOutTime));
-
-		if (fadeImage.color.a < 0.05) {
-			SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-			yield break;
+		while (fadeImage.color.a < 0.95f) {
+			fadeImage.color += new Color (0, 0, 0, Mathf.Clamp01 (Time.deltaTime / fadeOutTime));
+			yield return null;
 		}
-
-		yield return null;
+		SceneManager.LoadSceneAsync (sceneName, LoadSceneMode.Single);
 	}
 
 	void Die()

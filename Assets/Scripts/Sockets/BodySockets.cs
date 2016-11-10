@@ -128,6 +128,12 @@ public class BodySockets : MonoBehaviour
 		}
 	}
 
+
+	void Die()
+	{
+		CeaseFirePrimary ();
+	}
+
 	public void StartFirePrimary()
 	{
 		foreach (var item in primaryWeaponSockets) {
