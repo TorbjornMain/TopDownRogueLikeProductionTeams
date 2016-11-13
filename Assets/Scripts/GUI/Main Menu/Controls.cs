@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class Controls : MonoBehaviour {
     public GameObject optionsEmpty;
     public GameObject imagePanel;
+    public GameObject backActive;
     // Use this for initialization
     void Start () {
 	
@@ -18,6 +20,7 @@ public class Controls : MonoBehaviour {
     public void ControlsPressed()
     {
         optionsEmpty.SetActive(false);
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(backActive);
         imagePanel.SetActive(true);
     }
 }
