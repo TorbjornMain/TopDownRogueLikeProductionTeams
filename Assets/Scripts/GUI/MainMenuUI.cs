@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class MainMenuUI : MonoBehaviour {
 
-    //public GameObject mainMenu;
-    //public Texture mainMenu;
+    public GameObject playActive;
     private bool imageSwapped = false;
     public GameObject mainMenuHolder;
     public GameObject logoHolder;
@@ -20,7 +20,7 @@ public class MainMenuUI : MonoBehaviour {
     {
         if (imageSwapped == false && Input.anyKey)
         {
-            //GetComponent<RawImage>().texture = mainMenu;
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(playActive);
             logoHolder.SetActive(false);
             imageSwapped = true;
             mainMenuHolder.SetActive(true);
