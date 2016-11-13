@@ -53,7 +53,15 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010042998728}
-  - 95: {fileID: 95000013103065478}
+  - 114: {fileID: 114000011841275558}
+  - 114: {fileID: 114000010440610874}
+  - 114: {fileID: 114000011540038290}
+  - 114: {fileID: 114000010316752592}
+  - 143: {fileID: 143000011111885140}
+  - 114: {fileID: 114000012304875332}
+  - 114: {fileID: 114000011198477216}
+  - 114: {fileID: 114000011496683352}
+  - 65: {fileID: 65000011105140036}
   m_Layer: 0
   m_Name: TurretStrong
   m_TagString: Untagged
@@ -174,20 +182,139 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011438756584}
   m_Mesh: {fileID: 4300002, guid: a1bd8817629cb104e819509ef4cc0397, type: 3}
---- !u!95 &95000013103065478
-Animator:
-  serializedVersion: 3
+--- !u!65 &65000011105140036
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8, y: 9.1, z: 3.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010316752592
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013099703280}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a1bd8817629cb104e819509ef4cc0397, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d2384daa96f034cb655eadb1c57ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000010440610874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6470163280460f846941905f529c09d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 0
+  widgetPrefab: {fileID: 1000011486221338, guid: 46fae96e1cc9c954a942231b90da0a48,
+    type: 2}
+  followsObject: 1
+  offset: 1
+--- !u!114 &114000011198477216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8025d48b3d6cb94dacc1b80edc8d712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRadius: 20
+  fleeThreshold: 0.2
+  aggroThreshold: 0.2
+  triggerHappiness: 0.01
+  triggerInertia: 5
+  aggroGainRate: 1
+  aggroDecayRate: 1
+  wanderDistance: 4
+  wanderStagnation: 6
+--- !u!114 &114000011496683352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07a9901ee3568045a9ebd0a0d378279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate: 1
+--- !u!114 &114000011540038290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff40077e5962a7488a08ad3c432bb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 1
+  height: 1
+  levelClass: 0
+  heightOffset: 0.5
+  frequency: 1
+--- !u!114 &114000011841275558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 50
+  _health: 50
+--- !u!114 &114000012304875332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd4e785e0d3c5646816abcc4a7e9290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryWeaponSockets:
+  - primaryWeapon: {fileID: 114000010407364372, guid: 65814abbed409ca48bc993cfd44ece23,
+      type: 2}
+    offset: {x: 0, y: 2.53, z: -0.15}
+    side: 0
+  transportSocket:
+    transport: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+--- !u!143 &143000011111885140
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013099703280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
