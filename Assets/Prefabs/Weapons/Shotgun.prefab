@@ -258,10 +258,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013412987150}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children:
   - {fileID: 4000011083627724}
   - {fileID: 4000010534305996}
@@ -424,6 +424,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000012362178438
 MonoBehaviour:
   m_ObjectHideFlags: 1
