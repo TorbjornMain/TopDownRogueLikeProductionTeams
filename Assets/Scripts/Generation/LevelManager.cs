@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour {
 	}
 	public List<SpawnableObject> propPrefabs;
 	public List<SpawnableObject> enemyPrefabs;
+	public GameObject portalPrefab;
+	private GameObject portalInstance;
 	private List<SpawnableObject> enemyInstances;
 	private List<SpawnableObject> propInstances;
 	private List<Partition> rooms;
@@ -39,6 +41,24 @@ public class LevelManager : MonoBehaviour {
 			initializeLevel ();
 		}
 		first = false;
+
+		if (enemyInstances.Count == 1 && enemyInstances [0] == null) {
+			Vector3 portalPos = ((_playerInstance.transform.position - proceduralLevel.transform.position)/proceduralLevel.tileScale) + new Vector3((proceduralLevel.width/2), 0, (proceduralLevel.height/2));
+			List<Vector2> validPositions = new List<Vector2> ();
+			for (int i = (int)portalPos.x - 2; i < (int)portalPos.x + 2; i++) {
+				for (int j = (int)portalPos.z - 2; j < (int)portalPos.z + 2; j++) {
+					if (!((i == portalPos.x && j == portalPos.z) || i < 0 || j < 0 || i > proceduralLevel.width || j > proceduralLevel.height)) {
+						if (placeableGrid [(int)portalPos.x, (int)portalPos.z]) {
+							validPositions.Add (new Vector2 (portalPos.x, portalPos.z));
+						}
+					}
+				}
+			}
+			int posIndex = Random.Range (0, validPositions.Count);
+			portalInstance = Instantiate<GameObject> (portalPrefab);
+			portalInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (validPositions[posIndex].x - (proceduralLevel.width/2), 0, validPositions[posIndex].y - (proceduralLevel.height/2)) * proceduralLevel.tileScale);;
+		}
+
 	}
 
 	void initializeLevel()
