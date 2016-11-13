@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuEmpty: {fileID: 996988373}
   optionsEmpty: {fileID: 660136734}
+  menuActive: {fileID: 843911687}
 --- !u!114 &111583020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionsEmpty: {fileID: 660136734}
   menuEmpty: {fileID: 996988373}
+  controlsButton: {fileID: 728483129}
 --- !u!114 &484254477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638970183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1147,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5522891de2cfc4a846985be05c7fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playActive: {fileID: 843911687}
   mainMenuHolder: {fileID: 996988373}
   logoHolder: {fileID: 638970182}
 --- !u!1 &660136734
@@ -1420,6 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionsEmpty: {fileID: 660136734}
   imagePanel: {fileID: 1839770150}
+  backActive: {fileID: 944381119}
 --- !u!114 &728483132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,6 +1981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionsEmpty: {fileID: 660136734}
   controlsImage: {fileID: 1839770150}
+  optionsActive: {fileID: 728483129}
 --- !u!114 &944381122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,7 +2092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &996988374
 RectTransform:
   m_ObjectHideFlags: 0
