@@ -132,6 +132,7 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 0.5
+  frequency: 1
 --- !u!114 &114000010782805526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,11 +179,11 @@ MonoBehaviour:
   primaryWeaponSockets:
   - primaryWeapon: {fileID: 114000010216997726, guid: e5bcd8699b92b5c4eb4ad39a3b808cb3,
       type: 2}
-    offset: {x: 1.8, y: -0.3, z: 2.26}
+    offset: {x: 1.45, y: -0.3, z: 2.26}
     side: 0
   - primaryWeapon: {fileID: 114000010216997726, guid: e5bcd8699b92b5c4eb4ad39a3b808cb3,
       type: 2}
-    offset: {x: -1.8, y: -0.3, z: 2.26}
+    offset: {x: -1.45, y: -0.3, z: 2.26}
     side: 0
   transportSocket:
     transport: {fileID: 114000013652321144, guid: bdba96d8d4eed344dbf7618af84fc4d9,
@@ -203,6 +204,7 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 1
+  frequency: 1
 --- !u!114 &114000012021656074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +230,7 @@ MonoBehaviour:
   heightOffset: 0
   widgetPrefab: {fileID: 1000011486221338, guid: 46fae96e1cc9c954a942231b90da0a48,
     type: 2}
+  followsObject: 1
   offset: 0.1
 --- !u!114 &114000013469800202
 MonoBehaviour:
