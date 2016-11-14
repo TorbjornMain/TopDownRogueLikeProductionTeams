@@ -211,6 +211,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1640627537}
   openSound: {fileID: 0}
   closeSound: {fileID: 0}
+  resumeButton: {fileID: 0}
 --- !u!1 &174344664
 GameObject:
   m_ObjectHideFlags: 0
