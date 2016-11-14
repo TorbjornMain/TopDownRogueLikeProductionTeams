@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 10
+  _health: 10
 --- !u!114 &114000012547039134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +127,7 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 1.5
+  frequency: 1
 --- !u!114 &114000012913367546
 MonoBehaviour:
   m_ObjectHideFlags: 1
