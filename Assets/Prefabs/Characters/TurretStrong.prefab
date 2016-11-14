@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8025d48b3d6cb94dacc1b80edc8d712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 20
+  aggroRadius: 50
   fleeThreshold: 0.2
   aggroThreshold: 0.2
-  triggerHappiness: 0.01
+  triggerHappiness: 0.07
   triggerInertia: 5
   aggroGainRate: 1
   aggroDecayRate: 1

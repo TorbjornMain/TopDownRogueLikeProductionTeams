@@ -147,7 +147,7 @@ MonoBehaviour:
   aggroRadius: 20
   fleeThreshold: 0.2
   aggroThreshold: 0.2
-  triggerHappiness: 0.01
+  triggerHappiness: 0.02
   triggerInertia: 5
   aggroGainRate: 1
   aggroDecayRate: 1
