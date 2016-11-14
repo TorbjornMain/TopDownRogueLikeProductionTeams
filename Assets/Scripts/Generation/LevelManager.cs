@@ -15,13 +15,13 @@ public class LevelManager : MonoBehaviour {
 	}
 	public List<SpawnableObject> propPrefabs;
 	public List<SpawnableObject> enemyPrefabs;
-	public GameObject portalPrefab;
-	private GameObject portalInstance;
+	public LevelUpPortal portalPrefab;
+	private LevelUpPortal portalInstance;
 	private List<SpawnableObject> enemyInstances;
 	private List<SpawnableObject> propInstances;
 	private List<Partition> rooms;
 	private bool[,] placeableGrid;
-	public uint maxDifficulty, minDifficulty, minProps, minEnemies, maxProps, maxEnemies;
+	public uint maxDifficulty, minProps, minEnemies, maxProps, maxEnemies;
 	bool first = true;
 
 
@@ -42,23 +42,27 @@ public class LevelManager : MonoBehaviour {
 		}
 		first = false;
 
-		if (enemyInstances.Count == 1 && enemyInstances [0] == null) {
-			Vector3 portalPos = ((_playerInstance.transform.position - proceduralLevel.transform.position)/proceduralLevel.tileScale) + new Vector3((proceduralLevel.width/2), 0, (proceduralLevel.height/2));
-			List<Vector2> validPositions = new List<Vector2> ();
-			for (int i = (int)portalPos.x - 2; i < (int)portalPos.x + 2; i++) {
-				for (int j = (int)portalPos.z - 2; j < (int)portalPos.z + 2; j++) {
-					if (!((i == portalPos.x && j == portalPos.z) || i < 0 || j < 0 || i > proceduralLevel.width || j > proceduralLevel.height)) {
-						if (placeableGrid [(int)portalPos.x, (int)portalPos.z]) {
-							validPositions.Add (new Vector2 (portalPos.x, portalPos.z));
-						}
-					}
-				}
+
+		if (enemyInstances.Count == 1 && (enemyInstances [0] == null || enemyInstances [0].Equals (null))) {
+			Vector3 portalPos = new Vector3 (0, 0, 0);
+			portalInstance = Instantiate<LevelUpPortal> (portalPrefab);
+			portalInstance.levelManager = this;
+			portalInstance.transform.position = portalPos;
+		}
+		int destroyedIndex = 0;
+		bool isDestroyed = false;
+
+		for (int i = 0; i < enemyInstances.Count; i++) {
+			if (enemyInstances [i] == null || enemyInstances[i].Equals(null)) {
+				destroyedIndex = i;
+				isDestroyed = true;
+				break;
 			}
-			int posIndex = Random.Range (0, validPositions.Count);
-			portalInstance = Instantiate<GameObject> (portalPrefab);
-			portalInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (validPositions[posIndex].x - (proceduralLevel.width/2), 0, validPositions[posIndex].y - (proceduralLevel.height/2)) * proceduralLevel.tileScale);;
 		}
 
+		if (isDestroyed) {
+			enemyInstances.RemoveAt (destroyedIndex);
+		}
 	}
 
 	void initializeLevel()
@@ -81,6 +85,30 @@ public class LevelManager : MonoBehaviour {
 
 	}
 
+	public void transitionLevel()
+	{
+		_playerInstance.SetActive (false);
+		maxDifficulty++;
+		destroyLevel ();
+		initializeLevel ();
+	}
+
+	public void destroyLevel()
+	{
+		foreach (var item in propInstances) {
+			if (!(item == null)) {
+				Destroy (item.gameObject);
+			}
+		}
+		propInstances.Clear ();
+		foreach (var item in enemyInstances) {
+			if (!(item == null)) {
+				Destroy (item.gameObject);
+			}
+		}
+		enemyInstances.Clear ();
+	}
+
 	void spawnFromList(List<SpawnableObject> spawnList, uint numSpawns, ref List<SpawnableObject> outputList)
 	{
 		if (spawnList.Count == 0)
@@ -89,14 +117,7 @@ public class LevelManager : MonoBehaviour {
 		spawnList.Sort ();
 
 		bool cantSpawn = false;
-		int ind = 0, min = 0, max = 0;
-		while (spawnList [ind].levelClass < minDifficulty) {
-			ind++; min++; max++;
-			if (ind >= spawnList.Count) {
-				min = spawnList.Count - 1;
-				break;
-			}
-		}
+		int ind = 0, max = 0;
 
 		if (!cantSpawn) {
 			while (spawnList [ind].levelClass <= maxDifficulty) {
@@ -110,7 +131,7 @@ public class LevelManager : MonoBehaviour {
 
 		if (!cantSpawn) {
 			for (int i = 0; i < numSpawns; i++) {
-				int randItem = Random.Range (min, max + 1);
+				int randItem = Random.Range (0, max + 1);
 				int itemWidth = (int)spawnList[randItem].width, itemHeight = (int)spawnList[randItem].height;
 				int roomNumber = Random.Range (0, rooms.Count);
 				int roomX = 0, roomY = 0;
