@@ -24,8 +24,10 @@ public class PauseMenu : MonoBehaviour {
     {
         if (pauseMenu.activeInHierarchy == true)
         {
+            Time.timeScale = 1;
             pauseMenu.SetActive(false);
             closeSound.Play();
+            
 
         }
         else
@@ -33,6 +35,7 @@ public class PauseMenu : MonoBehaviour {
             pauseMenu.SetActive(true);
             EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
             openSound.Play();
+            Time.timeScale = 0;
         }
     }
 }
