@@ -25,11 +25,9 @@ GameObject:
   - 95: {fileID: 95000010480967604}
   - 54: {fileID: 54000013532877946}
   - 114: {fileID: 114000010559783996}
-  - 114: {fileID: 114000014127644380}
-  - 114: {fileID: 114000012875611448}
   - 114: {fileID: 114000013632479366}
   - 114: {fileID: 114000013874228446}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +96,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95000010480967604
 Animator:
@@ -129,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
-  isPiercing: 1
+  isPiercing: 0
   projectileSpeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -151,18 +149,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  baseProjectileSpeed: 6
---- !u!114 &114000012875611448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010361988172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936861bb2d38a264eb083f73943429a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  baseProjectileSpeed: 30
+  useGravity: 1
 --- !u!114 &114000013632479366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,18 +178,6 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1000011474644598, guid: c64d6cba762debd44a4fae175946d757,
     type: 2}
   spawnOffset: {x: 0, y: 0, z: 0}
---- !u!114 &114000014127644380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010361988172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ff4315a1d008940acf0188b254b260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageMultiplier: 1
 --- !u!136 &136000013996613222
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -209,7 +185,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010361988172}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

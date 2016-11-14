@@ -7,6 +7,7 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 	public AnimationCurve projectileSpeedCurve;
 	public float baseProjectileSpeed = 1.0f;
 	private Rigidbody rb;
+	public bool useGravity = false;
 
 	protected override void Start()
 	{
@@ -16,14 +17,13 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 
 	protected override void Update ()
 	{
-		rb.velocity = transform.forward * projectileSpeedCurve.Evaluate (timeAlive / lifetime) * baseProjectileSpeed;
+		rb.velocity = transform.forward * projectileSpeedCurve.Evaluate (timeAlive / lifetime) * baseProjectileSpeed + Physics.gravity;
 		if (!pws.isFiring) {
 			hasStoppedFiring = true;
 		}
 		if ((pws.isContinuous && hasStoppedFiring) || !pws.isContinuous) {
 			timeAlive += Time.deltaTime;
 			if (timeAlive > lifetime) {
-				endEffect (null);
 				Destroy (gameObject);
 			}
 		}
