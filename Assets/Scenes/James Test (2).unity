@@ -258,9 +258,9 @@ MonoBehaviour:
   - {fileID: 114000010545623304, guid: 7b45f770bc47e224dbfd9162a6e571a4, type: 2}
   - {fileID: 114000013500785920, guid: a4c4fb7e792c042428fdedac5222edb9, type: 2}
   - {fileID: 114000014057291422, guid: 3fc8d54c1738ca54c95df1c5ee649e50, type: 2}
-  portalPrefab: {fileID: 0}
+  portalPrefab: {fileID: 114000012588505574, guid: 305ed990fcf427a4cabae9bc0ccd59f3,
+    type: 2}
   maxDifficulty: 0
-  minDifficulty: 0
   minProps: 40
   minEnemies: 90
   maxProps: 100
