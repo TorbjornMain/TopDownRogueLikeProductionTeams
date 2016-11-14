@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013260415158}
+  - 114: {fileID: 114000013469800202}
   - 33: {fileID: 33000012347498412}
   - 23: {fileID: 23000013950187636}
   - 95: {fileID: 95000013469444996}
-  - 114: {fileID: 114000013469800202}
   - 114: {fileID: 114000013340946920}
   - 143: {fileID: 143000010065412640}
   - 114: {fileID: 114000011618755820}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 1
   height: 1
-  levelClass: 0
+  levelClass: 1
   heightOffset: 0.5
   frequency: 1
 --- !u!114 &114000010782805526

@@ -255,7 +255,8 @@ MonoBehaviour:
   - {fileID: 114000010085162610, guid: 8dc2ac484920ebe45929b8e7649cc3af, type: 2}
   - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}
   - {fileID: 114000010545623304, guid: 7b45f770bc47e224dbfd9162a6e571a4, type: 2}
-  - {fileID: 114000011540038290, guid: a4c4fb7e792c042428fdedac5222edb9, type: 2}
+  - {fileID: 114000013500785920, guid: a4c4fb7e792c042428fdedac5222edb9, type: 2}
+  - {fileID: 114000014057291422, guid: 3fc8d54c1738ca54c95df1c5ee649e50, type: 2}
   portalPrefab: {fileID: 0}
   maxDifficulty: 0
   minDifficulty: 0

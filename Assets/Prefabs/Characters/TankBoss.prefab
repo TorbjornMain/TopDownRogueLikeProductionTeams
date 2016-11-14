@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightOffset: 0
   widgetPrefab: {fileID: 0}
+  followsObject: 1
   offset: 0.1
 --- !u!114 &114000013890884480
 MonoBehaviour:
@@ -290,6 +291,7 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 0.5
+  frequency: 1
 --- !u!143 &143000013360415368
 CharacterController:
   m_ObjectHideFlags: 1
