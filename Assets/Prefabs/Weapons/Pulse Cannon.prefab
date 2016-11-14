@@ -114,7 +114,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Pulse Cannon
-    damage: 75
+    damage: 50
     spread: 0
     numProjectiles: 1
     speed: 0.8
@@ -149,6 +149,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!135 &135000012277668006
 SphereCollider:
   m_ObjectHideFlags: 1

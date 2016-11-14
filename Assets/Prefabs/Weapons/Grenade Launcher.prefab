@@ -75,6 +75,7 @@ GameObject:
   - 114: {fileID: 114000013698308498}
   - 114: {fileID: 114000013179873874}
   - 135: {fileID: 135000012448676344}
+  - 114: {fileID: 114000010862369450}
   m_Layer: 0
   m_Name: Grenade Launcher
   m_TagString: Untagged
@@ -329,6 +330,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010862369450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011245130308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ff4315a1d008940acf0188b254b260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!114 &114000013179873874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,6 +356,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000013698308498
 MonoBehaviour:
   m_ObjectHideFlags: 1

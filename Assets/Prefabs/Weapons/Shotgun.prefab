@@ -424,6 +424,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000012362178438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -439,7 +440,7 @@ MonoBehaviour:
   weaponMods: []
   baseStats:
     name: Shotgun
-    damage: 25
+    damage: 40
     spread: 0.1
     numProjectiles: 4
     speed: 0.75
