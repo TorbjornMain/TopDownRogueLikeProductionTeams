@@ -444,7 +444,7 @@ MonoBehaviour:
     spread: 0.1
     numProjectiles: 4
     speed: 0.75
-    description: 
+    description: One projectile not enough? Grab a shotgun and go nuts!
   projectilePrefab: {fileID: 114000013753133250, guid: 810a26b6546b45d4193b58f0b44f735d,
     type: 2}
   barrelPos: {x: 0, y: 1.59, z: 1.2}

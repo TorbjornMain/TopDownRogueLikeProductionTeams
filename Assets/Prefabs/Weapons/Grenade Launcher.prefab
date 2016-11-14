@@ -388,7 +388,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 1
-    description: 
+    description: Watch out, these bad boys can hurt you too!
   projectilePrefab: {fileID: 114000010559783996, guid: ac6c20bfd88244a4bb3e488564139f7f,
     type: 2}
   barrelPos: {x: 0, y: 0.03, z: 0.94}

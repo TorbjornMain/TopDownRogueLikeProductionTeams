@@ -276,6 +276,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000013185311978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +296,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 0
     speed: 0
-    description: 
+    description: For those who love to get close and personal
   projectilePrefab: {fileID: 0}
   barrelPos: {x: -1.32, y: 0, z: 1.33}
   barrelDir: {x: 0, y: 0, z: 1}
