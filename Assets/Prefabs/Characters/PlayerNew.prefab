@@ -587,11 +587,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+  - primaryWeapon: {fileID: 114000013698308498, guid: 51d88960dac9336469f6c343017a5650,
       type: 2}
     offset: {x: -1.2, y: -1.3, z: 0.7}
     side: 0
-  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+  - primaryWeapon: {fileID: 114000013698308498, guid: 51d88960dac9336469f6c343017a5650,
       type: 2}
     offset: {x: 1.2, y: -1.3, z: 0.7}
     side: 1
