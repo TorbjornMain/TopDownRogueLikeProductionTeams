@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public AudioSource openSound;
     public AudioSource closeSound;
+    public GameObject resumeButton;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,7 @@ public class PauseMenu : MonoBehaviour {
         else
         {
             pauseMenu.SetActive(true);
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
             openSound.Play();
         }
     }
