@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010963903028}
   - 198: {fileID: 198000010164859494}
   - 199: {fileID: 199000012777041900}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Explosion_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - 135: {fileID: 135000011902457952}
   - 114: {fileID: 114000011841141754}
   - 114: {fileID: 114000011153446274}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GrenadeExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

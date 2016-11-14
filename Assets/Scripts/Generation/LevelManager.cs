@@ -44,7 +44,13 @@ public class LevelManager : MonoBehaviour {
 
 
 		if (enemyInstances.Count == 1 && (enemyInstances [0] == null || enemyInstances [0].Equals (null))) {
-			Vector3 portalPos = new Vector3 (0, 0, 0);
+			RaycastHit rc = new RaycastHit();
+			Vector3 portalPos;
+			if (Physics.Raycast (playerInstance.transform.position, playerInstance.transform.forward, out rc, 20, LayerMask.NameToLayer ("Terrain"))) {
+				portalPos = rc.point - playerInstance.transform.forward;
+			} else {
+				portalPos = playerInstance.transform.position + (playerInstance.transform.forward * 20);
+			}
 			portalInstance = Instantiate<LevelUpPortal> (portalPrefab);
 			portalInstance.levelManager = this;
 			portalInstance.transform.position = portalPos;
@@ -77,6 +83,7 @@ public class LevelManager : MonoBehaviour {
 
 		placeableGrid [roomX, roomY] = false;
 		_playerInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2), 0, roomY- (proceduralLevel.height/2)) * proceduralLevel.tileScale);
+		playerInstance.transform.position = proceduralLevel.transform.position + (new Vector3 (roomX - (proceduralLevel.width/2), playerInstance.transform.position.y, roomY- (proceduralLevel.height/2)) * proceduralLevel.tileScale);
 
 		spawnFromList (enemyPrefabs, (uint)Random.Range (minEnemies, maxEnemies), ref enemyInstances);
 		spawnFromList (propPrefabs, (uint)Random.Range (minProps, maxProps), ref propInstances);
