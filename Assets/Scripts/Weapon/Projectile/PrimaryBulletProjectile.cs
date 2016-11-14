@@ -39,7 +39,7 @@ public class PrimaryBulletProjectile : PrimaryProjectile
 
 	protected void OnCollisionEnter(Collision other)
 	{
-		endEffect (other.gameObject);
+		bounceEffect (other.gameObject);
 	}
 
 	private void endEffect(GameObject targ)

@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 114000014127644380}
   - 114: {fileID: 114000012875611448}
   - 114: {fileID: 114000013632479366}
-  - 114: {fileID: 114000010662410274}
+  - 114: {fileID: 114000013874228446}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -152,20 +152,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   baseProjectileSpeed: 6
---- !u!114 &114000010662410274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010361988172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e96eddff78cbc4f8e6d06af52887bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1000011474644598, guid: c64d6cba762debd44a4fae175946d757,
-    type: 2}
-  spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114000012875611448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +176,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _health: 100
+--- !u!114 &114000013874228446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010361988172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc08fac42749fe245b3306b967e90e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1000011474644598, guid: c64d6cba762debd44a4fae175946d757,
+    type: 2}
+  spawnOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114000014127644380
 MonoBehaviour:
   m_ObjectHideFlags: 1

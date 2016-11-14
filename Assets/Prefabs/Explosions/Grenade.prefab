@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010963903028}
   - 198: {fileID: 198000010164859494}
   - 199: {fileID: 199000012777041900}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: FX_Explosion_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,8 +39,8 @@ GameObject:
   - 135: {fileID: 135000011902457952}
   - 114: {fileID: 114000011841141754}
   - 114: {fileID: 114000011153446274}
-  m_Layer: 15
-  m_Name: Grenade
+  m_Layer: 0
+  m_Name: GrenadeExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011177080286}
-  serializedVersion: 2
+  serializedVersion: 4
   lengthInSec: 0.1
   startDelay:
     scalar: 0.1
@@ -154,12 +154,13 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
-  randomSeed: 0
   looping: 0
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   moveWithTransform: 0
+  autoRandomSeed: 1
   scalingMode: 2
+  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
