@@ -185,10 +185,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012446604258}
   - 95: {fileID: 95000013489180392}
+  - 114: {fileID: 114000012755584922}
   - 114: {fileID: 114000012314053770}
   - 143: {fileID: 143000012088721324}
   - 114: {fileID: 114000011125800094}
-  - 114: {fileID: 114000012755584922}
   - 114: {fileID: 114000012939821248}
   - 114: {fileID: 114000010838514334}
   - 114: {fileID: 114000011136772518}
@@ -1051,8 +1051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 400
-  _health: 400
+  _maxHealth: 1000
+  _health: 1000
 --- !u!114 &114000012939821248
 MonoBehaviour:
   m_ObjectHideFlags: 1
