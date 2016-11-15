@@ -172,7 +172,7 @@ MonoBehaviour:
   stats:
     name: 
     type: 2
-    speed: 15
+    speed: 16
     turnRate: 360
     description: Zoom zoom zoom! Grab this for a slippery ride!
 --- !u!114 &114000013487310358
