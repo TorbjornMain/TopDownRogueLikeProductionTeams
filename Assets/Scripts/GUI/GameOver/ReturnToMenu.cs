@@ -2,11 +2,11 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Restart : MonoBehaviour {
+public class ReturnToMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    
+	
 	}
 	
 	// Update is called once per frame
@@ -14,8 +14,8 @@ public class Restart : MonoBehaviour {
 	
 	}
 
-    public void RestartRun()
+    public void Menu()
     {
-        SceneManager.LoadSceneAsync("James Test (2)", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("TitleScene", LoadSceneMode.Single);
     }
 }
