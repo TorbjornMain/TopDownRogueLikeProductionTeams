@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419859053ea3a39458e909dc9390c9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 3
+  lifetime: 4
   isPiercing: 0
   projectileSpeedCurve:
     serializedVersion: 2
@@ -180,3 +180,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   baseProjectileSpeed: 40
+  useGravity: 0

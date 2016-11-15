@@ -41,8 +41,8 @@ public class TopDownController : MonoBehaviour {
 		a.SetFloat ("Speed", moveVec.magnitude * speed);
 	}
 
-	void Update () {		 
-		if (Input.GetButtonDown ("Fire1")) {
+	void Update () {
+        if (Input.GetButtonDown ("Fire1")) {
 			mainBody.StartFirePrimary ();
 		}
 
