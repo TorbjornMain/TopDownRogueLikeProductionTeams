@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 1
   height: 1
-  levelClass: 0
+  levelClass: 2
   heightOffset: 0.5
   frequency: 1
 --- !u!114 &114000014095216124

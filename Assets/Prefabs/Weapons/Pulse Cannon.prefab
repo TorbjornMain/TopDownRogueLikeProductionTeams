@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemFadeTime: 10
+  itemFadeTime: 20
   weaponMods: []
   baseStats:
     name: Pulse Cannon
@@ -118,7 +118,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 0.8
-    description: 
+    description: Charge....charge...BOOM!
   projectilePrefab: {fileID: 11462312, guid: b09329f6e90e33441a718f938ff12564, type: 2}
   barrelPos: {x: 0.26, y: 0.2, z: 1.8}
   barrelDir: {x: 0, y: 0, z: 1}

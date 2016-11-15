@@ -202,7 +202,7 @@ MonoBehaviour:
     type: 0
     speed: 10
     turnRate: 1
-    description: AWWW YISS
+    description: Slow & Steady wins the race...or it could get you killed.
 --- !u!114 &114000014102015296
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemFadeTime: 10
+  itemFadeTime: 20
   weaponMods: []
   baseStats:
     name: Disco Gun
@@ -549,7 +549,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 0
     speed: 0
-    description: 
+    description: EVERYBODY DANCE NOW
   projectilePrefab: {fileID: 0}
   barrelPos: {x: 0, y: 0.2, z: 1.2}
   barrelDir: {x: 0, y: 0, z: 1}
@@ -580,6 +580,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!135 &135000011324467974
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -431,6 +431,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000010056007038, guid: 31ebd0982dc536949b563c4169acac8d,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000012821768606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -448,7 +449,7 @@ MonoBehaviour:
     type: 1
     speed: 15
     turnRate: 1
-    description: 
+    description: Just an ordinary pair of Mech Legs
 --- !u!137 &137000010943983372
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

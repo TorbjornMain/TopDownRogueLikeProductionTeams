@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41007e00bfd4cdf47b7b90e59ff07340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemFadeTime: 10
+  itemFadeTime: 20
   weaponMods: []
   baseStats:
     name: Projectile Gun
@@ -119,7 +119,7 @@ MonoBehaviour:
     spread: 0
     numProjectiles: 1
     speed: 4
-    description: 
+    description: Moderate Damage, Moderate Fire-Rate
   projectilePrefab: {fileID: 114000013753133250, guid: 810a26b6546b45d4193b58f0b44f735d,
     type: 2}
   barrelPos: {x: 0, y: 0.2, z: 0.9}
@@ -139,6 +139,7 @@ MonoBehaviour:
   heightOffset: 1
   widgetPrefab: {fileID: 1000012383609246, guid: 5063b18b0bc36ac4fa43c8cb7fe3e262,
     type: 2}
+  followsObject: 1
 --- !u!114 &114000013735883374
 MonoBehaviour:
   m_ObjectHideFlags: 1
