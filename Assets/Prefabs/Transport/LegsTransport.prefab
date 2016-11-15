@@ -160,6 +160,7 @@ GameObject:
   - 114: {fileID: 114000010895710732}
   - 114: {fileID: 114000010077940338}
   - 114: {fileID: 114000011364073988}
+  - 114: {fileID: 114000010541311920}
   m_Layer: 11
   m_Name: LegsTransport
   m_TagString: Untagged
@@ -509,6 +510,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 2.9, z: 0}
+--- !u!114 &114000010541311920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012885100420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5731120b36585084997551624cebc09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightOffset: 0
+  widgetPrefab: {fileID: 1000010056007038, guid: 31ebd0982dc536949b563c4169acac8d,
+    type: 2}
+  followsObject: 1
 --- !u!114 &114000010895710732
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -31,10 +31,15 @@ public class TopDownController : MonoBehaviour {
 		if ((Input.GetJoystickNames ().Length == 0) || !Settings.bUsingController) {
 			gunAimVec = Input.mousePosition - playerCamera.WorldToScreenPoint (mainBody.transform.position);
 		} else {
-			gunAimVec = new Vector3 (Input.GetAxis("RightStick-X"), 0, Input.GetAxis("RightStick-Y"));
+			
+				gunAimVec = new Vector3 (Input.GetAxis("RightStick-X"), Input.GetAxis("RightStick-Y"), 0);
 		}
+
+
 		gunAimVec.Set (gunAimVec.x, 0, gunAimVec.y);
-		mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
+		print (gunAimVec);
+		if (gunAimVec.magnitude > 0.1)
+			mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
 		a.SetFloat ("Speed", moveVec.magnitude * speed);
 
 		if ((Input.GetJoystickNames ().Length == 0) || !Settings.bUsingController) {
@@ -46,10 +51,10 @@ public class TopDownController : MonoBehaviour {
 				mainBody.CeaseFirePrimary ();
 			}
 		} else {
-			if (gunAimVec.magnitude > 0.2f && !mainBody.isFiring) {
+			if (gunAimVec.magnitude > 0.5f && !mainBody.isFiring) {
 				mainBody.StartFirePrimary ();
 			}
-			if (gunAimVec.magnitude < 0.2f && mainBody.isFiring) {
+			if (gunAimVec.magnitude < 0.1f && mainBody.isFiring) {
 				mainBody.CeaseFirePrimary ();
 			}
 		}
