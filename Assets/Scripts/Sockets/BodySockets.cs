@@ -88,7 +88,8 @@ public class BodySockets : MonoBehaviour
 				transportSocket.transport.nodeObject.mainBody = null;
 				transportSocket.transport.nodeObject.StartCoroutine ("Despawn");
 			} else {
-				Destroy (transportSocket.transport.nodeObject.gameObject);
+				if(transportSocket.transport.gameObject != null)
+					Destroy (transportSocket.transport.nodeObject.gameObject);
 			}
 
 			transportSocket.transport = null;
