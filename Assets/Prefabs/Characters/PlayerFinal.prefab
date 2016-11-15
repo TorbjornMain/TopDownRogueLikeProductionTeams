@@ -985,11 +985,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeaponSockets:
-  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+  - primaryWeapon: {fileID: 114000013735883374, guid: ed1861558871fec42b746d5c10fa337e,
       type: 2}
     offset: {x: -1.2, y: 2.1, z: 0.6}
     side: 0
-  - primaryWeapon: {fileID: 114000013735883374, guid: 5cdf6742cd8badc4f9b4abbff597ccd9,
+  - primaryWeapon: {fileID: 114000013735883374, guid: ed1861558871fec42b746d5c10fa337e,
       type: 2}
     offset: {x: 1.2, y: 2.1, z: 0.6}
     side: 1
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 20000011656293778}
-  cameraOffset: {x: 0, y: 20, z: -5}
+  cameraOffset: {x: 0, y: 37.5, z: -10}
   cameraAngle: {x: 70, y: 0, z: 0}
 --- !u!114 &114000012755584922
 MonoBehaviour:
