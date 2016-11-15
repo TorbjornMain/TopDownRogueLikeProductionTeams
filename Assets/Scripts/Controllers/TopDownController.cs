@@ -37,7 +37,6 @@ public class TopDownController : MonoBehaviour {
 
 
 		gunAimVec.Set (gunAimVec.x, 0, gunAimVec.y);
-		print (gunAimVec);
 		if (gunAimVec.magnitude > 0.1)
 			mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
 		a.SetFloat ("Speed", moveVec.magnitude * speed);
