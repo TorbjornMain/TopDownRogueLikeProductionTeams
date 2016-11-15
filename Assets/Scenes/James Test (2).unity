@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proceduralLevel: {fileID: 1814993766}
-  playerPrefab: {fileID: 1000011210795040, guid: 864a8dec98717c343be47c91be90c751,
+  playerPrefab: {fileID: 1000010603816378, guid: c56c2a044378bbb42b034be51cf85c3e,
     type: 2}
   propPrefabs:
   - {fileID: 114000012547039134, guid: e2f13a7d7510b914dbbfe85de1b11e2c, type: 2}

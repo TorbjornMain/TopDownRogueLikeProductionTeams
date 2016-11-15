@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Settings
 {
-	public static bool bUsingController = false;
+	public static bool bUsingController = true;
 	private Settings (){}
 }
 
