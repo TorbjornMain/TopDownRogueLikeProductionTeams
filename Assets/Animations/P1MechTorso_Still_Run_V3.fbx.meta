@@ -62,7 +62,8 @@ ModelImporter:
     400052: torso
     400054: TorsoMesh
     4300000: TorsoMesh
-    7400000: Take 001
+    7400000: Idle
+    7400002: Walk
     9500000: //RootNode
     13700000: TorsoMesh
   materials:
@@ -85,7 +86,175 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: control_curves1
+        weight: 1
+      - path: control_curves1/L_arm_CTRL
+        weight: 1
+      - path: control_curves1/L_arm_CTRL/ikHandle6
+        weight: 1
+      - path: control_curves1/Lelbow_nurbsCircle
+        weight: 1
+      - path: control_curves1/Lshoulder_nurbsCircle
+        weight: 1
+      - path: control_curves1/R_arm_CTRL
+        weight: 1
+      - path: control_curves1/R_arm_CTRL/ikHandle7
+        weight: 1
+      - path: control_curves1/Relbow_nurbsCircle
+        weight: 1
+      - path: control_curves1/Rshoulder_nurbsCircle
+        weight: 1
+      - path: Root_group1
+        weight: 1
+      - path: Root_group1/hip
+        weight: 1
+      - path: Root_group1/hip/torso
+        weight: 1
+      - path: Root_group1/hip/torso/group3
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2/group1
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2/group1/head
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder/Lelbow
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder/Lelbow/Lhand
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder/Relbow
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder/Relbow/Rhand
+        weight: 1
+      - path: TorsoMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 98
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: control_curves1
+        weight: 1
+      - path: control_curves1/L_arm_CTRL
+        weight: 1
+      - path: control_curves1/L_arm_CTRL/ikHandle6
+        weight: 1
+      - path: control_curves1/Lelbow_nurbsCircle
+        weight: 1
+      - path: control_curves1/Lshoulder_nurbsCircle
+        weight: 1
+      - path: control_curves1/R_arm_CTRL
+        weight: 1
+      - path: control_curves1/R_arm_CTRL/ikHandle7
+        weight: 1
+      - path: control_curves1/Relbow_nurbsCircle
+        weight: 1
+      - path: control_curves1/Rshoulder_nurbsCircle
+        weight: 1
+      - path: Root_group1
+        weight: 1
+      - path: Root_group1/hip
+        weight: 1
+      - path: Root_group1/hip/torso
+        weight: 1
+      - path: Root_group1/hip/torso/group3
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2/group1
+        weight: 1
+      - path: Root_group1/hip/torso/group3/group2/group1/head
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder/Lelbow
+        weight: 1
+      - path: Root_group1/hip/torso/Lcolar/Lshoulderjoint/Lshoulder/Lelbow/Lhand
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder/Relbow
+        weight: 1
+      - path: Root_group1/hip/torso/Rcolar/Rshoulderjoint/Rshoulder/Relbow/Rhand
+        weight: 1
+      - path: TorsoMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []

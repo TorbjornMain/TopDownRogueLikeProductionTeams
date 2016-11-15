@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1b04b6dcef8fe6c48ba3ce8aecc67101
-timeCreated: 1478046941
+guid: 7e536810c25ccad42822ab6a2553dca5
+timeCreated: 1479165382
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -13,20 +13,21 @@ ModelImporter:
     100010: L_leg_CTRL
     100012: L_Leg_Ik
     100014: Lankle
-    100016: Lfoot
-    100018: Lknee
-    100020: Lthigh
-    100022: Master_Control
-    100024: //RootNode
-    100026: pelvis
-    100028: R_knee
-    100030: R_leg_CTRL
-    100032: R_Leg_Ik
-    100034: Rankle
-    100036: Rfoot
-    100038: Rknee
-    100040: Root_group
-    100042: Rthigh
+    100016: LegsMesh
+    100018: Lfoot
+    100020: Lknee
+    100022: Lthigh
+    100024: Master_Control
+    100026: //RootNode
+    100028: pelvis
+    100030: R_knee
+    100032: R_leg_CTRL
+    100034: R_Leg_Ik
+    100036: Rankle
+    100038: Rfoot
+    100040: Rknee
+    100042: Root_group
+    100044: Rthigh
     400000: control_curves
     400002: hip
     400004: ikHandle4
@@ -35,22 +36,25 @@ ModelImporter:
     400010: L_leg_CTRL
     400012: L_Leg_Ik
     400014: Lankle
-    400016: Lfoot
-    400018: Lknee
-    400020: Lthigh
-    400022: Master_Control
-    400024: //RootNode
-    400026: pelvis
-    400028: R_knee
-    400030: R_leg_CTRL
-    400032: R_Leg_Ik
-    400034: Rankle
-    400036: Rfoot
-    400038: Rknee
-    400040: Root_group
-    400042: Rthigh
+    400016: LegsMesh
+    400018: Lfoot
+    400020: Lknee
+    400022: Lthigh
+    400024: Master_Control
+    400026: //RootNode
+    400028: pelvis
+    400030: R_knee
+    400032: R_leg_CTRL
+    400034: R_Leg_Ik
+    400036: Rankle
+    400038: Rfoot
+    400040: Rknee
+    400042: Root_group
+    400044: Rthigh
+    4300000: LegsMesh
     7400000: Take 001
     9500000: //RootNode
+    13700000: LegsMesh
   materials:
     importMaterials: 1
     materialName: 0
