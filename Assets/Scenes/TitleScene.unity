@@ -1645,6 +1645,7 @@ GameObject:
   - 4: {fileID: 827612545}
   - 114: {fileID: 827612544}
   - 114: {fileID: 827612543}
+  - 95: {fileID: 827612546}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1697,6 +1698,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!95 &827612546
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827612542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 715073b978ed99f478bffe3a8f7fc898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &843911687
 GameObject:
   m_ObjectHideFlags: 0
