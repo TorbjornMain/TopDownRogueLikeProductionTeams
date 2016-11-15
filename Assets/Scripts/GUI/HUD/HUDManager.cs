@@ -6,6 +6,7 @@ public class HUDManager : MonoBehaviour {
     public GameObject healthBar;
     HealthBar health;
     float playerHealth = -1;
+    float playerMaxHealth;
     DamageableItem playersDamageComponent;
 
     // Use this for initialization
@@ -23,10 +24,12 @@ public class HUDManager : MonoBehaviour {
         {
             playersDamageComponent = player.GetComponent<DamageableItem>();
             playerHealth = playersDamageComponent.health;
+            playerMaxHealth = playersDamageComponent.maxHealth;
         }
         if(playerHealth >= 0)
         {
-            health.percentFilled = playersDamageComponent.health;
+            health.percentFilled = playersDamageComponent.health / playerMaxHealth;
+            //health.percentFilled = playersDamageComponent.health;
         }
         
     }
