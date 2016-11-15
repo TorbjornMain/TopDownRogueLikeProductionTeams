@@ -20,10 +20,7 @@ public class TopDownController : MonoBehaviour {
 		a = GetComponent<Animator> ();
 	}
 
-
-
-	void FixedUpdate()
-	{
+	void Update () {
 		Vector3 moveVec = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
 		if(mainBody.transportSocket.transport != null)
 			mainBody.transportSocket.transport.nodeObject.Drive(moveVec);
@@ -34,20 +31,27 @@ public class TopDownController : MonoBehaviour {
 		if ((Input.GetJoystickNames ().Length == 0) || !Settings.bUsingController) {
 			gunAimVec = Input.mousePosition - playerCamera.WorldToScreenPoint (mainBody.transform.position);
 		} else {
-			gunAimVec = new Vector3 (Input.GetAxis());
+			gunAimVec = new Vector3 (Input.GetAxis("RightStick-X"), 0, Input.GetAxis("RightStick-Y"));
 		}
 		gunAimVec.Set (gunAimVec.x, 0, gunAimVec.y);
 		mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
 		a.SetFloat ("Speed", moveVec.magnitude * speed);
-	}
 
-	void Update () {
-        if (Input.GetButtonDown ("Fire1")) {
-			mainBody.StartFirePrimary ();
-		}
+		if ((Input.GetJoystickNames ().Length == 0) || !Settings.bUsingController) {
+			if (Input.GetButtonDown ("Fire1")) {
+				mainBody.StartFirePrimary ();
+			}
 
-		if (Input.GetButtonUp ("Fire1")) {
-			mainBody.CeaseFirePrimary ();
+			if (Input.GetButtonUp ("Fire1")) {
+				mainBody.CeaseFirePrimary ();
+			}
+		} else {
+			if (gunAimVec.magnitude > 0.2f && !mainBody.isFiring) {
+				mainBody.StartFirePrimary ();
+			}
+			if (gunAimVec.magnitude < 0.2f && mainBody.isFiring) {
+				mainBody.CeaseFirePrimary ();
+			}
 		}
 	
 	}

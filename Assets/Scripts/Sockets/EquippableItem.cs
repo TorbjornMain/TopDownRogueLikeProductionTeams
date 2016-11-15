@@ -16,9 +16,11 @@ public class EquippableItem : MonoBehaviour {
 	{
 		if (gameObject.layer == LayerMask.NameToLayer ("Item")) {
 			transform.rotation = Quaternion.Euler (0, transform.rotation.eulerAngles.y + 180 * Time.deltaTime, 0);
-			col.enabled = true;
+			if(col != null)
+				col.enabled = true;
 		} else {
-			col.enabled = false;
+			if(col != null)
+				col.enabled = false;
 		}
 
 	}

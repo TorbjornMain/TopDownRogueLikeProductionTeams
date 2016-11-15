@@ -946,7 +946,7 @@ Animator:
   m_GameObject: {fileID: 1000011727969918}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9a92ecfa2ecfda54899841bce3282774, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1cbdd8a298ddaac4a887a57aec10aa02, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -975,7 +975,7 @@ MonoBehaviour:
     offset: {x: -1.2, y: 2.1, z: 0.6}
     side: 0
   transportSocket:
-    transport: {fileID: 114000010660953830, guid: 0c7fb6e02b5bdcd4f80f92b680b1b9bc,
+    transport: {fileID: 114000010077940338, guid: 119dab105c209984cb2c5350667e0974,
       type: 2}
     offset: {x: 0, y: 2.6, z: 0}
 --- !u!114 &114000012314053770
@@ -992,8 +992,6 @@ MonoBehaviour:
   playerCamera: {fileID: 20000011656293778}
   cameraOffset: {x: 0, y: 20, z: -5}
   cameraAngle: {x: 70, y: 0, z: 0}
-  mainBody: {fileID: 114000011125800094}
-  speed: 5
 --- !u!124 &124000010008988986
 Behaviour:
   m_ObjectHideFlags: 1

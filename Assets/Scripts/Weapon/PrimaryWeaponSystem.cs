@@ -64,6 +64,7 @@ public class PrimaryWeaponSystem : EquippableItem
 				shotTime = 0;
 		}
 
+
 		base.Update ();
 	}
 

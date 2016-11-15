@@ -54,7 +54,7 @@ public class Transport : EquippableItem {
 
 	public void Drive(Vector3 direction)
 	{
-		transportSpeed = (transform.position - previousPos).magnitude;
+		transportSpeed = (transform.position - previousPos).magnitude / Time.deltaTime;
 		if (direction.magnitude > 0) {
 			footRotVec = (direction.normalized + footRotVec).normalized;
 			transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), Vector3.Slerp (transform.forward, footRotVec, stats.turnRate)).eulerAngles.y, 0);
