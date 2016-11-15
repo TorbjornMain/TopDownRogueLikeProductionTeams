@@ -32,8 +32,8 @@ public class TopDownController : MonoBehaviour {
 		mainBody.transform.rotation = Quaternion.Euler (0, Quaternion.FromToRotation (new Vector3 (0, 0, 1), gunAimVec).eulerAngles.y, 0);
 	}
 
-	void Update () {		 
-		if (Input.GetButtonDown ("Fire1")) {
+	void Update () {
+        if (Input.GetButtonDown ("Fire1")) {
 			mainBody.StartFirePrimary ();
 		}
 
