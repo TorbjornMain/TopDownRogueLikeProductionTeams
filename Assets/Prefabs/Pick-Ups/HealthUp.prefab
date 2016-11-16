@@ -250,7 +250,7 @@ MonoBehaviour:
   height: 1
   levelClass: 0
   heightOffset: 0.5
-  frequency: 1
+  frequency: 3
 --- !u!114 &114000012572963972
 MonoBehaviour:
   m_ObjectHideFlags: 1
