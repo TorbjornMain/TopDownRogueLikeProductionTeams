@@ -22,6 +22,9 @@ GameObject:
   - 33: {fileID: 33000013782525352}
   - 23: {fileID: 23000013303515792}
   - 95: {fileID: 95000010253569626}
+  - 114: {fileID: 114000012668393674}
+  - 114: {fileID: 114000010443257736}
+  - 65: {fileID: 65000013064583382}
   m_Layer: 0
   m_Name: Scrap
   m_TagString: Untagged
@@ -78,6 +81,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011441081146}
   m_Mesh: {fileID: 4300000, guid: 299fa0b41791b2d49a7cce84ce5558bc, type: 3}
+--- !u!65 &65000013064583382
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011441081146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.085413, y: 0.92560923, z: 0.39553207}
+  m_Center: {x: -0.04054573, y: 0.0117675215, z: 0}
 --- !u!95 &95000010253569626
 Animator:
   serializedVersion: 3
@@ -95,3 +110,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010443257736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011441081146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11145d04252717e4681f068d201815ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000012668393674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011441081146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff40077e5962a7488a08ad3c432bb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 1
+  height: 1
+  levelClass: 0
+  heightOffset: 0.5
+  frequency: 1
