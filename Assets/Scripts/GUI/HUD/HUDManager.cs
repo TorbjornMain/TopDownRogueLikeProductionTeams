@@ -9,9 +9,14 @@ public class HUDManager : MonoBehaviour {
     float playerMaxHealth;
     DamageableItem playersDamageComponent;
 
+    public GameObject armourBar;
+    float playerArmor;
+    HealthBar armour;
+
     // Use this for initialization
     void Start () {
         health = healthBar.GetComponent<HealthBar>();
+        armour = armourBar.GetComponent<HealthBar>();
 	}
 	
 	// Update is called once per frame
@@ -32,5 +37,10 @@ public class HUDManager : MonoBehaviour {
             //health.percentFilled = playersDamageComponent.health;
         }
         
+    }
+
+    float getArmor()
+    {
+        return playerArmor;
     }
 }
