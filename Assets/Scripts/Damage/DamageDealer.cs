@@ -14,6 +14,7 @@ public class DamageDealer : MonoBehaviour {
 	{
 		dmgInfo.target.SendMessage ("Damaged", -dmgInfo.baseDamage * damageMultiplier, SendMessageOptions.DontRequireReceiver);
 		dmgInfo.target.changeHealth (-dmgInfo.baseDamage * damageMultiplier);
-		return -dmgInfo.baseDamage * damageMultiplier;
+        dmgInfo.target.changeArmour(-dmgInfo.baseDamage * damageMultiplier);
+        return -dmgInfo.baseDamage * damageMultiplier;
 	}
 }
