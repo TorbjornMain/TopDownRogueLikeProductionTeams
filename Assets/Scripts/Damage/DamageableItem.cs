@@ -6,6 +6,10 @@ public class DamageableItem : MonoBehaviour {
 	private float _maxHealth = 100;
 	[SerializeField]
 	private float _health = 100;
+    [SerializeField]
+    private float _armour = 0;
+    [SerializeField]
+    private float _maxArmour = 100;
 
 	private bool dead = false;
 
@@ -35,6 +39,27 @@ public class DamageableItem : MonoBehaviour {
 		}
 	}
 
+    public float armour
+    {
+        get
+        {
+            return _armour;
+        }
+
+        set
+        {
+            _armour = Mathf.Clamp(value, 0, _maxArmour);
+        }
+    }
+
+    public float maxArmour
+    {
+        get
+        {
+            return _maxArmour;
+        }
+    }
+
 
 	// Use this for initialization
 	void Start () {
@@ -47,8 +72,17 @@ public class DamageableItem : MonoBehaviour {
 
 	public void changeHealth(float value)
 	{
-		health += value;
+        if(armour <= 0)
+        {
+            health += value;
+        }
+		
 	}
+
+    public void changeArmour(float value)
+    {
+        armour += value;
+    }
 
 	void die()
 	{

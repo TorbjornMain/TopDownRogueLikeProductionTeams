@@ -9,27 +9,45 @@ public class HUDManager : MonoBehaviour {
     float playerMaxHealth;
     DamageableItem playersDamageComponent;
 
+    public GameObject armourBar;
+    float playerArmour = -1;
+    float playerMaxArmour;
+    HealthBar armour;
+
     // Use this for initialization
     void Start () {
         health = healthBar.GetComponent<HealthBar>();
+        armour = armourBar.GetComponent<HealthBar>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if(player == null)
+
+    // Update is called once per frame
+    void Update() {
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        if(player != null && playerHealth == -1)
+        if (player != null && playerHealth == -1)
         {
             playersDamageComponent = player.GetComponent<DamageableItem>();
             playerHealth = playersDamageComponent.health;
+            print("health " + playerHealth);
             playerMaxHealth = playersDamageComponent.maxHealth;
+            print("Max Health " + playerMaxHealth);
+            playerArmour = playersDamageComponent.armour;
+            print("Armour " + playerArmour); 
+            playerMaxArmour = playersDamageComponent.maxArmour;
+            print("Max Armour" + playerMaxArmour);
+
         }
-        if(playerHealth >= 0)
+        if (playerHealth >= 0)
         {
             health.percentFilled = playersDamageComponent.health / playerMaxHealth;
             //health.percentFilled = playersDamageComponent.health;
+        }
+        if (playerArmour >= 0)
+        {
+            armour.percentFilled = (playersDamageComponent.armour / playerMaxArmour);
+            //print(armour.percentFilled);
         }
         
     }
