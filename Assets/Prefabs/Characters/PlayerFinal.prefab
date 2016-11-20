@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 1000
   _health: 1000
-  _armour: 50
+  _armour: 0
   _maxArmour: 1000
 --- !u!114 &114000012939821248
 MonoBehaviour:

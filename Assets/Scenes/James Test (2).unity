@@ -132,6 +132,7 @@ MonoBehaviour:
   - {fileID: 114000011264071874, guid: 585022d787206a845abdb9711e6a11c0, type: 2}
   - {fileID: 114000010364874710, guid: 30597f8d4bfcf5946bc7d7bf77626297, type: 2}
   - {fileID: 114000010818816050, guid: baaa6e016c6d356428dffcb2f1265249, type: 2}
+  - {fileID: 114000010573899204, guid: b01dae0f1f1defe48902ef569bebae6e, type: 2}
   enemyPrefabs:
   - {fileID: 114000010085162610, guid: 8dc2ac484920ebe45929b8e7649cc3af, type: 2}
   - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}
