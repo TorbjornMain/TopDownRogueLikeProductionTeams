@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749623027a921b145bb84d73f387d2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 30
-  height: 30
+  width: 50
+  height: 50
   numRooms: 8
   wallHeight: 5
   tileScale: 4
