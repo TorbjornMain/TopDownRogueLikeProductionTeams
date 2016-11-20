@@ -250,6 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 50
   _health: 50
+  _armour: 0
+  _maxArmour: 100
 --- !u!114 &114000012411838390
 MonoBehaviour:
   m_ObjectHideFlags: 1

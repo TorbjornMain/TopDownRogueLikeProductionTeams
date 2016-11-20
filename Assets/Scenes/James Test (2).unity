@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 114000010364874710, guid: 30597f8d4bfcf5946bc7d7bf77626297, type: 2}
   - {fileID: 114000010818816050, guid: baaa6e016c6d356428dffcb2f1265249, type: 2}
   - {fileID: 114000010573899204, guid: b01dae0f1f1defe48902ef569bebae6e, type: 2}
+  - {fileID: 114000010573899204, guid: b01dae0f1f1defe48902ef569bebae6e, type: 2}
   enemyPrefabs:
   - {fileID: 114000010085162610, guid: 8dc2ac484920ebe45929b8e7649cc3af, type: 2}
   - {fileID: 114000014057291422, guid: 0ba22de19d0102e4d9b03b06c245bace, type: 2}
@@ -142,10 +143,10 @@ MonoBehaviour:
   portalPrefab: {fileID: 114000012588505574, guid: 305ed990fcf427a4cabae9bc0ccd59f3,
     type: 2}
   maxDifficulty: 0
-  minProps: 40
-  minEnemies: 90
-  maxProps: 100
-  maxEnemies: 110
+  minProps: 25
+  minEnemies: 25
+  maxProps: 50
+  maxEnemies: 50
 --- !u!4 &174344666
 Transform:
   m_ObjectHideFlags: 0
@@ -521,9 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749623027a921b145bb84d73f387d2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 100
-  height: 100
-  numRooms: 16
+  width: 30
+  height: 30
+  numRooms: 8
   wallHeight: 5
   tileScale: 4
 --- !u!1 &2147468269

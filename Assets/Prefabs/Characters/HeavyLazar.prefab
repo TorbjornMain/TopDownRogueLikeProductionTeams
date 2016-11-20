@@ -28,7 +28,6 @@ GameObject:
   - 114: {fileID: 114000011618755820}
   - 114: {fileID: 114000010085162610}
   - 114: {fileID: 114000010782805526}
-  - 114: {fileID: 114000011811555428}
   - 114: {fileID: 114000012021656074}
   - 114: {fileID: 114000011157888316}
   - 65: {fileID: 65000011219678400}
@@ -186,25 +185,9 @@ MonoBehaviour:
     offset: {x: -1.45, y: -0.3, z: 2.26}
     side: 0
   transportSocket:
-    transport: {fileID: 114000013652321144, guid: bdba96d8d4eed344dbf7618af84fc4d9,
+    transport: {fileID: 114000010077940338, guid: 119dab105c209984cb2c5350667e0974,
       type: 2}
     offset: {x: 0, y: 0, z: 0}
---- !u!114 &114000011811555428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014023241546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff40077e5962a7488a08ad3c432bb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 1
-  height: 1
-  levelClass: 0
-  heightOffset: 1
-  frequency: 1
 --- !u!114 &114000012021656074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 200
   _health: 200
+  _armour: 0
+  _maxArmour: 100
 --- !u!143 &143000010065412640
 CharacterController:
   m_ObjectHideFlags: 1
