@@ -1348,8 +1348,8 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 0.6313726, g: 0.6313726, b: 0.6313726, a: 1}
-      maxColor: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
+      minColor: {r: 1, g: 0.95686275, b: 0.8745098, a: 1}
+      maxColor: {r: 0.9254902, g: 0.80784315, b: 0.49803922, a: 1}
       minMaxState: 2
     startSize:
       scalar: 25
@@ -1571,7 +1571,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 500
+      scalar: 1000
       maxCurve:
         serializedVersion: 2
         m_Curve:
