@@ -47,13 +47,13 @@ public class LevelManager : MonoBehaviour {
 			RaycastHit rc = new RaycastHit();
 			Vector3 portalPos;
 			if (Physics.Raycast (playerInstance.transform.position, playerInstance.transform.forward, out rc, 20, LayerMask.NameToLayer ("Terrain"))) {
-				portalPos = rc.point - playerInstance.transform.forward;
+				portalPos = rc.point - (playerInstance.transform.forward * 5);
 			} else {
 				portalPos = playerInstance.transform.position + (playerInstance.transform.forward * 20);
 			}
 			portalInstance = Instantiate<LevelUpPortal> (portalPrefab);
 			portalInstance.levelManager = this;
-			portalInstance.transform.position = portalPos;
+			portalInstance.transform.position = portalPos + new Vector3(0, 5, 0);
 		}
 		int destroyedIndex = 0;
 		bool isDestroyed = false;

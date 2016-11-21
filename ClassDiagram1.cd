@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LegAnimationScript" Collapsed="true">
+    <Position X="14" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Animation\LegAnimationScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyAIController" Collapsed="true">
+    <Position X="2.25" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQQAAAAAgCAAAICQAAAAAACAAAAABIAEAAgAgKAABAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\EnemyAIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopDownController" Collapsed="true">
+    <Position X="2.25" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAACAAAAAhAAAAAAAAAAAAAQAgABAAgCAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\TopDownController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageableItem" Collapsed="true">
+    <Position X="7.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAIADEACAAAAAAAAAAIAAAAIAAKAAAACAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Damage\DamageableItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageDealer" Collapsed="true">
+    <Position X="2.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Damage\DamageDealer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Explosion" Collapsed="true">
+    <Position X="8.75" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAEQAAAgAAAAAAQAAAAEBAAAA=</HashCode>
+      <FileName>Assets\Scripts\Damage\Explosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager" Collapsed="true">
+    <Position X="3.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACUBABAAACAAAAAABgMCBAAGAAAAACAAAAAGAoAABgQ=</HashCode>
+      <FileName>Assets\Scripts\Generation\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProceduralLevelGenerator" Collapsed="true">
+    <Position X="3.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAAAAKQAAgQEQAEgAAAUAIAAgAAAAAAAAABEASQ=</HashCode>
+      <FileName>Assets\Scripts\Generation\ProceduralLevelGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnableObject" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAQAQAAAAAAwAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Generation\SpawnableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.266" Collapsed="true" />
+  </Class>
+  <Class Name="FaderCard" Collapsed="true">
+    <Position X="5.5" Y="23.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\FaderCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GearRotator" Collapsed="true">
+    <Position X="10.75" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\GearRotator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GunCardOverlayWidget" Collapsed="true">
+    <Position X="6" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAAAgIAAQAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\GunCardOverlayWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthBar" Collapsed="true">
+    <Position X="3.75" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuButtonFader" Collapsed="true">
+    <Position X="10.75" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\MainMenuButtonFader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuUI" Collapsed="true">
+    <Position X="12.5" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAGAAAAAAAAAAAAAAAACAEAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\MainMenuUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Overlay" Collapsed="true">
+    <Position X="3.75" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Overlay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OverlayManager" Collapsed="true">
+    <Position X="3.75" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\OverlayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OverlayWidget" Collapsed="true">
+    <Position X="3.75" Y="23.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAACAAIAAAAAAAAAAgAAAAAAAAQAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\OverlayWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderableHealthBar" Collapsed="true">
+    <Position X="3.75" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAACAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\RenderableHealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransportCardOverlayWidget" Collapsed="true">
+    <Position X="1.5" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAAEAIAAQAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\TransportCardOverlayWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransportStatCard" Collapsed="true">
+    <Position X="1.5" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQBAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\TransportStatCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponStatCard" Collapsed="true">
+    <Position X="6" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgAAACAAAAAEQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\WeaponStatCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransportStats" Collapsed="true">
+    <Position X="14" Y="34" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAIAAAAAAAAAAFAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Mobility\Transport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Transport" Collapsed="true">
+    <Position X="12.25" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQASAAABAgAAAAAAAAAAAAgAAEAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Mobility\Transport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestroyOnDeath" Collapsed="true">
+    <Position X="11" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\DestroyOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DissapearOnDeath" Collapsed="true">
+    <Position X="11" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\DissapearOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DropItemsOnDeath" Collapsed="true">
+    <Position X="11" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAAgAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\DropItemsOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneTransitionOnDeath" Collapsed="true">
+    <Position X="11" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAACAAAgAAAABAAAEAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\SceneTransitionOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundOnDeath" Collapsed="true">
+    <Position X="11" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\SoundOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnOnDeath" Collapsed="true">
+    <Position X="11" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAgAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Death Effects\SpawnOnDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageOnHit" Collapsed="true">
+    <Position X="7" Y="38.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Hit Effects\DamageOnHit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnOnHit" Collapsed="true">
+    <Position X="7" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\On Hit Effects\SpawnOnHit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryWeaponSocket" Collapsed="true">
+    <Position X="8" Y="33.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\BodySockets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransportSocket" Collapsed="true">
+    <Position X="12.25" Y="35" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\BodySockets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BodySockets" Collapsed="true">
+    <Position X="5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQFAEAIACAAAAAgABAAAAAAAAAAEAAACAAAQAAAEAg=</HashCode>
+      <FileName>Assets\Scripts\Sockets\BodySockets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EquippableItem" Collapsed="true">
+    <Position X="11.25" Y="31" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAACAAAAAAAAAAEQAAAIAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\EquippableItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryWeaponNode" Collapsed="true">
+    <Position X="10" Y="33.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\PrimaryWeaponNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransportNode" Collapsed="true">
+    <Position X="12.25" Y="34" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\TransportNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeshMaker" Collapsed="true">
+    <Position X="8" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAgAEAAAAAAAAAAAAAAAAgAABAAAAAAACAAAABgA=</HashCode>
+      <FileName>Assets\Scripts\Utility\MeshMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GunStats" Collapsed="true">
+    <Position X="10" Y="34.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAYAAAAAAAAQAEAQAAAACAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\Modifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Modifier" Collapsed="true">
+    <Position X="8.25" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\Modifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryWeaponSystem" Collapsed="true">
+    <Position X="10" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oBQUEEAAAAAAABAAAABAAAAAAAAAACAAAAAAAAEAEAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\PrimaryWeaponSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReturnToMenu" Collapsed="true">
+    <Position X="17.75" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\GameOver\ReturnToMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HUDManager" Collapsed="true">
+    <Position X="17.75" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAQAAAAAACAAiAAAggAAAAAAAAAAAAABAAAAAQAQAAg=</HashCode>
+      <FileName>Assets\Scripts\GUI\HUD\HUDManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackButton" Collapsed="true">
+    <Position X="12.5" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAACAAAAAAAAIAAAAAAAAgAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\BackButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controls" Collapsed="true">
+    <Position X="14.25" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAQCAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\Controls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlsBackButton" Collapsed="true">
+    <Position X="16" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACgAAAABAAIAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\ControlsBackButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicSlider" Collapsed="true">
+    <Position X="16" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAQA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\MusicSlider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OptionsButton" Collapsed="true">
+    <Position X="17.75" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAACACAAAAAAIAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\OptionsButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuitGame" Collapsed="true">
+    <Position X="14.25" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\QuitGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundSlider" Collapsed="true">
+    <Position X="14.25" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAAQ=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\SoundSlider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartButton" Collapsed="true">
+    <Position X="16" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Main Menu\StartButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuButton" Collapsed="true">
+    <Position X="17.75" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Pause Menu\MainMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicController" Collapsed="true">
+    <Position X="14.25" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAwA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Pause Menu\MusicController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu" Collapsed="true">
+    <Position X="12.5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAACAAAAAAAAAAAIAAAAAAAAAAiAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Pause Menu\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Restart" Collapsed="true">
+    <Position X="16" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GUI\Pause Menu\Restart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundFXController" Collapsed="true">
+    <Position X="12.5" Y="26" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAACAAAAAAECAQAAAAAAAAAAAAAIAAAAACAAQ=</HashCode>
+      <FileName>Assets\Scripts\GUI\Pause Menu\SoundFXController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Partition" Collapsed="true">
+    <Position X="5.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAQAQAAAAAAAAAAAAAAgAQAkAAIAEAA=</HashCode>
+      <FileName>Assets\Scripts\Generation\ProceduralLevelGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryProjectile" Collapsed="true">
+    <Position X="8.5" Y="36" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAACAAEAAAAAAAAAAEAAAAgAAAAAAAABBAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\Projectile\PrimaryProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryBeamProjectile" Collapsed="true">
+    <Position X="9.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhwAAAAICCAACAAAAAAAAAIAADAAACAAAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\Projectile\PrimaryBeamProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaryBulletProjectile" Collapsed="true">
+    <Position X="7.25" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACBAAAAEAAAAAIAAAAAAgAAIQAAACAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Weapon\Projectile\PrimaryBulletProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="DamageInfo" Collapsed="true">
+    <Position X="5.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Damage\DamageDealer.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="EndEffectData" Collapsed="true">
+    <Position X="7" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIACAAAAAAAAAQAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\On Hit Effects\EndEffectData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="EnemyAIState" Collapsed="true">
+    <Position X="0.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\EnemyAIController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TransportType" Collapsed="true">
+    <Position X="15.75" Y="34" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Mobility\Transport.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SocketSide" Collapsed="true">
+    <Position X="5" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sockets\BodySockets.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Shape" Collapsed="true">
+    <Position X="8" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utility\MeshMaker.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
