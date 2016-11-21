@@ -1053,10 +1053,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362db255aacb4354185b64ede49da765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
-  _health: 1000
+  _maxHealth: 400
+  _health: 500
   _armour: 0
-  _maxArmour: 1000
+  _maxArmour: 500
 --- !u!114 &114000012939821248
 MonoBehaviour:
   m_ObjectHideFlags: 1
