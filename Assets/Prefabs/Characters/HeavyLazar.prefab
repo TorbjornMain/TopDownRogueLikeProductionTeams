@@ -131,7 +131,7 @@ MonoBehaviour:
   height: 1
   levelClass: 2
   heightOffset: 0.5
-  frequency: 1
+  frequency: 0.4
 --- !u!114 &114000010782805526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07a9901ee3568045a9ebd0a0d378279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: 1
+  dropRate: 0.4
 --- !u!114 &114000011618755820
 MonoBehaviour:
   m_ObjectHideFlags: 1
