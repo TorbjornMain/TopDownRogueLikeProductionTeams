@@ -28,18 +28,7 @@ public class ArmourPickUp : MonoBehaviour {
 
     void OnTriggerEnter(Collider player)
     {
-        if (player.tag == "Player" && playersDamageComponent.armour < playersDamageComponent.maxArmour)
-        {
-            if ((playersDamageComponent.armour + armourAmount) > playersDamageComponent.maxArmour)
-            {
-                playersDamageComponent.armour = playersDamageComponent.maxArmour;
-                DestroyObject(gameObject);
-            }
-            else
-            {
-                playersDamageComponent.armour = playersDamageComponent.armour + armourAmount;
-                DestroyObject(gameObject);
-            }
-        }
+		playersDamageComponent.changeArmour (armourAmount);
+		Destroy (gameObject);
     }
 }

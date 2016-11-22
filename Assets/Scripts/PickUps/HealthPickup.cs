@@ -26,17 +26,8 @@ public class HealthPickup : MonoBehaviour {
 
     void OnTriggerEnter(Collider player)
     {
-        if(player.tag == "Player" && playersDamageComponent.health < playersDamageComponent.maxHealth)
-        {
-            if((playersDamageComponent.health + healAmount) > playersDamageComponent.maxHealth)
-            {
-                playersDamageComponent.health = playersDamageComponent.maxHealth;
-                DestroyObject(gameObject);
-            }
-            else {
-                playersDamageComponent.health = playersDamageComponent.health + healAmount;
-                DestroyObject(gameObject);
-            }
-        }
-    }
+
+		playersDamageComponent.changeHealth(healAmount);
+		DestroyObject (gameObject);
+	 }
 }

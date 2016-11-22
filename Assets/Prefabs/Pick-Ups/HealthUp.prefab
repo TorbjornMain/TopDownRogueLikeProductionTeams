@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010487216912}
   - 33: {fileID: 33000010438148002}
   - 23: {fileID: 23000010427740214}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: modifier_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - 114: {fileID: 114000012572963972}
   - 114: {fileID: 114000010336116012}
   - 114: {fileID: 114000010818816050}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: HealthUp
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 4: {fileID: 4000013238670528}
   - 33: {fileID: 33000011961132994}
   - 23: {fileID: 23000011532765066}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: hp_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

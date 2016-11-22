@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 400
-  _health: 500
+  _health: 400
   _armour: 0
   _maxArmour: 500
 --- !u!114 &114000012939821248
@@ -1153,7 +1153,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011727969918}
-  serializedVersion: 2
+  serializedVersion: 4
   lengthInSec: 10
   startDelay:
     scalar: 0
@@ -1191,12 +1191,13 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
-  randomSeed: 0
   looping: 1
   prewarm: 1
   playOnAwake: 1
   moveWithTransform: 0
+  autoRandomSeed: 1
   scalingMode: 2
+  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
