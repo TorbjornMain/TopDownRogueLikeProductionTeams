@@ -72,6 +72,7 @@ public class DamageableItem : MonoBehaviour {
 
 	public void changeHealth(float value)
 	{
+		if(armour == 0 || value > 0)
             health += value;
 	}
 
