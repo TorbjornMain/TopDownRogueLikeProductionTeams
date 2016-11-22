@@ -1,0 +1,242 @@
+Initialize engine version: 5.4.2p4 (e59bdccd995f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     1969 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.206 seconds
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\zachary.demari\Documents\TopDownRogueLikeProductionTeams\SCRAP_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.564365 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 18f4 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.376829 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 77 unused Assets to reduce memory usage. Loaded Objects now: 1612.
+Total: 1.123172 ms (FindLiveObjects: 0.110883 ms CreateObjectMapping: 0.068461 ms MarkObjects: 0.625512 ms  DeleteObjects: 0.317729 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.633705 ms
+
+Unloading 99 unused Assets to reduce memory usage. Loaded Objects now: 1159.
+Total: 1.859568 ms (FindLiveObjects: 0.023405 ms CreateObjectMapping: 0.048859 ms MarkObjects: 0.313048 ms  DeleteObjects: 1.474254 ms)
+
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.530135 ms
+
+Unloading 746 unused Assets to reduce memory usage. Loaded Objects now: 336.
+Total: 1.956700 ms (FindLiveObjects: 0.018139 ms CreateObjectMapping: 0.049151 ms MarkObjects: 0.126682 ms  DeleteObjects: 1.762435 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.844939 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 461.
+Total: 0.804857 ms (FindLiveObjects: 0.051199 ms CreateObjectMapping: 0.054125 ms MarkObjects: 0.671738 ms  DeleteObjects: 0.026916 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.018432 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 461.
+Total: 0.806027 ms (FindLiveObjects: 0.050906 ms CreateObjectMapping: 0.053247 ms MarkObjects: 0.689292 ms  DeleteObjects: 0.011117 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.944997 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 461.
+Total: 0.795787 ms (FindLiveObjects: 0.052954 ms CreateObjectMapping: 0.054125 ms MarkObjects: 0.677004 ms  DeleteObjects: 0.010532 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.031305 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 461.
+Total: 0.845816 ms (FindLiveObjects: 0.052077 ms CreateObjectMapping: 0.054125 ms MarkObjects: 0.704213 ms  DeleteObjects: 0.033645 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.298420 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 75 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 0.708016 ms (FindLiveObjects: 0.055880 ms CreateObjectMapping: 0.037741 ms MarkObjects: 0.404330 ms  DeleteObjects: 0.209479 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.945290 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 0.773552 ms (FindLiveObjects: 0.050614 ms CreateObjectMapping: 0.037448 ms MarkObjects: 0.465477 ms  DeleteObjects: 0.219719 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.936220 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 0.868052 ms (FindLiveObjects: 0.079871 ms CreateObjectMapping: 0.045640 ms MarkObjects: 0.487127 ms  DeleteObjects: 0.255120 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.023991 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 0.753657 ms (FindLiveObjects: 0.086892 ms CreateObjectMapping: 0.037448 ms MarkObjects: 0.420128 ms  DeleteObjects: 0.208894 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.956407 ms
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 0.710064 ms (FindLiveObjects: 0.052662 ms CreateObjectMapping: 0.038033 ms MarkObjects: 0.403745 ms  DeleteObjects: 0.215038 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.927736 ms
+
+Unloading 99 unused Assets to reduce memory usage. Loaded Objects now: 1159.
+Total: 1.615273 ms (FindLiveObjects: 0.019894 ms CreateObjectMapping: 0.056465 ms MarkObjects: 0.312756 ms  DeleteObjects: 1.225278 ms)
+
+health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Health 400
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Armour 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Max Armour500
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
