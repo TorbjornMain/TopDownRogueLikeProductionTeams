@@ -5,6 +5,6 @@ public class RotatePitch : MonoBehaviour
     //Update is called as often as possible
     void Update()
     {
-        transform.Rotate(new Vector3(45, 0, 0) * Time.deltaTime);
+		transform.RotateAround(transform.position, new Vector3(0,0,1),  45 * Time.deltaTime);
     }
 }

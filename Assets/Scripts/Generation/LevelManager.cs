@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour {
 			RaycastHit rc = new RaycastHit();
 			Vector3 portalPos;
 			if (Physics.Raycast (playerInstance.transform.position, playerInstance.transform.forward, out rc, 20, LayerMask.NameToLayer ("Terrain"))) {
-				portalPos = rc.point - (playerInstance.transform.forward * 5);
+				portalPos = rc.point - (playerInstance.transform.forward * 10);
 			} else {
 				portalPos = playerInstance.transform.position + (playerInstance.transform.forward * 20);
 			}

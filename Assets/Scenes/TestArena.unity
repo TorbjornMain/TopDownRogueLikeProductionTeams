@@ -249,9 +249,9 @@ MonoBehaviour:
   portalPrefab: {fileID: 114000012588505574, guid: 305ed990fcf427a4cabae9bc0ccd59f3,
     type: 2}
   maxDifficulty: 0
-  minProps: 100
+  minProps: 0
   minEnemies: 1
-  maxProps: 100
+  maxProps: 0
   maxEnemies: 1
 --- !u!4 &174344666
 Transform:
@@ -1124,9 +1124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749623027a921b145bb84d73f387d2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 50
-  height: 50
-  numRooms: 8
+  width: 20
+  height: 20
+  numRooms: 1
   wallHeight: 5
   tileScale: 4
 --- !u!1 &2140281257
