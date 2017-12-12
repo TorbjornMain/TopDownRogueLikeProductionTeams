@@ -52,7 +52,21 @@ public class Transport : EquippableItem {
 		}
 	}
 
-	public void Drive(Vector3 direction)
+    protected override void OnAttach()
+    {
+        base.OnAttach();
+
+        GetComponent<Collider>().enabled = false;
+    }
+
+    protected override void OnDetach()
+    {
+        base.OnDetach();
+
+        GetComponent<Collider>().enabled = true;
+    }
+
+    public void Drive(Vector3 direction)
 	{
 		transportSpeed = (transform.position - previousPos).magnitude / Time.deltaTime;
 		if (direction.magnitude > 0) {

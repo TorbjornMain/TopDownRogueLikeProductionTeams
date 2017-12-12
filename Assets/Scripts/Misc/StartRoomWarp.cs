@@ -8,7 +8,7 @@ public class StartRoomWarp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync("James Test (2)", LoadSceneMode.Single);
+            SceneManager.LoadScene("James Test (2)", LoadSceneMode.Single);
         }
     }
 }

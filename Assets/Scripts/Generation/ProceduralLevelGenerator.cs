@@ -135,10 +135,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), 0, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), 0, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), 0, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
-					uv.Add (new Vector2 (0, 0.75f));
-					uv.Add (new Vector2 (0.25f, 0.75f));
-					uv.Add (new Vector2 (0.25f, 1));
-					uv.Add (new Vector2 (0, 1));
+					uv.Add (new Vector2 (0.01f, 0.76f));
+					uv.Add (new Vector2 (0.24f, 0.76f));
+					uv.Add (new Vector2 (0.24f, 0.99f));
+					uv.Add (new Vector2 (0.01f, 0.99f));
 					meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 
 
@@ -156,10 +156,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * x1) / 2)));
 									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * x1) / 2), 0, ((y - (height+2) / 2) * tileScale) - ((tileScale * x1) / 2)));
 
-									uv.Add (new Vector2 (0.75f, 1));
-									uv.Add (new Vector2 (0.5f, 1));
-									uv.Add (new Vector2 (0.5f, 0.75f));
-									uv.Add (new Vector2 (0.75f, 0.75f));
+									uv.Add (new Vector2 (0.74f, 0.99f));
+									uv.Add (new Vector2 (0.51f, 0.99f));
+									uv.Add (new Vector2 (0.51f, 0.76f));
+									uv.Add (new Vector2 (0.74f, 0.76f));
 									meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 
 								} else {
@@ -168,10 +168,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) - ((tileScale * y1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
 									l.Add (new Vector3 (((x - (width + 2) / 2) * tileScale) + ((tileScale * y1) / 2), 0, ((y - (height+2) / 2) * tileScale) + ((tileScale * y1) / 2)));
 
-									uv.Add (new Vector2 (0.75f, 1));
-									uv.Add (new Vector2 (0.5f, 1));
-									uv.Add (new Vector2 (0.5f, 0.75f));
-									uv.Add (new Vector2 (0.75f, 0.75f));
+									uv.Add (new Vector2 (0.74f, 0.99f));
+									uv.Add (new Vector2 (0.51f, 0.99f));
+									uv.Add (new Vector2 (0.51f, 0.76f));
+									uv.Add (new Vector2 (0.74f, 0.76f));
 									meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 								}
 							}
@@ -185,10 +185,10 @@ public class ProceduralLevelGenerator : MonoBehaviour {
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) - (tileScale/2)));
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) + (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
 					l.Add(new Vector3(((x - (width + 2)/2) * tileScale) - (tileScale/2), wallHeight, ((y - (height+2)/2) * tileScale) + (tileScale/2)));
-					uv.Add (new Vector2 (0.25f, 0.75f));
-					uv.Add (new Vector2 (0.5f, 0.75f));
-					uv.Add (new Vector2 (0.5f, 1));
-					uv.Add (new Vector2 (0.25f, 1));
+					uv.Add (new Vector2 (0.26f, 0.76f));
+					uv.Add (new Vector2 (0.49f, 0.76f));
+					uv.Add (new Vector2 (0.49f, 0.99f));
+					uv.Add (new Vector2 (0.26f, 0.99f));
 					meshMaker.AddQuad (l.ToArray (), uv.ToArray ());
 				}
 			}

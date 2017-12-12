@@ -30,13 +30,9 @@ public class HUDManager : MonoBehaviour {
         {
             playersDamageComponent = player.GetComponent<DamageableItem>();
             playerHealth = playersDamageComponent.health;
-            print("health " + playerHealth);
             playerMaxHealth = playersDamageComponent.maxHealth;
-            print("Max Health " + playerMaxHealth);
             playerArmour = playersDamageComponent.armour;
-            print("Armour " + playerArmour); 
             playerMaxArmour = playersDamageComponent.maxArmour;
-            print("Max Armour" + playerMaxArmour);
 
         }
         if (playerHealth >= 0)

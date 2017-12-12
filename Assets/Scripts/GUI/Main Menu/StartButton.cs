@@ -15,6 +15,6 @@ public class StartButton : MonoBehaviour {
 	}
 
     public void StartGame() {
-        SceneManager.LoadSceneAsync("StartRoom", LoadSceneMode.Single);
+        SceneManager.LoadScene("StartRoom", LoadSceneMode.Single);
     }
 }

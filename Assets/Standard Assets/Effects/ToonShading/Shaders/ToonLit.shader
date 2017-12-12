@@ -3,10 +3,12 @@ Shader "Toon/Lit" {
 		_Color ("Main Color", Color) = (0.5,0.5,0.5,1)
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 
+		_MinimapColor("Minimap Color", Color) = (1,1,1,1)
+		_MinimapTexture("Minimap Texture", 2D) = "white" {}
 	}
 
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" "Minimap"="True" }
 		LOD 200
 		
 CGPROGRAM

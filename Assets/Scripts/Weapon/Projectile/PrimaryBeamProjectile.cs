@@ -7,14 +7,18 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 	public float fadeInTime = 0.1f, fadeOutTime = 0.1f, lifeLoopFrequency = 0.3f;
 	public AnimationCurve fadeInWidthCurve, lifeLoopWidthCurve, fadeOutWidthCurve;
 	public float beamRange = 10.0f, beamWidth = 0.1f;
+    public int beamRes = 10;
 	private LineRenderer lr;
 	protected RaycastHit rc = new RaycastHit();
 	private LayerMask hitLayer;
+    protected Vector3[] beamPositions;
 
-	protected override void Start ()
+    protected override void Start ()
 	{
-		hitLayer = ~((1 << pws.gameObject.layer) | LayerMask.GetMask ("PlayerBullet", "EnemyBullet", "NeutralBullet", "Item"));
+        beamPositions = new Vector3[beamRes];
+        hitLayer = ~((1 << pws.gameObject.layer) | LayerMask.GetMask ("PlayerBullet", "EnemyBullet", "NeutralBullet", "Item"));
 		lr = GetComponent<LineRenderer>();
+        lr.positionCount = beamRes;
 		lifeLoopWidthCurve.preWrapMode = WrapMode.Loop;
 		lifeLoopWidthCurve.postWrapMode = WrapMode.Loop;
 		base.Start ();
@@ -42,10 +46,20 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 		}
 		if (raycastHit) {
 			range = rc.distance;
-			lr.SetPositions (new Vector3[]{transform.position, transform.position + transform.forward * rc.distance});
+            
+            for(int i = 0; i < beamRes; i++)
+            {
+                beamPositions[i] = Vector3.Lerp(transform.position, transform.position + transform.forward * rc.distance, (float)i / (float)beamRes);
+            }
+
+			lr.SetPositions (beamPositions);
 		} else {
 			range = beamRange;
-			lr.SetPositions (new Vector3[]{transform.position, transform.position + transform.forward * beamRange});
+            for (int i = 0; i < beamRes; i++)
+            {
+                beamPositions[i] = Vector3.Lerp(transform.position, transform.position + transform.forward * beamRange, (float)i / (float)beamRes);
+            }
+            lr.SetPositions (beamPositions);
 		}
 
 		float lrWidth;
@@ -79,7 +93,7 @@ public class PrimaryBeamProjectile: PrimaryProjectile
 		} else {
 			lrWidth = fadeOutWidthCurve.Evaluate ((timeAlive - (lifetime + fadeInTime)) / fadeOutTime) * beamWidth;
 		}
-		lr.SetWidth (lrWidth, lrWidth);
+        lr.widthMultiplier = lrWidth;
 
 
 

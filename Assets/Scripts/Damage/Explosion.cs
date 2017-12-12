@@ -31,7 +31,7 @@ public class Explosion : MonoBehaviour {
 		DamageableItem dmgTarg;
 		if ((dmgTarg = other.GetComponent<DamageableItem> ()) != null) {
 			DamageInfo dmg = new DamageInfo ();
-			dmg.baseDamage = baseDamage * (col.radius - (other.transform.position - transform.position).magnitude) / col.radius;
+			dmg.baseDamage = baseDamage * (Mathf.Clamp01(col.radius - (other.transform.position - transform.position).magnitude) / col.radius);
 			dmg.target = dmgTarg;
 			dd.DealDamage (dmg);
 		}
